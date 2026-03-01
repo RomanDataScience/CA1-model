@@ -207,4 +207,6 @@ marimo/_lsp/
 __marimo__/
 
 *.docx
-outputs/
+.DS_Store
+arm64
+original_models/
