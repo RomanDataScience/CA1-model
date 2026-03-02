@@ -209,5 +209,8 @@ __marimo__/
 *.docx
 .DS_Store
 arm64
+allmods/
 original_models/
-NetPyNE_comparison
+NetPyNE_comparison/
+tests/
+singleCellSuite/
