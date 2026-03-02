@@ -58,7 +58,8 @@ def test_import_bilash_vip_cell(tmp_path: Path) -> None:
         conds={"cellType": "BilashVIP", "cellModel": "BilashVIP"},
         fileName=str(cell_file),
         cellName="VIPCRCell",
-        cellArgs={'gid': -1}
+        cellArgs={'gid': -1},
+        somaAtOrigin = True
     )
     assert "BilashVIP" in net_params.cellParams, "VIP cell import did not populate netParams.cellParams."
     net_params.popParams["vipPop"] = {"cellType": "BilashVIP", "cellModel": "BilashVIP", "numCells": 1}

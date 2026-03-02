@@ -58,6 +58,7 @@ def test_import_olm_into_netpyne(tmp_path: Path) -> None:
         conds={"cellType": "OLM", "cellModel": "OLM"},
         fileName=str(hoc_entry),
         cellName="celldef",
+        somaAtOrigin=True
     )
 
     assert "OLMCell" in net_params.cellParams, "OLM cell import did not populate netParams.cellParams."
