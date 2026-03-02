@@ -72,7 +72,7 @@ def test_import_bilash_vip_cell(tmp_path: Path) -> None:
     net_params = specs.NetParams()
     net_params.importCellParams(
         label="BilashVIP",
-        conds={"cellType": "BilashVIP", "cellModel": "BilashVIP"},
+        conds={"cellType": "BilashVIP", "cellModel": "HH"},
         fileName=str(cell_file),
         cellName="VIPCRCell",
         cellArgs={'gid': -1},

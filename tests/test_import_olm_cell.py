@@ -70,7 +70,7 @@ def test_import_olm_into_netpyne(tmp_path: Path) -> None:
     net_params = specs.NetParams()
     net_params.importCellParams(
         label="OLMCell",
-        conds={"cellType": "OLM", "cellModel": "OLM"},
+        conds={"cellType": "OLM", "cellModel": "HH"},
         fileName=str(hoc_entry),
         cellName="celldef",
         somaAtOrigin=True

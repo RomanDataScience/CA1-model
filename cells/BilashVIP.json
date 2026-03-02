@@ -1,7 +1,7 @@
 {
     "conds": {
         "cellType": "BilashVIP",
-        "cellModel": "BilashVIP"
+        "cellModel": "HH"
     },
     "secs": {
         "soma": {
