@@ -207,10 +207,15 @@ marimo/_lsp/
 __marimo__/
 
 *.docx
+*.csv
+*.png
 .DS_Store
 arm64
 allmods/
 original_models/
+
 NetPyNE_comparison/
+
 tests/
+
 singleCellSuite/

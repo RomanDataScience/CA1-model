@@ -21,7 +21,7 @@ DT_MS = 0.025
 ICLAMP_DELAY_MS = 0.0
 ICLAMP_DUR_MS = 1e9
 STIM_TIME_MS = (0.0, 13000.0, 14000.0, 15000.0, 16000.0)
-STIM_AMP_NA = (0.09, 0.09, 0.45, 0.09, 0.09)
+STIM_AMP_NA = (0*0.09, 0*0.09, 0.45, 0*0.09, 0*0.09)
 
 
 def _require_neuron():
