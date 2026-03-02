@@ -210,3 +210,4 @@ __marimo__/
 .DS_Store
 arm64
 original_models/
+NetPyNE_comparison

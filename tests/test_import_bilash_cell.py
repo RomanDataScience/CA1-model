@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 from pathlib import Path
 
 import pytest
@@ -18,10 +19,24 @@ _require_module("netpyne")
 from netpyne import specs, sim  # type: ignore
 
 
+def _export_cell_rule_json(repo_root: Path, file_name: str, cell_rule) -> Path:
+    cell_dict = json.loads(json.dumps(cell_rule))
+    for sec_data in cell_dict.get("secs", {}).values():
+        sec_data.pop("pointps", None)
+
+    cells_dir = repo_root / "cells"
+    cells_dir.mkdir(exist_ok=True)
+    output_path = cells_dir / file_name
+    with output_path.open("w", encoding="utf-8") as handle:
+        json.dump(cell_dict, handle, indent=4)
+    return output_path
+
+
 def test_import_bilash_pyramidal_cell(tmp_path: Path) -> None:
     """Smoke test: import Bilash 2022 PyramidalCell into NetPyNE and build a one-cell network."""
 
-    cell_file = Path(__file__).resolve().parents[1] / "original_models/bilash_2022/_codes/cell_models.py"
+    repo_root = Path(__file__).resolve().parents[1]
+    cell_file = repo_root / "original_models/bilash_2022/_codes/cell_models.py"
     assert cell_file.is_file(), "Bilash cell model file is missing."
 
     net_params = specs.NetParams()
@@ -33,6 +48,7 @@ def test_import_bilash_pyramidal_cell(tmp_path: Path) -> None:
         cellArgs={'gid': -1}
     )
     assert "BilashPYR" in net_params.cellParams, "Cell import did not populate netParams.cellParams."
+    _export_cell_rule_json(repo_root, "BilashPYR.json", net_params.cellParams["BilashPYR"])
     net_params.popParams["pyrPop"] = {"cellType": "BilashPYR", "cellModel": "BilashPYR", "numCells": 1}
 
     sim_config = specs.SimConfig()
@@ -49,7 +65,8 @@ def test_import_bilash_pyramidal_cell(tmp_path: Path) -> None:
 def test_import_bilash_vip_cell(tmp_path: Path) -> None:
     """Smoke test: import Bilash 2022 VIPCRCell into NetPyNE and build a one-cell network."""
 
-    cell_file = Path(__file__).resolve().parents[1] / "original_models/bilash_2022/_codes/cell_models.py"
+    repo_root = Path(__file__).resolve().parents[1]
+    cell_file = repo_root / "original_models/bilash_2022/_codes/cell_models.py"
     assert cell_file.is_file(), "Bilash cell model file is missing."
 
     net_params = specs.NetParams()
@@ -62,6 +79,7 @@ def test_import_bilash_vip_cell(tmp_path: Path) -> None:
         somaAtOrigin = True
     )
     assert "BilashVIP" in net_params.cellParams, "VIP cell import did not populate netParams.cellParams."
+    _export_cell_rule_json(repo_root, "BilashVIP.json", net_params.cellParams["BilashVIP"])
     net_params.popParams["vipPop"] = {"cellType": "BilashVIP", "cellModel": "BilashVIP", "numCells": 1}
 
     sim_config = specs.SimConfig()
