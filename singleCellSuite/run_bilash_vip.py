@@ -13,7 +13,7 @@ else:  # pragma: no cover
 
 
 def main() -> int:
-    return main_for_model("PC2B", "PC2B.json")
+    return main_for_model("BilashVIP", "BilashVIP.json")
 
 
 if __name__ == "__main__":  # pragma: no cover
