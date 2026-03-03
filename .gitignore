@@ -218,4 +218,5 @@ NetPyNE_comparison/
 
 tests/
 
-singleCellSuite/
+singleCellSuite/*
+!singleCellSuite/plotGeometry.py
