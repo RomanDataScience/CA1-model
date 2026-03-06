@@ -14,7 +14,7 @@ UNITS {
 
 
 NEURON {
-	SUFFIX mykca
+	SUFFIX mykca_PYR
 	USEION k READ ek WRITE ik
 	USEION ca READ cai
 	RANGE gkbar,ik, cainit

@@ -2,7 +2,7 @@ TITLE  H-current
 : Corrected and cleaned up by Val G. Rousseau on 07/17/20.
 
 NEURON {
-    SUFFIX h
+    SUFFIX h_PYR
     NONSPECIFIC_CURRENT i
     RANGE gbar,vhalf,K,taun,ninf,g,i
 }

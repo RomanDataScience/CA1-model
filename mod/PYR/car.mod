@@ -8,7 +8,7 @@ TITLE Ca R-type channel with medium threshold for activation
 :  Updated by Maria Markaki  03/12/03
 
 NEURON {
-	SUFFIX car
+	SUFFIX car_PYR
 	USEION ca READ  cao WRITE ica
 :	USEION Ca WRITE iCa VALENCE 2
         RANGE gcabar, m, h,ica

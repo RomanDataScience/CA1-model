@@ -31,7 +31,7 @@ PARAMETER {
 
 
 NEURON {
-	SUFFIX km
+	SUFFIX km_PYR
 	USEION k READ ek WRITE ik
         RANGE  gk,gbar,ik
       GLOBAL inf, tau

@@ -7,7 +7,7 @@ TITLE Ca R-type channel with medium threshold for activation
 : written by Yiota Poirazi on 3/12/01 poirazi@LNC.usc.edu
 
 NEURON {
-	SUFFIX somacar
+	SUFFIX somacar_PYR
 	USEION ca READ eca WRITE ica
         RANGE gcabar, m, h
 	RANGE inf, fac, tau, ica

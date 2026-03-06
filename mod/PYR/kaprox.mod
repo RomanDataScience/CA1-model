@@ -1,50 +1,51 @@
 TITLE K-A channel from Klee Ficker and Heinemann
-: modified to account for Dax A Current ----------
-: M.Migliore Jun 1997
+: modified to account for Dax A Current --- M.Migliore Jun 1997
+: modified to be used with cvode  M.Migliore 2001
 
 UNITS {
-        (mA) = (milliamp)
-        (mV) = (millivolt)
+	(mA) = (milliamp)
+	(mV) = (millivolt)
+
 }
 
 PARAMETER {
-	celsius
-        v (mV)
-        gkabar=.008 (mho/cm2)
-        vhalfn=-1   (mV)
+	v (mV)
+	celsius		(degC)
+	gkabar=.008 (mho/cm2)
+        vhalfn=11   (mV)
         vhalfl=-56   (mV)
         a0l=0.05      (/ms)
-        a0n=.1    (/ms)
-        zetan=-1.8    (1)
+        a0n=0.05    (/ms)
+        zetan=-1.5    (1)
         zetal=3    (1)
-        gmn=0.39   (1)
+        gmn=0.55   (1)
         gml=1   (1)
-        lmin=2  (mS)
-        nmin=0.2  (mS)
-        pw=-1    (1)
-        tq=-40
-        qq=5
-        q10=5
-        qtl=1
+	lmin=2  (mS)
+	nmin=0.1  (mS)
+	pw=-1    (1)
+	tq=-40
+	qq=5
+	q10=5
+	qtl=1
 	ek
 }
 
 
 NEURON {
-        SUFFIX kad
-        USEION k READ ek WRITE ik
+	SUFFIX kap_PYR
+	USEION k READ ek WRITE ik
         RANGE gkabar,gka,vhalfn,vhalfl,i
         GLOBAL ninf,linf,taul,taun,lmin
 }
 
 STATE {
-        n
+	n
         l
 }
 
 ASSIGNED {
-        ik (mA/cm2)
-        i (mA/cm2)
+	ik (mA/cm2)
+	i (mA/cm2)
         ninf
         linf      
         taul
@@ -52,18 +53,19 @@ ASSIGNED {
         gka
 }
 
-BREAKPOINT {
-        SOLVE states METHOD cnexp
-        gka = gkabar*n*l
-        i = gka*(v-ek)
-        ik = i
-
-}
-
 INITIAL {
 	rates(v)
 	n=ninf
 	l=linf
+}
+
+
+BREAKPOINT {
+	SOLVE states METHOD cnexp
+	gka = gkabar*n*l
+	i = gka*(v-ek)
+	ik = i
+
 }
 
 
@@ -97,7 +99,7 @@ FUNCTION betn(v(mV)) {
     else {betn=exp(Arg)}
 }
 
-FUNCTION alpl(v(mV)) {
+FUNCTION alpl(v (mV)) {
     LOCAL Arg
     Arg=1.e-3*zetal*(v-vhalfl)*9.648e4/(8.315*(273.16+celsius))
     
@@ -115,10 +117,10 @@ FUNCTION betl(v(mV)) {
     else {betl=exp(Arg)}
 }
 
-DERIVATIVE states {  
+DERIVATIVE states {     : exact when v held constant; integrates over dt step
         rates(v)
         n' = (ninf - n)/taun
-        l' = (linf - l)/taul
+        l' =  (linf - l)/taul
 }
 
 PROCEDURE rates(v (mV)) { :callable from hoc
@@ -127,10 +129,23 @@ PROCEDURE rates(v (mV)) { :callable from hoc
         a = alpn(v)
         ninf = 1/(1 + a)
         taun = betn(v)/(qt*a0n*(1+a))
-        if (taun<nmin) {taun=nmin}
+	if (taun<nmin) {taun=nmin}
         a = alpl(v)
         linf = 1/(1+ a)
-        taul = 0.26*(v+50)/qtl
-        if (taul<lmin/qtl) {taul=lmin/qtl}
+	taul = 0.26*(v+50)/qtl
+	if (taul<lmin/qtl) {taul=lmin/qtl}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
