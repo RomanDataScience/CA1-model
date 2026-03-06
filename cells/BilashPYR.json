@@ -14,17 +14,17 @@
             },
             "topol": {},
             "mechs": {
-                "cad": {},
-                "cal": {
+                "cad_VIP": {},
+                "cal_VIP": {
                     "gcalbar": 0.007
                 },
-                "cat": {
+                "cat_VIP": {
                     "gcatbar": 5e-05
                 },
                 "constant": {
                     "ic": 0.008
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 1.5e-05,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -35,19 +35,19 @@
                     "gkbar": 0.0014,
                     "gl": 5e-08
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.0075
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0166
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.09075
                 },
-                "somacar": {
+                "somacar_VIP": {
                     "gcabar": 0.003
                 }
             },
@@ -88,20 +88,20 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
-                "car": {
+                "car_VIP": {
                     "gcabar": 0.00030000000000000003
                 },
-                "cat": {
+                "cat_VIP": {
                     "gcatbar": 0.0004
                 },
                 "constant": {
                     "ic": -0.0016
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 1.8e-05,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -112,16 +112,16 @@
                     "gkbar": 0.001735895846249225,
                     "gl": 5.263157894736842e-08
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.018
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.066
                 }
             },
@@ -162,20 +162,20 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 6.3200000000000005e-06
                 },
-                "car": {
+                "car_VIP": {
                     "gcabar": 0.00030000000000000003
                 },
-                "cat": {
+                "cat_VIP": {
                     "gcatbar": 0.0004
                 },
                 "constant": {
                     "ic": -0.0022
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -186,16 +186,16 @@
                     "gkbar": 0.001735895846249225,
                     "gl": 6.666666666666667e-08
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.027812571428571426
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.066
                 }
             },
@@ -236,20 +236,20 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
-                "car": {
+                "car_VIP": {
                     "gcabar": 0.00030000000000000003
                 },
-                "cat": {
+                "cat_VIP": {
                     "gcatbar": 0.0004
                 },
                 "constant": {
                     "ic": -0.0028
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 9e-05,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -260,16 +260,16 @@
                     "gkbar": 0.001735895846249225,
                     "gl": 2.857142857142857e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.037546971428571434
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -310,20 +310,20 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.896e-05
                 },
-                "car": {
+                "car_VIP": {
                     "gcabar": 0.00030000000000000003
                 },
-                "cat": {
+                "cat_VIP": {
                     "gcatbar": 0.0004
                 },
                 "constant": {
                     "ic": -0.0034
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 9.75e-05,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -334,16 +334,16 @@
                     "gkbar": 0.001735895846249225,
                     "gl": 2.857142857142857e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04728137142857143
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -384,20 +384,20 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 2.5280000000000002e-05
                 },
-                "car": {
+                "car_VIP": {
                     "gcabar": 0.00030000000000000003
                 },
-                "cat": {
+                "cat_VIP": {
                     "gcatbar": 0.0004
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.000105,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -408,16 +408,16 @@
                     "gkbar": 0.001735895846249225,
                     "gl": 2.857142857142857e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -458,14 +458,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -476,16 +476,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -521,14 +521,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -539,16 +539,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -584,14 +584,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -602,16 +602,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -647,14 +647,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -665,16 +665,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -710,14 +710,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -728,16 +728,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -773,14 +773,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -791,16 +791,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -836,14 +836,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -854,16 +854,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -899,14 +899,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 3.1600000000000002e-06
                 },
                 "constant": {
                     "ic": -0.004
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 0.00012,
                     "eh": -10.0,
                     "vhalf": -90.0
@@ -917,16 +917,16 @@
                     "gkbar": 0.0019094854308741478,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.048672
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -962,14 +962,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -980,16 +980,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 7.692307692307693e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1025,14 +1025,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -1043,16 +1043,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1088,14 +1088,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -1106,16 +1106,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1151,14 +1151,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -1169,16 +1169,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1214,14 +1214,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -1232,16 +1232,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 7.692307692307693e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1277,14 +1277,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -1295,16 +1295,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1340,14 +1340,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -1358,16 +1358,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1403,14 +1403,14 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
-                "calH": {
+                "cad_VIP": {},
+                "calH_VIP": {
                     "gcalbar": 1.2640000000000001e-05
                 },
                 "constant": {
                     "ic": -0.0024
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 6e-05,
                     "eh": -10.0,
                     "vhalf": -80.0
@@ -1421,16 +1421,16 @@
                     "gkbar": 0.001041537507749535,
                     "gl": 8.333333333333333e-07
                 },
-                "kad": {
+                "kad_VIP": {
                     "gkabar": 0.04171885714285714
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 5e-05
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0012
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.004125
                 }
             },
@@ -1466,11 +1466,11 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
+                "cad_VIP": {},
                 "constant": {
                     "ic": -0.001
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 1.5e-05,
                     "eh": -10.0,
                     "vhalf": -81.0
@@ -1481,16 +1481,16 @@
                     "gkbar": 0.0008679479231246125,
                     "gl": 5.555555555555555e-07
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.0075
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.0165
                 }
             },
@@ -1526,11 +1526,11 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
+                "cad_VIP": {},
                 "constant": {
                     "ic": -0.001
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 2.25e-05,
                     "eh": -10.0,
                     "vhalf": -81.0
@@ -1541,16 +1541,16 @@
                     "gkbar": 0.0008679479231246125,
                     "gl": 5.555555555555555e-07
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.0075
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.0165
                 }
             },
@@ -1586,11 +1586,11 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
+                "cad_VIP": {},
                 "constant": {
                     "ic": -0.001
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 2.25e-05,
                     "eh": -10.0,
                     "vhalf": -81.0
@@ -1601,16 +1601,16 @@
                     "gkbar": 0.0008679479231246125,
                     "gl": 5.555555555555555e-07
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.0075
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.0165
                 }
             },
@@ -1646,11 +1646,11 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
+                "cad_VIP": {},
                 "constant": {
                     "ic": -0.001
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 1.5e-05,
                     "eh": -10.0,
                     "vhalf": -81.0
@@ -1661,16 +1661,16 @@
                     "gkbar": 0.0008679479231246125,
                     "gl": 5.555555555555555e-07
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.0075
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.0165
                 }
             },
@@ -1706,11 +1706,11 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
+                "cad_VIP": {},
                 "constant": {
                     "ic": -0.001
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 2.25e-05,
                     "eh": -10.0,
                     "vhalf": -81.0
@@ -1721,16 +1721,16 @@
                     "gkbar": 0.0008679479231246125,
                     "gl": 5.555555555555555e-07
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.0075
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.0165
                 }
             },
@@ -1766,11 +1766,11 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
+                "cad_VIP": {},
                 "constant": {
                     "ic": -0.001
                 },
-                "h": {
+                "h_VIP": {
                     "ghbar": 2.25e-05,
                     "eh": -10.0,
                     "vhalf": -81.0
@@ -1781,16 +1781,16 @@
                     "gkbar": 0.0008679479231246125,
                     "gl": 5.555555555555555e-07
                 },
-                "kap": {
+                "kap_VIP": {
                     "gkabar": 0.0075
                 },
-                "kca": {
+                "kca_VIP": {
                     "gbar": 0.0005
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 0.0006
                 },
-                "mykca": {
+                "mykca_VIP": {
                     "gkbar": 0.0165
                 }
             },
@@ -1826,7 +1826,7 @@
                 "childX": 0.0
             },
             "mechs": {
-                "cad": {},
+                "cad_VIP": {},
                 "constant": {
                     "ic": -0.001
                 },
@@ -1836,7 +1836,7 @@
                     "gkbar": 0.1,
                     "gl": 5e-08
                 },
-                "km": {
+                "km_VIP": {
                     "gbar": 3e-06
                 }
             },

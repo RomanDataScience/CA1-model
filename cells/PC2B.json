@@ -126,18 +126,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 4.387122334281258e-05,
                     "vhalf": -81.0
@@ -150,17 +150,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.05333450274161901,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -175,11 +175,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -297,18 +297,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 4.845147494791949e-05,
                     "vhalf": -81.0
@@ -321,17 +321,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.05823282737485834,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -346,11 +346,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -456,18 +456,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 5.298912041623644e-05,
                     "vhalf": -81.0
@@ -480,17 +480,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.06308558711180842,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -505,11 +505,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -645,18 +645,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 6.0832040521865455e-05,
                     "vhalf": -81.0
@@ -669,17 +669,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.071473154446995,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -694,11 +694,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -804,18 +804,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 6.361530546103204e-05,
                     "vhalf": -81.0
@@ -828,17 +828,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.07444970167360371,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -853,11 +853,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -1011,18 +1011,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0003977828816459359
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 7.176720257282327e-05,
                     "vhalf": -81.64080028586925
@@ -1035,17 +1035,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.08316770275149155,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -1060,11 +1060,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -1206,18 +1206,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0004756725003786709
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 7.994561253976046e-05,
                     "vhalf": -82.54951250441783
@@ -1230,17 +1230,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0919140578550216,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -1255,11 +1255,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -1419,18 +1419,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0006216033470099293
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 9.526835143604258e-05,
                     "vhalf": -84.25203904844918
@@ -1443,17 +1443,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.10830087584132332,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -1468,11 +1468,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -1566,18 +1566,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0006524143828479985
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 9.850351019903985e-05,
                     "vhalf": -84.61150113322665
@@ -1590,17 +1590,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1117606984073065,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -1615,11 +1615,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -1785,18 +1785,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007360643829660039
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00010728676021143042,
                     "vhalf": -85.58741780127005
@@ -1809,17 +1809,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.12115389633722419,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -1834,11 +1834,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -1932,18 +1932,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007665477232599706
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00011048751094229694,
                     "vhalf": -85.94305677136633
@@ -1956,17 +1956,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.12457692142440087,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -1981,11 +1981,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -2091,18 +2091,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007996105088236359
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00011395910342648177,
                     "vhalf": -86.32878926960909
@@ -2115,17 +2115,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.12828959671998744,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -2140,11 +2140,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -2232,18 +2232,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0008172564670239326
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00011581192903751293,
                     "vhalf": -86.53465878194588
@@ -2256,17 +2256,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1302710907762291,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -2281,11 +2281,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -2433,18 +2433,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0008815583675115411
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00012256362858871183,
                     "vhalf": -87.28484762096798
@@ -2457,17 +2457,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.13749165835181681,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -2482,11 +2482,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -2610,18 +2610,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0009270381427810719
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00012733900499201255,
                     "vhalf": -87.8154449991125
@@ -2634,17 +2634,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.14259865811645786,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -2659,11 +2659,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -2787,18 +2787,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0009706750620211606
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00013192088151222186,
                     "vhalf": -88.32454239024688
@@ -2811,17 +2811,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.14749872050612617,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -2836,11 +2836,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -3094,18 +3094,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.001194613226083892
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00015543438873880867,
                     "vhalf": -89.0
@@ -3118,17 +3118,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.17264511017900372,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -3143,11 +3143,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -3353,18 +3353,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.001351737083338071
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00017193239375049748,
                     "vhalf": -89.0
@@ -3377,17 +3377,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.19028880998317094,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -3402,11 +3402,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -3678,18 +3678,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0015257037834619151
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00019019889726350109,
                     "vhalf": -89.0
@@ -3702,17 +3702,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.20982382068457756,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -3727,11 +3727,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -3873,18 +3873,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 4.9675807276819104e-05,
                     "vhalf": -81.0
@@ -3897,17 +3897,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.059542182782153764,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -3922,11 +3922,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -4376,18 +4376,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.000660888494910489
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 9.939329196560136e-05,
                     "vhalf": -84.7103657739557
@@ -4400,17 +4400,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.11271227057432365,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -4425,11 +4425,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -4709,18 +4709,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.00044733564558881823
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 7.697024278682591e-05,
                     "vhalf": -82.21891586520287
@@ -4733,17 +4733,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.08873206520257773,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -4758,11 +4758,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -5046,18 +5046,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0006267059389710179
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 9.580412359195687e-05,
                     "vhalf": -84.31156928799521
@@ -5070,17 +5070,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.10887385439695388,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -5095,11 +5095,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -5791,18 +5791,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0010031475359448825
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001353304912742127,
                     "vhalf": -88.70338791935697
@@ -5815,17 +5815,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1511451087238108,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -5840,11 +5840,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -6512,18 +6512,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007102765670611687
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00010457903954142272,
                     "vhalf": -85.28655994904697
@@ -6536,17 +6536,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.11825813950957707,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -6561,11 +6561,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -6665,18 +6665,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 5.6138136768876664e-05,
                     "vhalf": -81.0
@@ -6689,17 +6689,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.06645328515560421,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -6714,11 +6714,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -7172,18 +7172,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0005766835216445921
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 9.055176977268218e-05,
                     "vhalf": -83.7279744191869
@@ -7196,17 +7196,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.103256753784674,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -7221,11 +7221,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -7373,18 +7373,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 6.239133425566338e-05,
                     "vhalf": -81.0
@@ -7397,17 +7397,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.07314073246786224,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -7422,11 +7422,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -7844,18 +7844,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0006610959644186225
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 9.941507626395538e-05,
                     "vhalf": -84.7127862515506
@@ -7868,17 +7868,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.11273556767117449,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -7893,11 +7893,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -7991,18 +7991,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 6.529074010260523e-05,
                     "vhalf": -81.0
@@ -8015,17 +8015,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0762414859430639,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -8040,11 +8040,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -8530,18 +8530,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007991584266258997
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00011391163479571948,
                     "vhalf": -86.32351497730217
@@ -8554,17 +8554,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.12823883165653333,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -8579,11 +8579,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -9069,18 +9069,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.00077733509206355
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00011162018466667277,
                     "vhalf": -86.06890940740809
@@ -9093,17 +9093,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1257882530463028,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -9118,11 +9118,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -9382,18 +9382,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0004403569366212355
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 7.623747834522973e-05,
                     "vhalf": -82.13749759391442
@@ -9406,17 +9406,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.08794841434142624,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -9431,11 +9431,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -9781,18 +9781,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0006712500797922761
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00010048125837818898,
                     "vhalf": -84.83125093090989
@@ -9805,17 +9805,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.11387579021000765,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -9830,11 +9830,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -10210,18 +10210,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007656516294728758
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00011039342109465197,
                     "vhalf": -85.93260234385022
@@ -10234,17 +10234,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.12447629755955836,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -10259,11 +10259,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -10699,18 +10699,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0009659265912399859
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00013142229208019856,
                     "vhalf": -88.2691435644665
@@ -10723,17 +10723,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1469655068079901,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -10748,11 +10748,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -10870,18 +10870,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0004379895491563634
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 7.598890266141816e-05,
                     "vhalf": -82.1098780734909
@@ -10894,17 +10894,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.08768257645734999,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -10919,11 +10919,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -11457,18 +11457,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0009029378140091084
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001248084704709564,
                     "vhalf": -87.53427449677294
@@ -11481,17 +11481,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.13989239203143947,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -11506,11 +11506,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -12038,18 +12038,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0008778020303020571
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.000122169213181716,
                     "vhalf": -87.24102368685733
@@ -12062,17 +12062,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.13706985298600183,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -12087,11 +12087,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -12227,18 +12227,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007273317230155474
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001063698309166325,
                     "vhalf": -85.48553676851472
@@ -12251,17 +12251,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1201732913969542,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -12276,11 +12276,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -12814,18 +12814,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0017953376185735864
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -12838,17 +12838,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -12863,11 +12863,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -13049,18 +13049,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0008284860963178773
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00011699104011337712,
                     "vhalf": -86.66567112370856
@@ -13073,17 +13073,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.13153208456569496,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -13098,11 +13098,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -13716,18 +13716,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0012994148729262983
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00016643856165726134,
                     "vhalf": -89.0
@@ -13740,17 +13740,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1844134617723489,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -13765,11 +13765,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -14103,18 +14103,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0011205114270558157
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00014765369984086064,
                     "vhalf": -89.0
@@ -14127,17 +14127,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.16432409566314263,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -14152,11 +14152,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -14684,18 +14684,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0010387409970891368
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00013906780469435937,
                     "vhalf": -89.0
@@ -14708,17 +14708,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.15514195779813433,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -14733,11 +14733,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -15313,18 +15313,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.001079979206330818
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00014339781666473591,
                     "vhalf": -89.0
@@ -15337,17 +15337,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.15977266504423146,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -15362,11 +15362,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -15484,18 +15484,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0007883492750011723
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001127766738751231,
                     "vhalf": -86.19740820834701
@@ -15508,17 +15508,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.12702505400533998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -15533,11 +15533,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -16091,18 +16091,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0012950244085296117
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00016597756289560923,
                     "vhalf": -89.0
@@ -16115,17 +16115,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1839204492078043,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -16140,11 +16140,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -16820,18 +16820,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0014102101098562908
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00017807206153491056,
                     "vhalf": -89.0
@@ -16844,17 +16844,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.19685484358594602,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -16869,11 +16869,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -17291,18 +17291,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.001087748411135875
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00014421358316926691,
                     "vhalf": -89.0
@@ -17315,17 +17315,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.16064508200046596,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -17340,11 +17340,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -17976,18 +17976,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0012553181356492753
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00016180840424317387,
                     "vhalf": -89.0
@@ -18000,17 +18000,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.17946176564894986,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -18025,11 +18025,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -18597,18 +18597,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0013960872138029164
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00017658915744930622,
                     "vhalf": -89.0
@@ -18621,17 +18621,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1952689600499525,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -18646,11 +18646,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -19166,18 +19166,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0019447326144316373
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -19190,17 +19190,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -19215,11 +19215,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -19583,18 +19583,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002250225716732211
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -19607,17 +19607,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -19632,11 +19632,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -20144,18 +20144,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0012371168629151422
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00015989727060608996,
                     "vhalf": -89.0
@@ -20168,17 +20168,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.17741791439817955,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -20193,11 +20193,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -20653,18 +20653,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.001298655501020945
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001663588276071992,
                     "vhalf": -89.0
@@ -20677,17 +20677,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.18432819063547692,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -20702,11 +20702,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -20900,18 +20900,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0013090818307922667
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00016745359223318802,
                     "vhalf": -89.0
@@ -20924,17 +20924,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.18549898058271494,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -20949,11 +20949,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -21059,18 +21059,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0013472298776398778
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00017145913715218718,
                     "vhalf": -89.0
@@ -21083,17 +21083,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.1897826883433113,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -21108,11 +21108,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -21356,18 +21356,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0015564429360608205
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001934265082863862,
                     "vhalf": -89.0
@@ -21380,17 +21380,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.21327557136182965,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -21405,11 +21405,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -21779,18 +21779,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.001616048226673236
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001996850638006898,
                     "vhalf": -89.0
@@ -21803,17 +21803,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.2199687487868488,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -21828,11 +21828,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -22136,18 +22136,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0015465604160621684
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00019238884368652772,
                     "vhalf": -89.0
@@ -22160,17 +22160,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.21216584672031438,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -22185,11 +22185,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -22307,18 +22307,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0015917868453517979
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0001971376187619388,
                     "vhalf": -89.0
@@ -22331,17 +22331,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.217244397842629,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -22356,11 +22356,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -22724,18 +22724,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0019640217943139647
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -22748,17 +22748,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -22773,11 +22773,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -23025,18 +23025,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0021509589934164478
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -23049,17 +23049,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -23074,11 +23074,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -23190,18 +23190,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002189402616733428
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -23214,17 +23214,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -23239,11 +23239,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -23317,18 +23317,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002322534570417316
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -23341,17 +23341,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -23366,11 +23366,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -23698,18 +23698,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002515024449562092
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -23722,17 +23722,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -23747,11 +23747,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -23857,18 +23857,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0023573171785507526
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -23881,17 +23881,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -23906,11 +23906,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -24334,18 +24334,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0027638393814454535
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -24358,17 +24358,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -24383,11 +24383,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -24889,18 +24889,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0027498669956965995
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -24913,17 +24913,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -24938,11 +24938,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -25036,18 +25036,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0022555431986856587
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -25060,17 +25060,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -25085,11 +25085,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -25615,18 +25615,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002549810248340747
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -25639,17 +25639,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -25664,11 +25664,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -26540,18 +26540,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0032277612682708656
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -26564,17 +26564,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -26589,11 +26589,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -27017,18 +27017,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0028336591823147367
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -27041,17 +27041,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -27066,11 +27066,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -27282,18 +27282,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0014927494023053514
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00018673868724206188,
                     "vhalf": -89.0
@@ -27306,17 +27306,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.20612331830053843,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -27331,11 +27331,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -28311,18 +28311,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0023836305944566153
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -28335,17 +28335,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -28360,11 +28360,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -28620,18 +28620,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002525356733853035
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -28644,17 +28644,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -28669,11 +28669,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -28861,18 +28861,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0024838479158823066
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -28885,17 +28885,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -28910,11 +28910,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -29014,18 +29014,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0015270067440713323
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00019033570812748989,
                     "vhalf": -89.0
@@ -29038,17 +29038,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.20997013230301004,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -29063,11 +29063,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -29441,18 +29441,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.001937493240783436
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -29465,17 +29465,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -29490,11 +29490,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -30028,18 +30028,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002435082121264204
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -30052,17 +30052,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -30077,11 +30077,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -30589,18 +30589,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002551245151063456
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -30613,17 +30613,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -30638,11 +30638,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -30872,18 +30872,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0016772894749644343
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.0002061153948712656,
                     "vhalf": -89.0
@@ -30896,17 +30896,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.22684563062621463,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -30921,11 +30921,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -31119,18 +31119,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0018559392425369545
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -31143,17 +31143,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -31168,11 +31168,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -31580,18 +31580,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0023401083055161645
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -31604,17 +31604,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -31629,11 +31629,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -32241,18 +32241,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002446171661242226
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -32265,17 +32265,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -32290,11 +32290,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -32412,18 +32412,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0017187766409846761
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -32436,17 +32436,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -32461,11 +32461,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -32619,18 +32619,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0017906040937220975
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -32643,17 +32643,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -32668,11 +32668,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -33702,18 +33702,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.002567080097174318
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -33726,17 +33726,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -33751,11 +33751,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -34273,18 +34273,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0021359307833815778
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -34297,17 +34297,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -34322,11 +34322,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -35290,18 +35290,18 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "calH": {
+                "calH_PYR": {
                     "gcalbar": 0.0,
                     "gcal": 0.0
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 3e-06
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0026802310889298383
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 0.00021,
                     "vhalf": -89.0
@@ -35314,17 +35314,17 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kad": {
+                "kad_PYR": {
                     "gkabar": 0.23099999999999998,
                     "vhalfn": -1.0,
                     "vhalfl": -56.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -35339,11 +35339,11 @@
                     "Offset": 15.0,
                     "Slope": -10.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
@@ -35558,12 +35558,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -35687,12 +35687,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -35864,12 +35864,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -36835,12 +36835,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -37986,12 +37986,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -38221,12 +38221,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -39206,12 +39206,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -39329,12 +39329,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -40078,12 +40078,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -40315,12 +40315,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -41002,12 +41002,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -41749,12 +41749,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -41902,12 +41902,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -42031,12 +42031,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -42260,12 +42260,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -43135,12 +43135,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -43834,12 +43834,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -44151,12 +44151,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -44826,12 +44826,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -45503,12 +45503,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -45880,12 +45880,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -46561,12 +46561,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -47262,12 +47262,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -47451,12 +47451,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -47692,12 +47692,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -47833,12 +47833,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -48718,12 +48718,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -49619,12 +49619,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -50438,12 +50438,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -50561,12 +50561,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -50696,12 +50696,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -51643,12 +51643,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -51990,12 +51990,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -52677,12 +52677,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -53638,12 +53638,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -53773,12 +53773,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -54148,12 +54148,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -54289,12 +54289,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -54938,12 +54938,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -55477,12 +55477,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -56146,12 +56146,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -57133,12 +57133,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -57470,12 +57470,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -57623,12 +57623,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -58612,12 +58612,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -58717,12 +58717,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -59654,12 +59654,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -60141,12 +60141,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -60288,12 +60288,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -61245,12 +61245,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -62084,12 +62084,12 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.5,
                     "gbar": 3e-05,
                     "vhalf": -81.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0025036,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -62255,7 +62255,7 @@
                     "DCa": 0.22
                 },
                 "d3": {},
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.056,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
@@ -62263,7 +62263,7 @@
                 "kd": {
                     "gbar": 0.011
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
@@ -62317,7 +62317,7 @@
                 "Kv2like": {
                     "gbar": 0.0132
                 },
-                "cal": {
+                "cal_PYR": {
                     "gcalbar": 6e-06,
                     "ggk": 0.0
                 },
@@ -62328,14 +62328,14 @@
                     "beta": 1.0,
                     "DCa": 0.22
                 },
-                "car": {
+                "car_PYR": {
                     "gcabar": 8e-05
                 },
-                "cat": {
+                "cat_PYR": {
                     "gcatbar": 0.0003
                 },
                 "d3": {},
-                "h": {
+                "h_PYR": {
                     "K": 8.8,
                     "gbar": 3e-05,
                     "vhalf": -82.0
@@ -62348,12 +62348,12 @@
                     "taumin": 0.1,
                     "concrelease": 1.0
                 },
-                "kap": {
+                "kap_PYR": {
                     "gkabar": 0.0385,
                     "vhalfn": 11.0,
                     "vhalfl": -56.0
                 },
-                "kca": {
+                "kca_PYR": {
                     "cainit": 0.0001,
                     "gbar": 0.0,
                     "cac": 0.00075,
@@ -62362,11 +62362,11 @@
                 "kd": {
                     "gbar": 0.0
                 },
-                "km": {
+                "km_PYR": {
                     "gbar": 0.0,
                     "gk": 0.0
                 },
-                "mykca": {
+                "mykca_PYR": {
                     "gkbar": 0.0,
                     "cainit": 0.0001
                 },
