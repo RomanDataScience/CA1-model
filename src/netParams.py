@@ -32,9 +32,9 @@ with open(cfg.VIPFile, 'r') as f:
     cellRuleVIP = json.load(f)
 
 # Add to netParams
-netParams.cellParams['PC2B'] = cellRulePYR
-netParams.cellParams['OLM'] = cellRuleOLM
-netParams.cellParams['VIP'] = cellRuleVIP
+netParams.addCellParams(label='PC2B', params=cellRulePYR)
+netParams.addCellParams(label='OLM', params=cellRuleOLM)
+netParams.addCellParams(label='VIP', params=cellRuleVIP)
 
 ###############################################################################
 # NETWORK PARAMETERS
@@ -62,8 +62,8 @@ netParams.synMechParams['NMDA'] = {
 }
 
 # ---------------- target secList ----------------
-# label = 'PC2B'
-# define_CA1_zones(netParams, label = label)
+label = 'PC2B'
+define_CA1_zones(netParams, label = label)
 
 netParams.stimSourceParams['SC'] = {
     'type': 'VecStim',
@@ -74,10 +74,10 @@ netParams.stimSourceParams['SC'] = {
 netParams.stimTargetParams['SC->PC2B_SC_zone'] = {
     'source': 'SC',
     'conds': {'pop': 'PC2B', 'cellModel': 'HH'},
-    'sec': 'soma',
+    'sec': 'SC_zone',
     'loc': 0.5,
     'synMech': ['AMPA', 'NMDA'],
-    'weight': [cfg.ampaW, cfg.nmdaW],
+    'weight': [0.5, 0.5],
     'delay': 0,
     'number': 22,
 }
