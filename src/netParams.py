@@ -40,7 +40,7 @@ netParams.cellParams['VIP'] = cellRuleVIP
 # NETWORK PARAMETERS
 ###############################################################################
 # Population parameters
-netParams.popParams['PYR'] = {'cellModel': 'HH', 'cellType': 'PC2B', 'numCells': cfg.PYR} # add dict with params for this pop
+netParams.popParams['PC2B'] = {'cellModel': 'HH', 'cellType': 'PC2B', 'numCells': cfg.PYR} # add dict with params for this pop
 netParams.popParams['OLM'] = {'cellModel': 'HH', 'cellType': 'OLM', 'numCells': cfg.OLM} # add dict with params for this pop
 netParams.popParams['VIP'] = {'cellModel': 'HH', 'cellType': 'BilashVIP', 'numCells': cfg.VIP} # add dict with params for this pop
 
@@ -73,10 +73,29 @@ netParams.stimSourceParams['SC'] = {
 # ---------------- SC -> CA1 ----------------
 netParams.stimTargetParams['SC->PC2B_SC_zone'] = {
     'source': 'SC',
-    'conds': {'pop': 'PC2B'},
+    'conds': {'pop': 'PC2B', 'cellModel': 'HH'},
     'sec': 'soma',
+    'loc': 0.5,
     'synMech': ['AMPA', 'NMDA'],
     'weight': [cfg.ampaW, cfg.nmdaW],
     'delay': 0,
     'number': 22,
 }
+
+#------------------------------------------------------------------------------
+# Current inputs (IClamp)
+#------------------------------------------------------------------------------
+if cfg.addIClamp:
+    for key in [k for k in dir(cfg) if k.startswith('IClamp')]:
+        params = getattr(cfg, key, None)
+        [pop,sec,loc,start,dur,amp] = [params[s] for s in ['pop','sec','loc','start','dur','amp']]
+
+        # add stim source
+        netParams.stimSourceParams[key] = {'type': 'IClamp', 'delay': start, 'dur': dur, 'amp': amp}
+        
+        # connect stim source to target
+        netParams.stimTargetParams[key+'_'+pop] =  {
+            'source': key, 
+            'conds': {'pop': pop},
+            'sec': sec, 
+            'loc': loc}

@@ -18,7 +18,7 @@ cfg._batchtk_path_pointer = None
 inter_burst_isi = 200.0  # 5 Hz
 cfg.Cycles = 5          # Number of cycles to simulate
 cfg.Cycles2Plot = 5           # Number of cycles to plot
-cfg.Transient = 3000 # Transient time
+cfg.Transient = 1000 # Transient time
 cfg.duration = cfg.Transient +  cfg.Cycles*inter_burst_isi          # Duration of the simulation, in ms
 cfg.dt = 1e-1               # Internal integration timestep to use
 cfg.hParams = {'v_init': -80}  
@@ -75,10 +75,19 @@ cfg.nmdaW = 1.2 * 0.000882 # NMDA weight
 ###############################################################################
 ## Recording and analysis
 ###############################################################################
-allpops = ['PYR', 'OLM', 'VIP']
+allpops = ['PC2B', 'OLM', 'VIP']
 timeRange = [0, cfg.duration]
 cfg.recordCells = [(pop,0) for pop in allpops]
 cfg.recordTraces = {'V_soma':{'sec':'soma','loc':0.5,'var':'v'}}  # Dict with traces to record
 cfg.analysis['plotRaster'] = {'include': allpops,'saveFig': True, 'timeRange': timeRange} # Plot a raster
-cfg.analysis['plotSpikeHist'] = {'include': ['FS', 'SC'], 'saveFig': True, 'timeRange': timeRange, 'binSize': 1, 'measure': 'rate'}                  # Plot a Spike Histogram
+cfg.analysis['plotSpikeHist'] = {'include': allpops, 'saveFig': True, 'timeRange': timeRange, 'binSize': 1, 'measure': 'rate'}                  # Plot a Spike Histogram
 cfg.analysis['plotTraces'] = {'include': cfg.recordCells, 'saveFig': True, 'timeRange': timeRange}  # Plot recorded traces for this list of cells
+
+#------------------------------------------------------------------------------
+# Current inputs 
+#------------------------------------------------------------------------------
+cfg.addIClamp = False
+
+cfg.IClamp1 = {'pop': 'PC2B', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}
+cfg.IClamp1 = {'pop': 'OLM', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}
+cfg.IClamp1 = {'pop': 'VIP', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}

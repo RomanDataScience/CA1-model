@@ -14454,7 +14454,7 @@
             },
             "vinit": -74.0
         },
-        "soma_0": {
+        "soma": {
             "geom": {
                 "L": 12.455997268466628,
                 "nseg": 1,
@@ -14588,7 +14588,7 @@
                 ]
             },
             "topol": {
-                "parentSec": "soma_0",
+                "parentSec": "soma",
                 "parentX": 1.0,
                 "childX": 0.0
             },
@@ -14669,7 +14669,7 @@
                 ]
             },
             "topol": {
-                "parentSec": "soma_0",
+                "parentSec": "soma",
                 "parentX": 1.0,
                 "childX": 0.0
             },
@@ -17388,7 +17388,7 @@
             "dend_96",
             "dend_97",
             "dend_98",
-            "soma_0",
+            "soma",
             "soma_1",
             "soma_2",
             "axon_0",
@@ -17400,7 +17400,7 @@
             "axon_6"
         ],
         "SectionList[7]": [
-            "soma_0",
+            "soma",
             "soma_1",
             "soma_2"
         ],
