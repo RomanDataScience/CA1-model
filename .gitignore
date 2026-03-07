@@ -220,3 +220,4 @@ tests/
 
 singleCellSuite/*
 !singleCellSuite/plotGeometry.py
+output/
