@@ -14,12 +14,14 @@ netParams = specs.NetParams()   # object of class NetParams to store the network
 
 netParams.version = 1
 
-def define_CA1_zones(netParams, label):
+def define_CA1_zones(netParams, label, sc_secs):
     netParams.addCellParamsSecList(label=label, secListName='perisom', somaDist=[0, 50])
     netParams.addCellParamsSecList(label=label, secListName='basal', somaDist=[0, 200])
-    netParams.addCellParamsSecList(label=label, secListName='SC_zone', somaDist=[200, 300])
-    netParams.addCellParamsSecList(label=label, secListName='PP_zone', somaDist=[320, 1000])
+    netParams.addCellParamsSecList(label=label, secListName='PP_zone', somaDist=[350, 2000])
     netParams.addCellParamsSecList(label=label, secListName='below_soma', somaDistY=[-600, 0]) 
+    # netParams.addCellParamsSecList(label=label, secListName='SC_zone', somaDist=[200, 300]) 
+    netParams.cellParams[label]['secLists']['SC_zone'] = sc_secs
+
 
 # Load cellRules file
 with open(cfg.PYRFile, 'r') as f:
@@ -43,8 +45,8 @@ netParams.addCellParams(label='VIP', params=cellRuleVIP)
 netParams.popParams['PC2B'] = {'cellType': 'PC2B', 'numCells': cfg.PYR} # add dict with params for this pop
 netParams.popParams['OLM'] = {'cellType': 'OLM', 'numCells': cfg.OLM} # add dict with params for this pop
 netParams.popParams['VIP'] = {'cellType': 'BilashVIP', 'numCells': cfg.VIP} # add dict with params for this pop
-netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': 22, 'spkTimes': cfg.sc_spike_times}
-netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': 22, 'spkTimes': cfg.sc_spike_times}
+netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': cfg.SC, 'spkTimes': cfg.sc_spike_times}
+netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': cfg.PP, 'spkTimes': cfg.sc_spike_times}
 
 # ---------------- synapses ----------------
 netParams.synMechParams['AMPA'] = {
@@ -63,27 +65,40 @@ netParams.synMechParams['NMDA'] = {
 
 # ---------------- target secList ----------------
 label = 'PC2B'
-define_CA1_zones(netParams, label = label)
+define_CA1_zones(netParams, label = label, sc_secs=cfg.sc_secs)
 
 # ---------------- SC -> CA1 ----------------
-netParams.connParams['SC->PC2B_SC_zone'] = {
-    'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
-    'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
-    'sec': 'SC_zone',
-    'loc': 0.5,
-    'synMech': ['AMPA', 'NMDA'],
-    'weight': [cfg.ampaW, cfg.nmdaW],
-    'delay': 0,
-    'synsPerConn': 1,
-}
+for i, (sec, loc) in enumerate(cfg.sc_syn_sites):
+    netParams.connParams[f'SC->PC2B_site_{i}'] = {
+        'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
+        'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+        'sec': sec,
+        'loc': loc,
+        'synMech': ['AMPA', 'NMDA'],
+        'weight': [cfg.ampaWSC, cfg.nmdaWSC],
+        'delay': 0,
+        'synsPerConn': 1,
+    }
+# OLD RULE
+# # ---------------- SC -> CA1 ----------------
+# netParams.connParams['SC->PC2B_SC_zone'] = {
+#     'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
+#     'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+#     'sec': 'SC_zone',
+#     'loc': 'uniform(0.45, 0.55)',
+#     'synMech': ['AMPA', 'NMDA'],
+#     'weight': [cfg.ampaW, cfg.nmdaW],
+#     'delay': 0,
+#     'synsPerConn': 1,
+# }
 # ---------------- PP -> CA1 ----------------
-netParams.connParams['PP->PC2B_SC_zone'] = {
+netParams.connParams['PP->PC2B_PP_zone'] = {
     'preConds': {'pop': 'PP', 'cellModel': 'VecStim'},
     'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
     'sec': 'PP_zone',
-    'loc': 0.5,
+    'loc': 'uniform(0.2, 0.8)',
     'synMech': ['AMPA', 'NMDA'],
-    'weight': [cfg.ampaW, cfg.nmdaW],
+    'weight': [cfg.ampaWPP, cfg.nmdaWPP],
     'delay': 0,
     'synsPerConn': 1,
 }

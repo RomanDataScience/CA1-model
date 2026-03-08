@@ -57,7 +57,7 @@ for cell in post_cells:
             h, sec_hobj, float(loc),
             markspec='o',
             color=color_by_pop[pre_pop],
-            markersize=2
+            markersize=0.3
         )
 
 # Optional legend
@@ -67,7 +67,7 @@ handles = [
 ]
 ax3d.legend(handles=handles, loc='upper left', fontsize=8)
 
-plt.savefig('SimGeom_by_pre_pop.png', dpi=300, bbox_inches='tight')
+plt.savefig(cfg.saveFolder + '/SimGeom_by_pre_pop.png', dpi=300, bbox_inches='tight')
 #----------
 
 
