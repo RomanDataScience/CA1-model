@@ -40,46 +40,52 @@ netParams.addCellParams(label='VIP', params=cellRuleVIP)
 # NETWORK PARAMETERS
 ###############################################################################
 # Population parameters
-netParams.popParams['PC2B'] = {'cellModel': 'HH', 'cellType': 'PC2B', 'numCells': cfg.PYR} # add dict with params for this pop
-netParams.popParams['OLM'] = {'cellModel': 'HH', 'cellType': 'OLM', 'numCells': cfg.OLM} # add dict with params for this pop
-netParams.popParams['VIP'] = {'cellModel': 'HH', 'cellType': 'BilashVIP', 'numCells': cfg.VIP} # add dict with params for this pop
+netParams.popParams['PC2B'] = {'cellType': 'PC2B', 'numCells': cfg.PYR} # add dict with params for this pop
+netParams.popParams['OLM'] = {'cellType': 'OLM', 'numCells': cfg.OLM} # add dict with params for this pop
+netParams.popParams['VIP'] = {'cellType': 'BilashVIP', 'numCells': cfg.VIP} # add dict with params for this pop
+netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': 22, 'spkTimes': cfg.sc_spike_times}
+netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': 22, 'spkTimes': cfg.sc_spike_times}
 
 # ---------------- synapses ----------------
 netParams.synMechParams['AMPA'] = {
     'mod': 'Exp2Syn',
-    'tau1': 0.5,
-    'tau2': 1.0,
-    'e': 0.0,
+    # 'tau1': 0.5,
+    # 'tau2': 1.0,
+    # 'e': 0.0
 }
 
 netParams.synMechParams['NMDA'] = {
     'mod': 'nmdanet',
-    'Cdur': 1.0,
-    'Alpha': 0.35,
-    'Beta': 0.035,
-    'Erev': 0.0,
-    'mg': 1.0,
+    # 'Alpha': 0.35,
+    # 'Beta': 0.035,
+    # 'mg': 1.0
 }
 
 # ---------------- target secList ----------------
 label = 'PC2B'
 define_CA1_zones(netParams, label = label)
 
-netParams.stimSourceParams['SC'] = {
-    'type': 'VecStim',
-    'spikeTimes': cfg.sc_spike_times,
-}
-
 # ---------------- SC -> CA1 ----------------
-netParams.stimTargetParams['SC->PC2B_SC_zone'] = {
-    'source': 'SC',
-    'conds': {'pop': 'PC2B', 'cellModel': 'HH'},
+netParams.connParams['SC->PC2B_SC_zone'] = {
+    'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
+    'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
     'sec': 'SC_zone',
     'loc': 0.5,
     'synMech': ['AMPA', 'NMDA'],
-    'weight': [0.5, 0.5],
+    'weight': [cfg.ampaW, cfg.nmdaW],
     'delay': 0,
-    'number': 22,
+    'synsPerConn': 1,
+}
+# ---------------- PP -> CA1 ----------------
+netParams.connParams['PP->PC2B_SC_zone'] = {
+    'preConds': {'pop': 'PP', 'cellModel': 'VecStim'},
+    'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+    'sec': 'PP_zone',
+    'loc': 0.5,
+    'synMech': ['AMPA', 'NMDA'],
+    'weight': [cfg.ampaW, cfg.nmdaW],
+    'delay': 0,
+    'synsPerConn': 1,
 }
 
 #------------------------------------------------------------------------------
@@ -99,3 +105,33 @@ if cfg.addIClamp:
             'conds': {'pop': pop},
             'sec': sec, 
             'loc': loc}
+
+#------------------------------------------------------------------------------
+# NetStim inputs
+#------------------------------------------------------------------------------
+if getattr(cfg, 'addNetStim', False):
+    for key in [k for k in dir(cfg) if k.startswith('NetStim')]:
+        params = getattr(cfg, key, None)
+        [pop, sec, loc, synMech, weight, delay, start, interval, number, noise] = [
+            params[s] for s in ['pop', 'sec', 'loc', 'synMech', 'weight', 'delay', 'start', 'interval', 'number', 'noise']
+        ]
+
+        # add stim source
+        netParams.stimSourceParams[key] = {
+            'type': 'NetStim',
+            'start': start,
+            'interval': interval,
+            'number': number,
+            'noise': noise
+        }
+
+        # connect stim source to target
+        netParams.stimTargetParams[key+'_'+pop] = {
+            'source': key,
+            'conds': {'pop': pop},
+            'sec': sec,
+            'loc': loc,
+            'synMech': synMech,
+            'weight': weight,
+            'delay': delay
+        }

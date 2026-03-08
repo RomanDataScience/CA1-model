@@ -1,7 +1,6 @@
 {
     "conds": {
-        "cellType": "PC2B",
-        "cellModel": "HH"
+        "cellType": "PC2B"
     },
     "secs": {
         "trunk_0": {

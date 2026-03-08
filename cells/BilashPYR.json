@@ -1,7 +1,6 @@
 {
     "conds": {
-        "cellType": "BilashPYR",
-        "cellModel": "HH"
+        "cellType": "BilashPYR"
     },
     "secs": {
         "soma": {

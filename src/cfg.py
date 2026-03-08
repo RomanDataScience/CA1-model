@@ -75,8 +75,8 @@ cfg.nmdaW = 1.2 * 0.000882 # NMDA weight
 ###############################################################################
 ## Recording and analysis
 ###############################################################################
-allpops = ['PC2B', 'OLM', 'VIP']
-timeRange = [0, cfg.duration]
+allpops = ['PC2B', 'OLM', 'VIP', 'SC']
+timeRange = [cfg.Transient, cfg.duration]
 cfg.recordCells = [(pop,0) for pop in allpops]
 cfg.recordTraces = {'V_soma':{'sec':'soma','loc':0.5,'var':'v'}}  # Dict with traces to record
 cfg.analysis['plotRaster'] = {'include': allpops,'saveFig': True, 'timeRange': timeRange} # Plot a raster
@@ -89,5 +89,49 @@ cfg.analysis['plotTraces'] = {'include': cfg.recordCells, 'saveFig': True, 'time
 cfg.addIClamp = False
 
 cfg.IClamp1 = {'pop': 'PC2B', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}
-cfg.IClamp1 = {'pop': 'OLM', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}
-cfg.IClamp1 = {'pop': 'VIP', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}
+cfg.IClamp2 = {'pop': 'OLM', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}
+cfg.IClamp3 = {'pop': 'VIP', 'sec': 'soma', 'loc': 0.5, 'start': 0, 'dur': 1000, 'amp': 0.50}
+
+#------------------------------------------------------------------------------
+# NetStim inputs
+#------------------------------------------------------------------------------
+cfg.addNetStim = False
+
+cfg.NetStim1 = {
+    'pop': 'PC2B',
+    'sec': 'soma',
+    'loc': 0.5,
+    'synMech': ['AMPA', 'NMDA'],
+    'weight': [cfg.ampaW, cfg.nmdaW],
+    'delay': 1.0,
+    'start': cfg.Transient + 25.0,
+    'interval': inter_burst_isi,
+    'number': cfg.Cycles,
+    'noise': 0.0
+}
+
+cfg.NetStim2 = {
+    'pop': 'OLM',
+    'sec': 'soma',
+    'loc': 0.5,
+    'synMech': 'AMPA',
+    'weight': cfg.ampaW,
+    'delay': 1.0,
+    'start': cfg.Transient + 50.0,
+    'interval': inter_burst_isi,
+    'number': cfg.Cycles,
+    'noise': 0.0
+}
+
+cfg.NetStim3 = {
+    'pop': 'VIP',
+    'sec': 'soma',
+    'loc': 0.5,
+    'synMech': 'AMPA',
+    'weight': cfg.ampaW,
+    'delay': 1.0,
+    'start': cfg.Transient + 75.0,
+    'interval': inter_burst_isi,
+    'number': cfg.Cycles,
+    'noise': 0.0
+}

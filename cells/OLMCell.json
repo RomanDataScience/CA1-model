@@ -1,7 +1,6 @@
 {
     "conds": {
-        "cellType": "OLM",
-        "cellModel": "HH"
+        "cellType": "OLM"
     },
     "secs": {
         "dend_0": {
