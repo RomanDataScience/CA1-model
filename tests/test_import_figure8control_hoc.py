@@ -80,7 +80,7 @@ def test_load_figure8control_hoc() -> None:
     """Smoke test: load Figure8control.hoc using NEURON inside a NetPyNE-ready environment."""
 
     repo_root = Path(__file__).resolve().parents[1]
-    model_dir = repo_root / "original_models" / "theta_burst_protocol"
+    model_dir = repo_root / "original_models" / "theta_burst_protocol" #"cholinergic_shift_generalize"
     hoc_entry = model_dir / "Figure8control.hoc"
 
     assert model_dir.is_dir(), "Cholinergic shift model directory is missing."
@@ -108,7 +108,7 @@ def test_load_figure8control_hoc() -> None:
         netParams.importCellParams(
                 label="PC2B",
                 conds={"cellType": "PC2B"},
-                fileName=str((repo_root / "tests" / "empty.hoc").resolve()),
+                fileName=repo_root / "tests" / "empty.hoc",
                 cellName=None,
                 cellArgs=None,
                 cellInstance=True,
@@ -144,7 +144,7 @@ def test_load_figure8control_hoc() -> None:
         cfg.verbose = False
 
         # make a 1-cell population using that rule
-        netParams.popParams["PC2B_pop"] = {"cellType": "PC2B", "cellModel": "HH", "numCells": 1}
+        netParams.popParams["PC2B_pop"] = {"cellType": "PC2B", "numCells": 1}
 
         # build network (no need to run)
         sim.create(netParams=netParams, simConfig=cfg)

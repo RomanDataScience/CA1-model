@@ -22,6 +22,15 @@ def define_CA1_zones(netParams, label, sc_secs):
     # netParams.addCellParamsSecList(label=label, secListName='SC_zone', somaDist=[200, 300]) 
     netParams.cellParams[label]['secLists']['SC_zone'] = sc_secs
 
+def apply_ican_toggle(cell_rule, enable_ican=True):
+    if enable_ican:
+        return
+
+    for sec in cell_rule.get('secs', {}).values():
+        mechs = sec.get('mechs', {})
+        if 'ican' in mechs:
+            mechs['ican']['gbar'] = 0.0
+
 
 # Load cellRules file
 with open(cfg.PYRFile, 'r') as f:
@@ -32,6 +41,9 @@ with open(cfg.OLMFile, 'r') as f:
 
 with open(cfg.VIPFile, 'r') as f:
     cellRuleVIP = json.load(f)
+
+# Optional global toggle to disable ican by forcing gbar=0 in all PC2B sections.
+apply_ican_toggle(cellRulePYR, enable_ican=getattr(cfg, 'ican', True))
 
 # Add to netParams
 netParams.addCellParams(label='PC2B', params=cellRulePYR)

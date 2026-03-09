@@ -2,7 +2,6 @@ from netpyne import specs
 import numpy as np
 from pathlib import Path
 
-
 # Simulation options
 cfg = specs.SimConfig()       # object of class SimConfig to store simulation configuration
 
@@ -24,6 +23,7 @@ cfg.Transient = 1000 # Transient time
 cfg.duration = cfg.Transient +  cfg.Cycles*inter_burst_isi          # Duration of the simulation, in ms
 cfg.dt = 1e-1               # Internal integration timestep to use
 cfg.hParams = {'v_init': -80}  
+cfg.saveFolder = 'output'  # Folder to save output
 cfg.simLabel = 'CA1_0'  # Simulation label, used in output file names
 cfg.validateNetParams = False
 cfg.verbose = False           # Show detailed messages
@@ -47,14 +47,13 @@ cfg.includeParamsLabel = True
 ###############################################################################
 ## SimParams
 ############################################################################### 
-cfg.CCh = False
-cfg.saveFolder = 'output_CCh' if cfg.CCh else 'output_control' # Folder to save output
-
-Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
-
 # PYR cells properties 
 cfg.PYR = 1 # Number of Pyramidal neurons
-cfg.PYRFile = 'cells/PC2B_CCh.json' if cfg.CCh else 'cells/PC2B.json'
+cfg.PYRFile = 'cells/PC2B_new.json'
+cfg.ican = False  # If False, force PC2B ican gbar to 0 in netParams
+
+cfg.saveFolder = cfg.saveFolder+'_control_new'
+Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
 
 # OLM cells properties 
 cfg.OLM = 1 # Number of OLM cells
@@ -76,14 +75,14 @@ cfg.sc_spike_times = [
 ]
 
 
-SCsyn_factor = 1.2
-PPsyn_factor = 0
+SCsyn_factor = 0.02#1.2
+PPsyn_factor = 0*0.05
 
-cfg.ampaWSC = SCsyn_factor * 0.00156*0.22 # AMPA weight
-cfg.nmdaWSC = SCsyn_factor * 0.000882*0.22 # NMDA weight
+cfg.ampaWSC = SCsyn_factor * 0.00156 # AMPA weight
+cfg.nmdaWSC = SCsyn_factor * 0.000882 # NMDA weight
 
-cfg.ampaWPP = PPsyn_factor * 0.00156*0.22 # AMPA weight
-cfg.nmdaWPP = PPsyn_factor * 0.000882*0.22 # NMDA weight
+cfg.ampaWPP = PPsyn_factor * 0.00156 # AMPA weight
+cfg.nmdaWPP = PPsyn_factor * 0.000882 # NMDA weight
 
 cfg.sc_secs = [
     'trunk_10', 'trunk_11', 'trunk_12', 'trunk_13', 'trunk_14', 'trunk_15',

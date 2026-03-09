@@ -222,3 +222,5 @@ singleCellSuite/*
 !singleCellSuite/plotGeometry.py
 output*/
 .eps
+*copy
+NetPyNE_comparison
