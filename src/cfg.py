@@ -1,5 +1,7 @@
 from netpyne import specs
 import numpy as np
+from pathlib import Path
+
 
 # Simulation options
 cfg = specs.SimConfig()       # object of class SimConfig to store simulation configuration
@@ -47,6 +49,9 @@ cfg.includeParamsLabel = True
 ############################################################################### 
 cfg.CCh = False
 cfg.saveFolder = 'output_CCh' if cfg.CCh else 'output_control' # Folder to save output
+
+Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
+
 # PYR cells properties 
 cfg.PYR = 1 # Number of Pyramidal neurons
 cfg.PYRFile = 'cells/PC2B_CCh.json' if cfg.CCh else 'cells/PC2B.json'
