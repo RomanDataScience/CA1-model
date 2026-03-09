@@ -80,7 +80,7 @@ def test_load_figure8control_hoc() -> None:
     """Smoke test: load Figure8control.hoc using NEURON inside a NetPyNE-ready environment."""
 
     repo_root = Path(__file__).resolve().parents[1]
-    model_dir = repo_root / "original_models" / "cholinergic_shift_generalize"
+    model_dir = repo_root / "original_models" / "theta_burst_protocol"
     hoc_entry = model_dir / "Figure8control.hoc"
 
     assert model_dir.is_dir(), "Cholinergic shift model directory is missing."
@@ -107,8 +107,8 @@ def test_load_figure8control_hoc() -> None:
 
         netParams.importCellParams(
                 label="PC2B",
-                conds={"cellType": "PC2B", "cellModel": "HH"},
-                fileName="empty.hoc",
+                conds={"cellType": "PC2B"},
+                fileName=str((repo_root / "tests" / "empty.hoc").resolve()),
                 cellName=None,
                 cellArgs=None,
                 cellInstance=True,

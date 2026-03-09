@@ -26,7 +26,7 @@ TITLE Slow Ca-dependent potassium current
 			    :   taumin = 0.5 ms instead of 0.1 ms	
 
                             NEURON {
-                                    SUFFIX kca_PYR
+                                    SUFFIX kca
                                     USEION k READ ek WRITE ik
                                     USEION ca READ cai
                                     RANGE cac, gk, gbar, m_inf, tau_m,ik, cainit

@@ -25,7 +25,7 @@ PARAMETER {
 
 
 NEURON {
-	SUFFIX cal_PYR
+	SUFFIX cal
 	USEION ca READ cao, cai WRITE ica
         RANGE gcalbar,cai, ica, gcal, ggk
         GLOBAL minf,taum

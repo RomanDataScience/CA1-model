@@ -16,7 +16,7 @@ UNITS {
 
 
 NEURON {
-	SUFFIX cat_PYR
+	SUFFIX cat
 	USEION ca READ cai,cao WRITE ica 
         : The T-current does not activate calcium-dependent currents.
         : The construction with dummy ion Ca prevents the updating of the 

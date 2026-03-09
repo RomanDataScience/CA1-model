@@ -5,7 +5,7 @@ TITLE Ca L-type channel with high treshold of activation
 : written by Yiota Poirazi, 1/8/00 poirazi@LNC.usc.edu
 
 NEURON {
-	SUFFIX calH_PYR
+	SUFFIX calH
 	USEION ca READ eca WRITE ica
         RANGE gcal,gcalbar, m, h,ica
 	RANGE inf, fac, tau

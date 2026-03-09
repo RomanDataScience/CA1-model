@@ -67,7 +67,8 @@ PROCEDURE rates() {
 		mAlpha = 0.12 * vtrap( -(v - 43), 11.0)
 		mBeta = 0.02 * MyExp(-(v + 1.27) / 120)
 		mInf = mAlpha / (mAlpha + mBeta)
-		mTau = 2.5 * (1 / (qt * (mAlpha + mBeta)))
+		:mTau = 2.5 * (1 / (qt * (mAlpha + mBeta)))
+		mTau = 0.325 * (1 / (qt * (mAlpha + mBeta)))
 
 		hInf =  1/(1 + MyExp((v + 58) / 11))
 		h1Tau = (360 + (1010 + 23.7 * (v + 54)) * MyExp(-((v + 75) / 48)^2)) / qt
