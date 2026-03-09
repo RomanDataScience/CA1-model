@@ -22,7 +22,6 @@ cfg.Transient = 1000 # Transient time
 cfg.duration = cfg.Transient +  cfg.Cycles*inter_burst_isi          # Duration of the simulation, in ms
 cfg.dt = 1e-1               # Internal integration timestep to use
 cfg.hParams = {'v_init': -80}  
-cfg.saveFolder = 'output'  # Folder to save output
 cfg.simLabel = 'CA1_0'  # Simulation label, used in output file names
 cfg.validateNetParams = False
 cfg.verbose = False           # Show detailed messages
@@ -46,9 +45,11 @@ cfg.includeParamsLabel = True
 ###############################################################################
 ## SimParams
 ############################################################################### 
+cfg.CCh = False
+cfg.saveFolder = 'output_CCh' if cfg.CCh else 'output_control' # Folder to save output
 # PYR cells properties 
 cfg.PYR = 1 # Number of Pyramidal neurons
-cfg.PYRFile = 'cells/PC2B.json'
+cfg.PYRFile = 'cells/PC2B_CCh.json' if cfg.CCh else 'cells/PC2B.json'
 
 # OLM cells properties 
 cfg.OLM = 1 # Number of OLM cells
