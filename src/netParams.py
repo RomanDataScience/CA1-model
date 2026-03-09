@@ -58,8 +58,8 @@ netParams.synMechParams['AMPA'] = {
 
 netParams.synMechParams['NMDA'] = {
     'mod': 'nmdanet',
-    # 'Alpha': 0.35,
-    # 'Beta': 0.035,
+    'Alpha': 0.35,
+    'Beta': 0.035,
     # 'mg': 1.0
 }
 

@@ -220,5 +220,5 @@ tests/
 
 singleCellSuite/*
 !singleCellSuite/plotGeometry.py
-output/
+output*/
 .eps
