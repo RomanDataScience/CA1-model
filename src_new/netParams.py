@@ -141,7 +141,7 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaScSites):
         'sec': sec,
         'loc': loc,
         'synMech': ['AMPA', 'NMDA'],
-        'weight': [cfg.thetaAMPAWeight, cfg.thetaNMDAWeight * nmda_mult],
+        'weight': [cfg.thetaAMPAWeightPYR, cfg.thetaNMDAWeightPYR * nmda_mult],
         'delay': cfg.thetaDelay,
         'synsPerConn': 1,
     }
@@ -153,7 +153,45 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaPpSites):
         'sec': sec,
         'loc': loc,
         'synMech': ['AMPA', 'NMDA'],
-        'weight': [cfg.thetaAMPAWeight, cfg.thetaNMDAWeight * nmda_mult],
+        'weight': [cfg.thetaAMPAWeightPYR, cfg.thetaNMDAWeightPYR * nmda_mult],
+        'delay': cfg.thetaDelay,
+        'synsPerConn': 1,
+    }
+
+# SC and PP pathway inputs onto VIP from cfg-defined target section lists.
+vip_sc_targets = list(getattr(cfg, 'vipScTargetSecs', []))
+vip_pp_targets = list(getattr(cfg, 'vipPpTargetSecs', []))
+vip_input_loc = float(getattr(cfg, 'vipInputLoc', 0.5))
+vip_secs = set(cellRuleVIP.get('secs', {}).keys())
+
+invalid_sc_targets = [sec for sec in vip_sc_targets if sec not in vip_secs]
+invalid_pp_targets = [sec for sec in vip_pp_targets if sec not in vip_secs]
+if invalid_sc_targets or invalid_pp_targets:
+    raise ValueError(
+        'Invalid VIP target sections in cfg. '
+        f'SC invalid: {invalid_sc_targets}; PP invalid: {invalid_pp_targets}'
+    )
+
+for i, sec in enumerate(vip_sc_targets):
+    netParams.connParams[f'SC->VIP_{i}'] = {
+        'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
+        'postConds': {'pop': 'VIP', 'cellType': 'BilashVIP'},
+        'sec': sec,
+        'loc': vip_input_loc,
+        'synMech': ['AMPA', 'NMDA'],
+        'weight': [cfg.thetaAMPAWeightVIP, cfg.thetaNMDAWeightVIP],
+        'delay': cfg.thetaDelay,
+        'synsPerConn': 1,
+    }
+
+for i, sec in enumerate(vip_pp_targets):
+    netParams.connParams[f'PP->VIP_{i}'] = {
+        'preConds': {'pop': 'PP', 'cellModel': 'VecStim'},
+        'postConds': {'pop': 'VIP', 'cellType': 'BilashVIP'},
+        'sec': sec,
+        'loc': vip_input_loc,
+        'synMech': ['AMPA', 'NMDA'],
+        'weight': [cfg.thetaAMPAWeightVIP, cfg.thetaNMDAWeightVIP],
         'delay': cfg.thetaDelay,
         'synsPerConn': 1,
     }
@@ -177,7 +215,7 @@ netParams.connParams['PYR->OLM'] = {
 netParams.addCellParamsSecList(
     label='OLM',
     secListName='perisom',
-    somaDist=[0, 50]
+    somaDist=[0, 100]
 )
 
 # PYR targets OLM in Stratum Oriens (SO)

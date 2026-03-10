@@ -95,9 +95,25 @@ cfg.thetaScSites = [(sec, loc, nmda_mult) for sec, loc, nmda_mult, group in cfg.
 cfg.thetaPpSites = [(sec, loc, nmda_mult) for sec, loc, nmda_mult, group in cfg.thetaSites if group == 'PP']
 
 # multisyn.hoc amplitudes
-factorSyn = 0.208 #(for 500 ms transient)
-cfg.thetaAMPAWeight = 1.2 * 0.00156 * factorSyn
-cfg.thetaNMDAWeight = 1.2 * 0.000882 * factorSyn
+factorSynPYR = 0.208 #(for 500 ms transient)
+cfg.thetaAMPAWeightPYR = 1.2 * 0.00156 * factorSynPYR
+cfg.thetaNMDAWeightPYR = 1.2 * 0.000882 * factorSynPYR
+
+factorSynVIP = 2. 
+cfg.thetaAMPAWeightVIP = 1.2 * 0.00156 * factorSynVIP
+cfg.thetaNMDAWeightVIP = 1.2 * 0.000882 * factorSynVIP
+
+# SC/PP pathway targets onto BilashVIP (editable from cfg without touching netParams)
+cfg.vipScTargetSecs = [
+    'radTprox', 'radTmed', 'radTdist1', 'radTdist2', 'radTdist3',
+    'rad_thick1', 'rad_medium1', 'rad_thin1a', 'rad_thin1b', 'rad_thick2'
+]
+cfg.vipPpTargetSecs = [
+    'lm_thick1', 'lm_medium1', 'lm_thin1a', 'lm_thin1b',
+    'lm_thick2', 'lm_medium2', 'lm_thin2a', 'lm_thin2b',
+    'lmM1', 'lmt1'
+]
+cfg.vipInputLoc = 0.5
 
 # One VecStim source population per pathway
 cfg.SC = 1
@@ -110,7 +126,7 @@ cfg.PP = 1
 # (5e-3, 1e-2); (5e-3, 0)
 cfg.PYROLMweight = 5e-3
 cfg.OLMPYRweight = 1e-2
-cfg.VIPOLMweight = 1e-2
+cfg.VIPOLMweight = 5e-3
 
 # Best combos
 # (2, 8, 3)
@@ -120,9 +136,9 @@ cfg.synsPerConnVIPOLM = 3
 
 cfg.delayPYROLM = 1.5
 cfg.delayOLMPYR = 1.1
-cfg.delayVIPOLM = 1.2
+cfg.delayVIPOLM = 1.
 
-cfg.simLabel += f'_Control{cfg.applyControlPC2B}_GLU{cfg.PYROLMweight}_GABA{cfg.OLMPYRweight}' 
+cfg.simLabel += f'_Control{cfg.applyControlPC2B}_GLU{cfg.PYROLMweight}_GABAOLM{cfg.OLMPYRweight}_GABAVIP{cfg.VIPOLMweight}' 
 
 # -----------------------------------------------------------------------------
 # Recording
