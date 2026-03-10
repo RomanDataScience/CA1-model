@@ -230,4 +230,5 @@ src/
 src_copy/
 src_test/
 src_test_copy/
-exampleTheta
+exampleTheta/
+*working*.py

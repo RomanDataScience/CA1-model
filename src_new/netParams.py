@@ -52,8 +52,16 @@ def apply_pc2b_condition_mods(cell_rule, cfg):
             for ican_mech in _iter_ican_mechs(sec_data):
                 ican_mech['concrelease'] = target
 
+    ican_gbar_factor = float(getattr(cfg, 'IcanGbarFactor', 1.0))
+    if ican_gbar_factor != 1.0:
+        for sec_data in secs.values():
+            if not isinstance(sec_data, dict):
+                continue
+            for ican_mech in _iter_ican_mechs(sec_data):
+                if 'gbar' in ican_mech:
+                    ican_mech['gbar'] = float(ican_mech['gbar']) * ican_gbar_factor
+    
     return cell_rule
-
 
 # -----------------------------------------------------------------------------
 # Cell rule
@@ -62,12 +70,17 @@ with open(cfg.PYRFile, 'r') as f:
     cellRulePYR = json.load(f)
 cellRulePYR = apply_pc2b_condition_mods(cellRulePYR, cfg)
 
+with open(cfg.OLMFile, 'r') as f:
+    cellRuleOLM = json.load(f)
+
 netParams.addCellParams(label='PC2B', params=cellRulePYR)
+netParams.addCellParams(label='OLM', params=cellRuleOLM)
 
 # -----------------------------------------------------------------------------
 # Populations
 # -----------------------------------------------------------------------------
 netParams.popParams['PC2B'] = {'cellType': 'PC2B', 'numCells': cfg.PYR}
+netParams.popParams['OLM'] = {'cellType': 'OLM', 'numCells': cfg.OLM}
 netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': cfg.SC, 'spkTimes': cfg.thetaSpikeTimes}
 netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': cfg.PP, 'spkTimes': cfg.thetaSpikeTimes}
 
@@ -113,3 +126,43 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaPpSites):
         'delay': cfg.thetaDelay,
         'synsPerConn': 1,
     }
+
+# -----------------------------------------------------------------------------
+# Random excitatory NetStim input to OLM (AMPA + NMDA)
+# -----------------------------------------------------------------------------
+if getattr(cfg, 'addOlmExcNetStim', False):
+    all_olm_secs = []
+    if isinstance(cellRuleOLM.get('secs', {}), dict):
+        all_olm_secs = sorted(cellRuleOLM['secs'].keys())
+
+    olm_secs = [sec for sec in all_olm_secs if not sec.lower().startswith('axon')]
+
+    # Fallback if filtering removed everything.
+    if not olm_secs:
+        olm_secs = all_olm_secs if all_olm_secs else ['soma']
+
+    n_olm_stims = max(1, int(getattr(cfg, 'olmExcNumNetStims', 20)))
+    reps = (n_olm_stims + len(olm_secs) - 1) // len(olm_secs)
+    target_secs = (olm_secs * reps)[:n_olm_stims]
+
+    for i in range(n_olm_stims):
+        source_name = f'OLMExc_{i}'
+        target_name = f'OLMExc_{i}->OLM'
+
+        netParams.stimSourceParams[source_name] = {
+            'type': 'NetStim',
+            'start': cfg.olmExcStart,
+            'interval': cfg.olmExcInterval,
+            'number': cfg.olmExcNumber,
+            'noise': cfg.olmExcNoise,
+        }
+
+        netParams.stimTargetParams[target_name] = {
+            'source': source_name,
+            'conds': {'pop': 'OLM'},
+            'sec': target_secs[i],
+            'loc': 0.5,
+            'synMech': ['AMPA', 'NMDA'],
+            'weight': [cfg.olmExcAMPAWeight, cfg.olmExcNMDAWeight],
+            'delay': cfg.olmExcDelay,
+        }
