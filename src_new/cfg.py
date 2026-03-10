@@ -105,8 +105,8 @@ cfg.PP = 1
 # OLM <-> PYR connectivity
 # -----------------------------------------------------------------------------
 
-cfg.PYROLMweight = 1.
-cfg.OLMPYRweight = 0.
+cfg.PYROLMweight = 1e-2
+cfg.OLMPYRweight = 1e-2
 
 # -----------------------------------------------------------------------------
 # Random excitatory NetStim input to OLM (AMPA + NMDA)
@@ -134,4 +134,4 @@ cfg.recordCells = [(pop,0) for pop in allpops if pop not in ['SC', 'PP']]
 cfg.recordTraces = {'V_soma':{'sec':'soma','loc':0.5,'var':'v'}}  # Dict with traces to record
 cfg.analysis['plotRaster'] = {'include': allpops,'saveFig': True, 'timeRange': timeRange, 'marker': '|'} # Plot a raster
 cfg.analysis['plotSpikeHist'] = {'include': allpops, 'saveFig': True, 'timeRange': timeRange, 'binSize': 1, 'measure': 'rate'}                  # Plot a Spike Histogram
-cfg.analysis['plotTraces'] = {'include': cfg.recordCells, 'saveFig': True, 'timeRange': timeRange, 'oneFigPer': 'cell', 'legend': True}  # Plot recorded traces for this list of cells
+cfg.analysis['plotTraces'] = {'include': cfg.recordCells, 'saveFig': True, 'timeRange': timeRange, 'oneFigPer': 'trace', 'legend': True, 'overlay': True}  # Plot recorded traces for this list of cells
