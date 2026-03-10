@@ -74,14 +74,19 @@ cellRulePYR = apply_pc2b_condition_mods(cellRulePYR, cfg)
 with open(cfg.OLMFile, 'r') as f:
     cellRuleOLM = json.load(f)
 
+with open(cfg.VIPFile, 'r') as f:
+    cellRuleVIP = json.load(f)
+
 netParams.addCellParams(label='PC2B', params=cellRulePYR)
 netParams.addCellParams(label='OLM', params=cellRuleOLM)
+netParams.addCellParams(label='BilashVIP', params=cellRuleVIP)
 
 # -----------------------------------------------------------------------------
 # Populations
 # -----------------------------------------------------------------------------
 netParams.popParams['PC2B'] = {'cellType': 'PC2B', 'numCells': cfg.PYR}
 netParams.popParams['OLM'] = {'cellType': 'OLM', 'numCells': cfg.OLM}
+netParams.popParams['VIP'] = {'cellType': 'BilashVIP', 'numCells': cfg.VIP}
 netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': cfg.SC, 'spkTimes': cfg.thetaSpikeTimes}
 netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': cfg.PP, 'spkTimes': cfg.thetaSpikeTimes}
 
@@ -118,6 +123,14 @@ netParams.synMechParams['AMPA_facil'] = {
     'e': 0
 }
 
+# GABA_A for VIP -> OLM (Disinhibitory inhibition)
+netParams.synMechParams['GABA_VIP'] = {
+    'mod': 'Exp2Syn', 
+    'tau1': 0.5, 
+    'tau2': 8.0, 
+    'e': -80
+}
+
 # -----------------------------------------------------------------------------
 # Theta-burst site mapping: SC and PP pathway populations
 # -----------------------------------------------------------------------------
@@ -146,7 +159,7 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaPpSites):
     }
 
 # -----------------------------------------------------------------------------
-# Random excitatory NetStim input to OLM (AMPA + NMDA)
+# PYR to OLM excitation
 # -----------------------------------------------------------------------------
 
 # PYR -> OLM (Feedback Excitation)
@@ -154,9 +167,10 @@ netParams.connParams['PYR->OLM'] = {
     'preConds': {'pop': 'PC2B'},
     'postConds': {'pop': 'OLM'},
     'weight': cfg.PYROLMweight,
-    'delay': 1.5,
+    'delay': cfg.delayPYROLM,
     'synMech': 'AMPA_facil',
-    'probability': 1.
+    'probability': 1.,
+    'synsPerConn': cfg.synsPerConnPYROLM
 }
 
 # OLM secList with sections up to 50 um from soma
@@ -176,70 +190,58 @@ netParams.subConnParams['PYR->OLM_proximal'] = {
     'density': 'uniform'
 }
 
+# -----------------------------------------------------------------------------
+# OLM to PYR inhibition
+# -----------------------------------------------------------------------------
+
 # OLM -> PYR (Feedback Inhibition)
 netParams.connParams['OLM->PYR'] = {
     'preConds': {'pop': 'OLM'},
     'postConds': {'pop': 'PC2B'},
     'weight': cfg.OLMPYRweight,
-    'delay': 2.5,
+    'delay': cfg.delayOLMPYR,
     'synMech': 'GABA_slow',
-    'probability': 1.
+    'probability': 1.,
+    'synsPerConn': cfg.synsPerConnOLMPYR
 }
 
-# PC2B secList with only distal apical sections apic_40+
-netParams.cellParams['PC2B']['secLists']['apical_distal_40plus'] = [
+# PC2B secList with only distal apical sections apic_35+
+netParams.cellParams['PC2B']['secLists']['apical_distal_35plus'] = [
     secName
     for secName in netParams.cellParams['PC2B']['secs'].keys()
-    if secName.startswith('apic_') and int(secName.split('_')[1]) >= 40
+    if secName.startswith('apic_') and int(secName.split('_')[1]) >= 35
 ]
 
 # OLM targets Distal Tuft (SLM) of PYR cells
 # Usually > 250 um from soma or top 15-20% of apical tree
 netParams.subConnParams['OLM->PYR_distal'] = {
-    'preConds': {'pop': 'OLM', 'cellType': 'OLM'},
-    'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+    'preConds': {'pop': 'OLM'},
+    'postConds': {'pop': 'PC2B'},
     'groupSynMechs': ['GABA_slow'],
-    'sec': 'apical_distal_40plus', # or use ynorm if using 1D depth
+    'sec': 'apical_distal_35plus', # or use ynorm if using 1D depth
     'density': 'uniform'
 }
 
-
 # -----------------------------------------------------------------------------
-# Random excitatory NetStim input to OLM (AMPA + NMDA)
+# VIP/IS-3 to OLM inhibition
 # -----------------------------------------------------------------------------
-if getattr(cfg, 'addOlmExcNetStim', False):
-    all_olm_secs = []
-    if isinstance(cellRuleOLM.get('secs', {}), dict):
-        all_olm_secs = sorted(cellRuleOLM['secs'].keys())
 
-    olm_secs = [sec for sec in all_olm_secs if not sec.lower().startswith('axon')]
+# VIP -> OLM (Disinhibition)
+netParams.connParams['VIP->OLM'] = {
+    'preConds': {'pop': 'VIP'},
+    'postConds': {'pop': 'OLM'},
+    'weight': cfg.VIPOLMweight,
+    'delay': cfg.delayVIPOLM,
+    'synMech': 'GABA_VIP',
+    'probability': 1.,
+    'synsPerConn': cfg.synsPerConnVIPOLM
+}
 
-    # Fallback if filtering removed everything.
-    if not olm_secs:
-        olm_secs = all_olm_secs if all_olm_secs else ['soma']
-
-    n_olm_stims = max(1, int(getattr(cfg, 'olmExcNumNetStims', 20)))
-    reps = (n_olm_stims + len(olm_secs) - 1) // len(olm_secs)
-    target_secs = (olm_secs * reps)[:n_olm_stims]
-
-    for i in range(n_olm_stims):
-        source_name = f'OLMExc_{i}'
-        target_name = f'OLMExc_{i}->OLM'
-
-        netParams.stimSourceParams[source_name] = {
-            'type': 'NetStim',
-            'start': cfg.olmExcStart,
-            'interval': cfg.olmExcInterval,
-            'number': cfg.olmExcNumber,
-            'noise': cfg.olmExcNoise,
-        }
-
-        netParams.stimTargetParams[target_name] = {
-            'source': source_name,
-            'conds': {'pop': 'OLM', 'cellType': 'OLM'},
-            'sec': target_secs[i],
-            'loc': 0.5,
-            'synMech': ['AMPA', 'NMDA'],
-            'weight': [cfg.olmExcAMPAWeight, cfg.olmExcNMDAWeight],
-            'delay': cfg.olmExcDelay,
-        }
+# VIP targets OLM dendrites in the Stratum Oriens (SO)
+netParams.subConnParams['VIP->OLM_SO'] = {
+    'preConds': {'pop': 'VIP'},
+    'postConds': {'pop': 'OLM'},
+    'groupSynMechs': ['GABA_VIP'],
+    'sec': 'perisom', # OLM dendrites are horizontal in SO
+    'density': 'uniform'
+}
