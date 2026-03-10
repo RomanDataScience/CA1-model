@@ -131,7 +131,11 @@ cfg.recordTime = True
 allpops = ['PC2B', 'OLM', 'SC', 'PP']
 timeRange = [cfg.Transient - 200., cfg.duration]
 cfg.recordCells = [(pop,0) for pop in allpops if pop not in ['SC', 'PP']]
-cfg.recordTraces = {'V_soma':{'sec':'soma','loc':0.5,'var':'v'}}  # Dict with traces to record
+cfg.recordTraces = {
+    'V_soma': {'sec': 'soma', 'loc': 0.5, 'var': 'v'},
+    'I_AMPA_facil': {'synMech': 'AMPA_facil', 'var': 'i', 'conds': {'pop': 'OLM'}},
+    'I_GABA_slow': {'synMech': 'GABA_slow', 'var': 'i', 'conds': {'pop': 'PC2B'}},
+}  # Dict with traces to record
 cfg.analysis['plotRaster'] = {'include': allpops,'saveFig': True, 'timeRange': timeRange, 'marker': '|'} # Plot a raster
 cfg.analysis['plotSpikeHist'] = {'include': allpops, 'saveFig': True, 'timeRange': timeRange, 'binSize': 1, 'measure': 'rate'}                  # Plot a Spike Histogram
 cfg.analysis['plotTraces'] = {'include': cfg.recordCells, 'saveFig': True, 'timeRange': timeRange, 'oneFigPer': 'trace', 'legend': True, 'overlay': True}  # Plot recorded traces for this list of cells

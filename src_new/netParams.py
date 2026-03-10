@@ -9,6 +9,7 @@ cfg.update()
 
 netParams = specs.NetParams()
 netParams.version = 1
+netParams.defaultThreshold = 0.
 
 def apply_pc2b_condition_mods(cell_rule, cfg):
     secs = cell_rule.get('secs', {})
