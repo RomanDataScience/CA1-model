@@ -21,8 +21,8 @@ cfg.recordStep = cfg.dt
 cfg.printRunTime = 0.1
 cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321, 'cell': 4321}
 
-cfg.saveFolder = 'output_multisyn_netpyne'
-cfg.simLabel = 'multisyn_netpyne'
+cfg.saveFolder = 'output'
+cfg.simLabel = 'CA1_1'
 Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
 
 cfg.saveJson = True
