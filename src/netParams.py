@@ -14,36 +14,57 @@ netParams = specs.NetParams()   # object of class NetParams to store the network
 
 netParams.version = 1
 
-def define_CA1_zones(netParams, label, sc_secs):
+def apply_pc2b_condition_mods(cell_rule, cfg):
+    secs = cell_rule.get('secs', {})
+
+    if getattr(cfg, 'applyControlPC2B', False):
+        soma = secs.get('soma', secs.get('soma_0', {}))
+        if isinstance(soma, dict):
+            km = soma.get('mechs', {}).get('km', {})
+            if isinstance(km, dict) and 'gbar' in km:
+                divisor = float(getattr(cfg, 'controlKmSomaDivisor', 0.05))
+                if divisor == 0:
+                    raise ValueError('cfg.controlKmSomaDivisor cannot be 0.')
+                km['gbar'] = float(km['gbar']) / divisor
+
+        target_ican_gbar = float(getattr(cfg, 'controlIcanGbar', 0.0))
+        target_ican_concrelease = float(getattr(cfg, 'controlIcanConcrelease', 1.0))
+        for sec_data in secs.values():
+            if not isinstance(sec_data, dict):
+                continue
+            ican = sec_data.get('mechs', {}).get('ican', {})
+            if isinstance(ican, dict):
+                # ican['gbar'] = target_ican_gbar
+                ican['concrelease'] = target_ican_concrelease
+
+    override_concrelease = getattr(cfg, 'overrideIcanConcrelease', None)
+    if override_concrelease is not None:
+        target_concrelease = float(override_concrelease)
+        for sec_data in secs.values():
+            if not isinstance(sec_data, dict):
+                continue
+            ican = sec_data.get('mechs', {}).get('ican', {})
+            if isinstance(ican, dict):
+                ican['concrelease'] = target_concrelease
+
+    return cell_rule
+
+
+def define_CA1_zones(netParams, label):
     netParams.addCellParamsSecList(label=label, secListName='perisom', somaDist=[0, 50])
     netParams.addCellParamsSecList(label=label, secListName='basal', somaDist=[0, 200])
-    netParams.addCellParamsSecList(label=label, secListName='PP_zone', somaDist=[350, 2000])
     netParams.addCellParamsSecList(label=label, secListName='below_soma', somaDistY=[-600, 0]) 
-    # netParams.addCellParamsSecList(label=label, secListName='SC_zone', somaDist=[200, 300]) 
-    netParams.cellParams[label]['secLists']['SC_zone'] = sc_secs
-
-def apply_ican_toggle(cell_rule, enable_ican=True):
-    if enable_ican:
-        return
-
-    for sec in cell_rule.get('secs', {}).values():
-        mechs = sec.get('mechs', {})
-        if 'ican' in mechs:
-            mechs['ican']['gbar'] = 0.0
-
 
 # Load cellRules file
 with open(cfg.PYRFile, 'r') as f:
     cellRulePYR = json.load(f)
+cellRulePYR = apply_pc2b_condition_mods(cellRulePYR, cfg)
 
 with open(cfg.OLMFile, 'r') as f:
     cellRuleOLM = json.load(f)
 
 with open(cfg.VIPFile, 'r') as f:
     cellRuleVIP = json.load(f)
-
-# Optional global toggle to disable ican by forcing gbar=0 in all PC2B sections.
-apply_ican_toggle(cellRulePYR, enable_ican=getattr(cfg, 'ican', True))
 
 # Add to netParams
 netParams.addCellParams(label='PC2B', params=cellRulePYR)
@@ -57,14 +78,14 @@ netParams.addCellParams(label='VIP', params=cellRuleVIP)
 netParams.popParams['PC2B'] = {'cellType': 'PC2B', 'numCells': cfg.PYR} # add dict with params for this pop
 netParams.popParams['OLM'] = {'cellType': 'OLM', 'numCells': cfg.OLM} # add dict with params for this pop
 netParams.popParams['VIP'] = {'cellType': 'BilashVIP', 'numCells': cfg.VIP} # add dict with params for this pop
-netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': cfg.SC, 'spkTimes': cfg.sc_spike_times}
-netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': cfg.PP, 'spkTimes': cfg.sc_spike_times}
+netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': cfg.SC, 'spkTimes': cfg.thetaSpikeTimes}
+netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': cfg.PP, 'spkTimes': cfg.thetaSpikeTimes}
 
 # ---------------- synapses ----------------
 netParams.synMechParams['AMPA'] = {
     'mod': 'Exp2Syn',
-    # 'tau1': 0.5,
-    # 'tau2': 1.0,
+    'tau1': 0.5,
+    'tau2': 1.0,
     # 'e': 0.0
 }
 
@@ -72,48 +93,30 @@ netParams.synMechParams['NMDA'] = {
     'mod': 'nmdanet',
     'Alpha': 0.35,
     'Beta': 0.035,
-    # 'mg': 1.0
 }
 
 # ---------------- target secList ----------------
 label = 'PC2B'
-define_CA1_zones(netParams, label = label, sc_secs=cfg.sc_secs)
+define_CA1_zones(netParams, label = label)
 
-# ---------------- SC -> CA1 ----------------
-for i, (sec, loc) in enumerate(cfg.sc_syn_sites):
-    netParams.connParams[f'SC->PC2B_site_{i}'] = {
-        'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
-        'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
-        'sec': sec,
-        'loc': loc,
-        'synMech': ['AMPA', 'NMDA'],
-        'weight': [cfg.ampaWSC, cfg.nmdaWSC],
-        'delay': 0,
-        'synsPerConn': 1,
-    }
-# OLD RULE
-# # ---------------- SC -> CA1 ----------------
-# netParams.connParams['SC->PC2B_SC_zone'] = {
-#     'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
-#     'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
-#     'sec': 'SC_zone',
-#     'loc': 'uniform(0.45, 0.55)',
-#     'synMech': ['AMPA', 'NMDA'],
-#     'weight': [cfg.ampaW, cfg.nmdaW],
-#     'delay': 0,
-#     'synsPerConn': 1,
-# }
-# ---------------- PP -> CA1 ----------------
-netParams.connParams['PP->PC2B_PP_zone'] = {
-    'preConds': {'pop': 'PP', 'cellModel': 'VecStim'},
-    'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
-    'sec': 'PP_zone',
-    'loc': 'uniform(0.2, 0.8)',
-    'synMech': ['AMPA', 'NMDA'],
-    'weight': [cfg.ampaWPP, cfg.nmdaWPP],
-    'delay': 0,
-    'synsPerConn': 1,
-}
+# Theta-burst site-specific mapping using two VecStim populations (SC and PP),
+# with one source cell per pathway and shared spike times.
+theta_inputs = (
+    ('SC', cfg.thetaScSites),
+    ('PP', cfg.thetaPpSites),
+)
+for pop_name, site_list in theta_inputs:
+    for i, (sec, loc, nmda_mult) in enumerate(site_list):
+        netParams.connParams[f'{pop_name}->PC2B_theta_site_{i}'] = {
+            'preConds': {'pop': pop_name, 'cellModel': 'VecStim'},
+            'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+            'sec': sec,
+            'loc': loc,
+            'synMech': ['AMPA', 'NMDA'],
+            'weight': [cfg.thetaAMPAWeight, cfg.thetaNMDAWeight * nmda_mult],
+            'delay': 1.,
+            'synsPerConn': 1,
+        }
 
 #------------------------------------------------------------------------------
 # Current inputs (IClamp)

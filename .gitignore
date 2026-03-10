@@ -224,3 +224,10 @@ output*/
 .eps
 *copy
 NetPyNE_comparison
+lasttxt*
+One2One
+src/
+src_copy/
+src_test/
+src_test_copy/
+exampleTheta

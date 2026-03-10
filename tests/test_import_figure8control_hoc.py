@@ -129,7 +129,7 @@ def test_load_figure8control_hoc() -> None:
         cells_dir.mkdir(exist_ok=True)
 
         # Path to JSON file
-        out_file = cells_dir / "PC2B.json"
+        out_file = cells_dir / "PC2B_new.json"
 
         # Export only the cell rule
         with open(out_file, "w") as f:
