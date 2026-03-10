@@ -100,13 +100,30 @@ netParams.synMechParams['NMDA'] = {
     'Beta': 0.035,
 }
 
+# GABA_A for OLM -> PYR (Slow inhibition)
+netParams.synMechParams['GABA_slow'] = {
+    'mod': 'Exp2Syn', 
+    'tau1': 2.0, 
+    'tau2': 20.0, 
+    'e': -75
+}
+
+# AMPA for PYR -> OLM (Facilitating)
+# Note: Requires a mechanism supporting STP, e.g., 'Exp2SynSTP'
+netParams.synMechParams['AMPA_facil'] = {
+    'mod': 'Exp2Syn', # or custom STP mod
+    'tau1': 0.5, 
+    'tau2': 3.0, 
+    'e': 0
+}
+
 # -----------------------------------------------------------------------------
 # Theta-burst site mapping: SC and PP pathway populations
 # -----------------------------------------------------------------------------
 for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaScSites):
     netParams.connParams[f'SC->PC2B_{i}'] = {
         'preConds': {'pop': 'SC', 'cellModel': 'VecStim'},
-        'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+        'postConds': {'pop': 'PC2B'},
         'sec': sec,
         'loc': loc,
         'synMech': ['AMPA', 'NMDA'],
@@ -118,7 +135,7 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaScSites):
 for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaPpSites):
     netParams.connParams[f'PP->PC2B_{i}'] = {
         'preConds': {'pop': 'PP', 'cellModel': 'VecStim'},
-        'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+        'postConds': {'pop': 'PC2B'},
         'sec': sec,
         'loc': loc,
         'synMech': ['AMPA', 'NMDA'],
@@ -126,6 +143,65 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaPpSites):
         'delay': cfg.thetaDelay,
         'synsPerConn': 1,
     }
+
+# -----------------------------------------------------------------------------
+# Random excitatory NetStim input to OLM (AMPA + NMDA)
+# -----------------------------------------------------------------------------
+
+# PYR -> OLM (Feedback Excitation)
+netParams.connParams['PYR->OLM'] = {
+    'preConds': {'pop': 'PC2B'},
+    'postConds': {'pop': 'OLM'},
+    'weight': cfg.PYROLMweight,
+    'delay': 1.5,
+    'synMech': 'AMPA_facil',
+    'probability': 1.
+}
+
+# OLM secList with sections up to 50 um from soma
+netParams.addCellParamsSecList(
+    label='OLM',
+    secListName='perisom',
+    somaDist=[0, 50]
+)
+
+# PYR targets OLM in Stratum Oriens (SO)
+# OLM dendrites are horizontal and restricted to SO
+netParams.subConnParams['PYR->OLM_proximal'] = {
+    'preConds': {'pop': 'PC2B'},
+    'postConds': {'pop': 'OLM'},
+    'groupSynMechs': ['AMPA_facil'],
+    'sec': 'perisom', # OLM dendrites are primarily in SO
+    'density': 'uniform'
+}
+
+# OLM -> PYR (Feedback Inhibition)
+netParams.connParams['OLM->PYR'] = {
+    'preConds': {'pop': 'OLM'},
+    'postConds': {'pop': 'PC2B'},
+    'weight': cfg.OLMPYRweight,
+    'delay': 2.5,
+    'synMech': 'GABA_slow',
+    'probability': 1.
+}
+
+# PC2B secList with only distal apical sections apic_40+
+netParams.cellParams['PC2B']['secLists']['apical_distal_40plus'] = [
+    secName
+    for secName in netParams.cellParams['PC2B']['secs'].keys()
+    if secName.startswith('apic_') and int(secName.split('_')[1]) >= 40
+]
+
+# OLM targets Distal Tuft (SLM) of PYR cells
+# Usually > 250 um from soma or top 15-20% of apical tree
+netParams.subConnParams['OLM->PYR_distal'] = {
+    'preConds': {'pop': 'OLM', 'cellType': 'OLM'},
+    'postConds': {'pop': 'PC2B', 'cellType': 'PC2B'},
+    'groupSynMechs': ['GABA_slow'],
+    'sec': 'apical_distal_40plus', # or use ynorm if using 1D depth
+    'density': 'uniform'
+}
+
 
 # -----------------------------------------------------------------------------
 # Random excitatory NetStim input to OLM (AMPA + NMDA)
@@ -159,7 +235,7 @@ if getattr(cfg, 'addOlmExcNetStim', False):
 
         netParams.stimTargetParams[target_name] = {
             'source': source_name,
-            'conds': {'pop': 'OLM'},
+            'conds': {'pop': 'OLM', 'cellType': 'OLM'},
             'sec': target_secs[i],
             'loc': 0.5,
             'synMech': ['AMPA', 'NMDA'],
