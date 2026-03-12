@@ -1,13 +1,14 @@
 def apply_synapse_config(cfg):
-    cfg.thetaSynScale = 1.2
+    cfg.thetaSynScaleVIP = 1.2
+    cfg.thetaSynScalePYR = 1.2
     cfg.thetaAMPAUnitWeight = 0.00156
     cfg.thetaNMDAUnitWeight = 0.000882
     cfg.factorSynPYR = 0.208
     cfg.factorSynVIP = 1.0
 
-    cfg.PYROLMweight = 5e-3
-    cfg.OLMPYRweight = 1e-2
-    cfg.VIPOLMweight = 1e-2
+    cfg.PYROLMweight = 2e-3
+    cfg.OLMPYRweight = 2e-3
+    cfg.VIPOLMweight = 1e-3
 
     cfg.synsPerConnPYROLM = 2
     cfg.synsPerConnOLMPYR = 8

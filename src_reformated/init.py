@@ -22,3 +22,4 @@ sim.saveData()                    			# save params, cell info and sim output to 
 sim.analysis.plotData()         			# plot spike raster etc
 
 print('completed simulation...')
+

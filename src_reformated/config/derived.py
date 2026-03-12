@@ -35,10 +35,10 @@ def apply_derived_config(cfg):
         if group == "PP"
     ]
 
-    cfg.thetaAMPAWeightPYR = cfg.thetaSynScale * cfg.thetaAMPAUnitWeight * cfg.factorSynPYR
-    cfg.thetaNMDAWeightPYR = cfg.thetaSynScale * cfg.thetaNMDAUnitWeight * cfg.factorSynPYR
-    cfg.thetaAMPAWeightVIP = cfg.thetaSynScale * cfg.thetaAMPAUnitWeight * cfg.factorSynVIP
-    cfg.thetaNMDAWeightVIP = cfg.thetaSynScale * cfg.thetaNMDAUnitWeight * cfg.factorSynVIP
+    cfg.thetaAMPAWeightPYR = cfg.thetaSynScalePYR * cfg.thetaAMPAUnitWeight * cfg.factorSynPYR
+    cfg.thetaNMDAWeightPYR = cfg.thetaSynScalePYR * cfg.thetaNMDAUnitWeight * cfg.factorSynPYR
+    cfg.thetaAMPAWeightVIP = cfg.thetaSynScaleVIP * cfg.thetaAMPAUnitWeight * cfg.factorSynVIP
+    cfg.thetaNMDAWeightVIP = cfg.thetaSynScaleVIP * cfg.thetaNMDAUnitWeight * cfg.factorSynVIP
 
     cfg.MSISI = 1000.0 / cfg.MSRateHz
     cfg.MSPhaseRef = cfg.thetaBurstStart - cfg.MSLeadBeforeTheta
