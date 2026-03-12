@@ -17,6 +17,6 @@ def apply_sim_config(cfg):
     cfg.saveDataInclude = ["simData", "simConfig", "netParams"]
     cfg.recordTime = True
 
-    cfg.saveFolder = "output_5"
+    cfg.saveFolder = "output_reformated"
     cfg.simLabelBase = "CA1_1"
     cfg.simLabel = cfg.simLabelBase
