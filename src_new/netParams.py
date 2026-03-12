@@ -205,7 +205,7 @@ for i, sec in enumerate(vip_pp_targets):
     }
 
 # MS to IS3 with a small weight that you tune to get a somatic EPSP around 2–3 mV
-for i, sec in enumerate(vip_sc_targets):
+for i, sec in enumerate(vip_sc_targets[0:3]):
     netParams.connParams[f'MS->VIP_{i}'] = {
         'preConds': {'pop': 'MS', 'cellModel': 'VecStim'},
         'postConds': {'pop': 'VIP', 'cellType': 'BilashVIP'},

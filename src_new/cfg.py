@@ -121,9 +121,9 @@ cfg.PP = 1
 # -----------------------------------------------------------------------------
 
 cfg.nMS = 1
-cfg.nMSweight = 0*1e-4
+cfg.nMSweight = 0*5e-4
 cfg.MSIntraBurstISI = 20.
-cfg.MSSpikesPerBurst = 3
+cfg.MSSpikesPerBurst = 2
 
 cfg.MS_train = [
     cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI + spike * cfg.MSIntraBurstISI
