@@ -89,7 +89,7 @@ netParams.popParams['OLM'] = {'cellType': 'OLM', 'numCells': cfg.OLM}
 netParams.popParams['VIP'] = {'cellType': 'BilashVIP', 'numCells': cfg.VIP}
 netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': cfg.SC, 'spkTimes': cfg.thetaSpikeTimes}
 netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': cfg.PP, 'spkTimes': cfg.thetaSpikeTimes}
-
+netParams.popParams['MS'] = {'cellModel': 'VecStim', 'numCells': cfg.nMS, 'spkTimes': cfg.MS_train}
 # -----------------------------------------------------------------------------
 # Synaptic mechanisms (multisyn.hoc)
 # -----------------------------------------------------------------------------
@@ -129,6 +129,14 @@ netParams.synMechParams['GABA_VIP'] = {
     'tau1': 0.5, 
     'tau2': 8.0, 
     'e': -80
+}
+
+# Nicotinic ACh synapse onto IS3 interneurons
+netParams.synMechParams['nACh_IS3'] = {
+    'mod': 'Exp2Syn',
+    'tau1': 33.0,     # rise time (ms)
+    'tau2': 139.0,    # decay time (ms)
+    'e': 0.0          # nicotinic reversal potential (mV)
 }
 
 # -----------------------------------------------------------------------------
@@ -192,6 +200,19 @@ for i, sec in enumerate(vip_pp_targets):
         'loc': vip_input_loc,
         'synMech': ['AMPA', 'NMDA'],
         'weight': [cfg.thetaAMPAWeightVIP, cfg.thetaNMDAWeightVIP],
+        'delay': cfg.thetaDelay,
+        'synsPerConn': 1,
+    }
+
+# MS to IS3 with a small weight that you tune to get a somatic EPSP around 2–3 mV
+for i, sec in enumerate(vip_sc_targets):
+    netParams.connParams[f'MS->VIP_{i}'] = {
+        'preConds': {'pop': 'MS', 'cellModel': 'VecStim'},
+        'postConds': {'pop': 'VIP', 'cellType': 'BilashVIP'},
+        'sec': sec,
+        'loc': vip_input_loc,
+        'synMech': 'nACh_IS3',
+        'weight': cfg.nMSweight,      # tune to produce ~2–3 mV EPSP
         'delay': cfg.thetaDelay,
         'synsPerConn': 1,
     }

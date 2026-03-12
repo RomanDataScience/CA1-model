@@ -21,10 +21,6 @@ cfg.recordStep = cfg.dt
 cfg.printRunTime = 0.1
 cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321, 'cell': 4321}
 
-cfg.saveFolder = 'output_2'
-cfg.simLabel = 'CA1_1'
-Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
-
 cfg.saveJson = True
 cfg.savePickle = False
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams']
@@ -99,7 +95,7 @@ factorSynPYR = 0.208 #(for 500 ms transient)
 cfg.thetaAMPAWeightPYR = 1.2 * 0.00156 * factorSynPYR
 cfg.thetaNMDAWeightPYR = 1.2 * 0.000882 * factorSynPYR
 
-factorSynVIP = 2. 
+factorSynVIP = 1.1 
 cfg.thetaAMPAWeightVIP = 1.2 * 0.00156 * factorSynVIP
 cfg.thetaNMDAWeightVIP = 1.2 * 0.000882 * factorSynVIP
 
@@ -120,10 +116,26 @@ cfg.SC = 1
 cfg.PP = 1
 
 # -----------------------------------------------------------------------------
+# Example MS cholinergic source:
+# 8 Hz theta, with 2 spikes per theta cycle separated by 20 ms
+# -----------------------------------------------------------------------------
+
+cfg.nMS = 1
+cfg.nMSweight = 0*1e-4
+cfg.MSIntraBurstISI = 20.
+cfg.MSSpikesPerBurst = 3
+
+cfg.MS_train = [
+    cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI + spike * cfg.MSIntraBurstISI
+    for burst in range(cfg.thetaCycles)
+    for spike in range(cfg.MSSpikesPerBurst)
+]
+
+# -----------------------------------------------------------------------------
 # OLM <-> PYR connectivity
 # -----------------------------------------------------------------------------
 # Best combos
-# (5e-3, 1e-2); (5e-3, 0)
+# (5e-3, 1e-2, 5e-3); (5e-3, 0, 0)
 cfg.PYROLMweight = 5e-3
 cfg.OLMPYRweight = 1e-2
 cfg.VIPOLMweight = 5e-3
@@ -138,12 +150,16 @@ cfg.delayPYROLM = 1.5
 cfg.delayOLMPYR = 1.1
 cfg.delayVIPOLM = 1.
 
-cfg.simLabel += f'_Control{cfg.applyControlPC2B}_GLU{cfg.PYROLMweight}_GABAOLM{cfg.OLMPYRweight}_GABAVIP{cfg.VIPOLMweight}' 
+cfg.saveFolder = 'output_3'
+cfg.simLabel = 'CA1_1'
+Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
+
+cfg.simLabel += f'_Control{cfg.applyControlPC2B}_GLU{cfg.PYROLMweight}_GABAOLM{cfg.OLMPYRweight}_GABAVIP{cfg.VIPOLMweight}_Achinput{cfg.nMSweight}' 
 
 # -----------------------------------------------------------------------------
 # Recording
 # -----------------------------------------------------------------------------
-allpops = ['PC2B', 'OLM', 'VIP', 'SC', 'PP']
+allpops = ['PC2B', 'OLM', 'VIP', 'SC', 'PP', 'MS']
 timeRange = [cfg.Transient - 200., cfg.duration]
 cfg.recordCells = [(pop,0) for pop in allpops if pop not in ['SC', 'PP']]
 allpopsHistogram = [pop for pop in allpops if pop not in ['SC', 'PP']]
@@ -151,6 +167,7 @@ cfg.recordTraces = {
     'V_soma': {'sec': 'soma', 'loc': 0.5, 'var': 'v'},
     'I_AMPA_facil': {'synMech': 'AMPA_facil', 'var': 'i', 'conds': {'pop': 'OLM'}},
     'I_GABA_slow': {'synMech': 'GABA_slow', 'var': 'i', 'conds': {'pop': 'PC2B'}},
+    'I_nAch': {'synMech': 'nACh_IS3', 'var': 'i', 'conds': {'pop': 'VIP'}},
 }  # Dict with traces to record
 cfg.analysis['plotRaster'] = {'include': allpops,'saveFig': True, 'timeRange': timeRange, 'marker': '|'} # Plot a raster
 cfg.analysis['plotSpikeHist'] = {'include': allpops, 'saveFig': True, 'timeRange': timeRange, 'binSize': 1, 'measure': 'rate'}                  # Plot a Spike Histogram
