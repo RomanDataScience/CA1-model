@@ -44,7 +44,7 @@ cfg.VIPFile = 'cells/BilashVIP.json'
 # - soma.km.gbar = soma.km.gbar / controlKmSomaDivisor
 # - all ican.gbar = controlIcanGbar
 # - all ican.concrelease = controlIcanConcrelease
-cfg.applyControlPC2B = True
+cfg.applyControlPC2B = False
 cfg.controlKmSomaDivisor = 0.05
 cfg.controlIcanGbar = 0.0
 cfg.controlIcanConcrelease = 1.0
@@ -120,7 +120,7 @@ cfg.PP = 1
 # -----------------------------------------------------------------------------
 
 cfg.nMS = 1
-cfg.nMSweight = 0*6e-4
+cfg.nMSweight = 6e-4
 cfg.nMSinputs = 4 #2
 # cfg.MSIntraBurstISI = 10.
 # cfg.MSSpikesPerBurst = 5
@@ -135,7 +135,7 @@ cfg.MSRateHz = 10.0
 cfg.MSISI = 1000.0 / cfg.MSRateHz  # ms between spikes
 cfg.MSLeadBeforeTheta = 20.0  # ms; MS spike occurs this much before each thetaBurstStart
 cfg.MSPhaseRef = cfg.thetaBurstStart - cfg.MSLeadBeforeTheta
-cfg.MSIstart = cfg.MSPhaseRef % cfg.MSISI
+cfg.MSIstart = cfg.Transient - cfg.MSLeadBeforeTheta
 
 cfg.MS_train = [
     cfg.MSIstart + spike * cfg.MSISI
@@ -147,9 +147,9 @@ cfg.MS_train = [
 # -----------------------------------------------------------------------------
 # Best combos
 # (5e-3, 1e-2, 5e-3); (5e-3, 0, 0)
-cfg.PYROLMweight = 0*5e-3
-cfg.OLMPYRweight = 0*1e-2
-cfg.VIPOLMweight = 0*1e-2
+cfg.PYROLMweight = 5e-3
+cfg.OLMPYRweight = 1e-2
+cfg.VIPOLMweight = 1e-2
 
 # Best combos
 # (2, 8, 3)
