@@ -2,10 +2,10 @@ import json
 
 from netpyne import specs
 
-from cfg import cfg
+from cfg import cfg, refresh_cfg
 
 
-cfg.update()
+refresh_cfg(cfg)
 
 netParams = specs.NetParams()
 netParams.version = 1
@@ -90,54 +90,8 @@ netParams.popParams['VIP'] = {'cellType': 'BilashVIP', 'numCells': cfg.VIP}
 netParams.popParams['SC'] = {'cellModel': 'VecStim', 'numCells': cfg.SC, 'spkTimes': cfg.thetaSpikeTimes}
 netParams.popParams['PP'] = {'cellModel': 'VecStim', 'numCells': cfg.PP, 'spkTimes': cfg.thetaSpikeTimes}
 netParams.popParams['MS'] = {'cellModel': 'VecStim', 'numCells': cfg.nMS, 'spkTimes': cfg.MS_train}
-# -----------------------------------------------------------------------------
-# Synaptic mechanisms (multisyn.hoc)
-# -----------------------------------------------------------------------------
-netParams.synMechParams['AMPA'] = {
-    'mod': 'Exp2Syn',
-    'tau1': 0.5,
-    'tau2': 1.0,
-    'e': 0.0,
-}
-
-netParams.synMechParams['NMDA'] = {
-    'mod': 'nmdanet',
-    'Alpha': 0.35,
-    'Beta': 0.035,
-}
-
-# GABA_A for OLM -> PYR (Slow inhibition)
-netParams.synMechParams['GABA_slow'] = {
-    'mod': 'Exp2Syn', 
-    'tau1': 2.0, 
-    'tau2': 20.0, 
-    'e': -75
-}
-
-# AMPA for PYR -> OLM (Facilitating)
-# Note: Requires a mechanism supporting STP, e.g., 'Exp2SynSTP'
-netParams.synMechParams['AMPA_facil'] = {
-    'mod': 'Exp2Syn', # or custom STP mod
-    'tau1': 0.5, 
-    'tau2': 3.0, 
-    'e': 0
-}
-
-# GABA_A for VIP -> OLM (Disinhibitory inhibition)
-netParams.synMechParams['GABA_VIP'] = {
-    'mod': 'Exp2Syn', 
-    'tau1': 0.3, 
-    'tau2': 15.0, 
-    'e': -80
-}
-
-# Nicotinic ACh synapse onto IS3 interneurons
-netParams.synMechParams['nACh_IS3'] = {
-    'mod': 'Exp2Syn',
-    'tau1': 40.0,     # rise time (ms)
-    'tau2': 222.0,    # decay time (ms)
-    'e': 0.0          # nicotinic reversal potential (mV)
-}
+for label, params in cfg.synMechParams.items():
+    netParams.synMechParams[label] = dict(params)
 
 # -----------------------------------------------------------------------------
 # Theta-burst site mapping: SC and PP pathway populations
