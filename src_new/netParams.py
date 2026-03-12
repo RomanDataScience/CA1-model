@@ -134,8 +134,8 @@ netParams.synMechParams['GABA_VIP'] = {
 # Nicotinic ACh synapse onto IS3 interneurons
 netParams.synMechParams['nACh_IS3'] = {
     'mod': 'Exp2Syn',
-    'tau1': 33.0,     # rise time (ms)
-    'tau2': 139.0,    # decay time (ms)
+    'tau1': 40.0,     # rise time (ms)
+    'tau2': 222.0,    # decay time (ms)
     'e': 0.0          # nicotinic reversal potential (mV)
 }
 

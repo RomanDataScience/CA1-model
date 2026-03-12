@@ -95,7 +95,7 @@ factorSynPYR = 0.208 #(for 500 ms transient)
 cfg.thetaAMPAWeightPYR = 1.2 * 0.00156 * factorSynPYR
 cfg.thetaNMDAWeightPYR = 1.2 * 0.000882 * factorSynPYR
 
-factorSynVIP = 0.2 
+factorSynVIP = 0.9 #1. 
 cfg.thetaAMPAWeightVIP = 1.2 * 0.00156 * factorSynVIP
 cfg.thetaNMDAWeightVIP = 1.2 * 0.000882 * factorSynVIP
 
@@ -121,10 +121,10 @@ cfg.PP = 1
 # -----------------------------------------------------------------------------
 
 cfg.nMS = 1
-cfg.nMSweight = 5e-3
-cfg.nMSinputs = 3
+cfg.nMSweight = 0*7e-4
+cfg.nMSinputs = 5
 cfg.MSIntraBurstISI = 10.
-cfg.MSSpikesPerBurst = 1
+cfg.MSSpikesPerBurst = 5
 
 cfg.MS_train = [
     cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI + spike * cfg.MSIntraBurstISI
@@ -137,9 +137,9 @@ cfg.MS_train = [
 # -----------------------------------------------------------------------------
 # Best combos
 # (5e-3, 1e-2, 5e-3); (5e-3, 0, 0)
-cfg.PYROLMweight = 5e-3
-cfg.OLMPYRweight = 1e-2
-cfg.VIPOLMweight = 5e-3
+cfg.PYROLMweight = 0*5e-3
+cfg.OLMPYRweight = 0*1e-2
+cfg.VIPOLMweight = 0*5e-3
 
 # Best combos
 # (2, 8, 3)
