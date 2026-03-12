@@ -126,8 +126,8 @@ netParams.synMechParams['AMPA_facil'] = {
 # GABA_A for VIP -> OLM (Disinhibitory inhibition)
 netParams.synMechParams['GABA_VIP'] = {
     'mod': 'Exp2Syn', 
-    'tau1': 0.5, 
-    'tau2': 8.0, 
+    'tau1': 0.3, 
+    'tau2': 15.0, 
     'e': -80
 }
 

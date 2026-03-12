@@ -44,7 +44,7 @@ cfg.VIPFile = 'cells/BilashVIP.json'
 # - soma.km.gbar = soma.km.gbar / controlKmSomaDivisor
 # - all ican.gbar = controlIcanGbar
 # - all ican.concrelease = controlIcanConcrelease
-cfg.applyControlPC2B = False
+cfg.applyControlPC2B = True
 cfg.controlKmSomaDivisor = 0.05
 cfg.controlIcanGbar = 0.0
 cfg.controlIcanConcrelease = 1.0
@@ -95,7 +95,7 @@ factorSynPYR = 0.208 #(for 500 ms transient)
 cfg.thetaAMPAWeightPYR = 1.2 * 0.00156 * factorSynPYR
 cfg.thetaNMDAWeightPYR = 1.2 * 0.000882 * factorSynPYR
 
-factorSynVIP = 0.1 #0.9 
+factorSynVIP = 1. #1.05 
 cfg.thetaAMPAWeightVIP = 1.2 * 0.00156 * factorSynVIP
 cfg.thetaNMDAWeightVIP = 1.2 * 0.000882 * factorSynVIP
 
@@ -116,13 +116,12 @@ cfg.SC = 1
 cfg.PP = 1
 
 # -----------------------------------------------------------------------------
-# Example MS cholinergic source:
-# 8 Hz theta, with 2 spikes per theta cycle separated by 20 ms
+# MS cholinergic source: continuous 10 Hz train phase-locked to theta burst start
 # -----------------------------------------------------------------------------
 
 cfg.nMS = 1
-cfg.nMSweight = 1e-4
-cfg.nMSinputs = 5
+cfg.nMSweight = 0*6e-4
+cfg.nMSinputs = 4 #2
 # cfg.MSIntraBurstISI = 10.
 # cfg.MSSpikesPerBurst = 5
 
@@ -134,10 +133,13 @@ cfg.nMSinputs = 5
 
 cfg.MSRateHz = 10.0
 cfg.MSISI = 1000.0 / cfg.MSRateHz  # ms between spikes
+cfg.MSLeadBeforeTheta = 20.0  # ms; MS spike occurs this much before each thetaBurstStart
+cfg.MSPhaseRef = cfg.thetaBurstStart - cfg.MSLeadBeforeTheta
+cfg.MSIstart = cfg.MSPhaseRef % cfg.MSISI
 
 cfg.MS_train = [
-    spike * cfg.MSISI
-    for spike in range(int(cfg.duration / cfg.MSISI) + 1)
+    cfg.MSIstart + spike * cfg.MSISI
+    for spike in range(int((cfg.duration - cfg.MSIstart) / cfg.MSISI) + 1)
 ]
 
 # -----------------------------------------------------------------------------
@@ -147,7 +149,7 @@ cfg.MS_train = [
 # (5e-3, 1e-2, 5e-3); (5e-3, 0, 0)
 cfg.PYROLMweight = 0*5e-3
 cfg.OLMPYRweight = 0*1e-2
-cfg.VIPOLMweight = 0*5e-3
+cfg.VIPOLMweight = 0*1e-2
 
 # Best combos
 # (2, 8, 3)
@@ -155,11 +157,11 @@ cfg.synsPerConnPYROLM = 2
 cfg.synsPerConnOLMPYR = 8
 cfg.synsPerConnVIPOLM = 3
 
-cfg.delayPYROLM = 1.5
+cfg.delayPYROLM = 1.1 #1.5
 cfg.delayOLMPYR = 1.1
-cfg.delayVIPOLM = 1.
+cfg.delayVIPOLM = 0.7
 
-cfg.saveFolder = 'output_4'
+cfg.saveFolder = 'output_5'
 cfg.simLabel = 'CA1_1'
 Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
 
@@ -169,12 +171,13 @@ cfg.simLabel += f'_Control{cfg.applyControlPC2B}_VIPx{factorSynVIP}_GLU{cfg.PYRO
 # Recording
 # -----------------------------------------------------------------------------
 allpops = ['PC2B', 'OLM', 'VIP', 'SC', 'PP', 'MS']
-timeRange = [cfg.Transient - 200., cfg.duration]
+timeRange = [cfg.Transient - 50., cfg.duration-200.]
 cfg.recordCells = [(pop,0) for pop in allpops if pop not in ['SC', 'PP']]
 allpopsHistogram = [pop for pop in allpops if pop not in ['SC', 'PP']]
 cfg.recordTraces = {
     'V_soma': {'sec': 'soma', 'loc': 0.5, 'var': 'v'},
     'I_AMPA_facil': {'synMech': 'AMPA_facil', 'var': 'i', 'conds': {'pop': 'OLM'}},
+    'I_GABA_VIP': {'synMech': 'GABA_VIP', 'var': 'i', 'conds': {'pop': 'OLM'}},
     'I_GABA_slow': {'synMech': 'GABA_slow', 'var': 'i', 'conds': {'pop': 'PC2B'}},
     'I_nAch': {'synMech': 'nACh_IS3', 'var': 'i', 'conds': {'pop': 'VIP'}},
 }  # Dict with traces to record
