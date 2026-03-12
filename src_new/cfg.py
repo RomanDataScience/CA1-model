@@ -95,7 +95,7 @@ factorSynPYR = 0.208 #(for 500 ms transient)
 cfg.thetaAMPAWeightPYR = 1.2 * 0.00156 * factorSynPYR
 cfg.thetaNMDAWeightPYR = 1.2 * 0.000882 * factorSynPYR
 
-factorSynVIP = 0.9 #1. 
+factorSynVIP = 0.1 #0.9 
 cfg.thetaAMPAWeightVIP = 1.2 * 0.00156 * factorSynVIP
 cfg.thetaNMDAWeightVIP = 1.2 * 0.000882 * factorSynVIP
 
@@ -121,15 +121,23 @@ cfg.PP = 1
 # -----------------------------------------------------------------------------
 
 cfg.nMS = 1
-cfg.nMSweight = 0*7e-4
+cfg.nMSweight = 1e-4
 cfg.nMSinputs = 5
-cfg.MSIntraBurstISI = 10.
-cfg.MSSpikesPerBurst = 5
+# cfg.MSIntraBurstISI = 10.
+# cfg.MSSpikesPerBurst = 5
+
+# cfg.MS_train = [
+#     cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI + spike * cfg.MSIntraBurstISI
+#     for burst in range(cfg.thetaCycles)
+#     for spike in range(cfg.MSSpikesPerBurst)
+# ]
+
+cfg.MSRateHz = 10.0
+cfg.MSISI = 1000.0 / cfg.MSRateHz  # ms between spikes
 
 cfg.MS_train = [
-    cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI + spike * cfg.MSIntraBurstISI
-    for burst in range(cfg.thetaCycles)
-    for spike in range(cfg.MSSpikesPerBurst)
+    spike * cfg.MSISI
+    for spike in range(int(cfg.duration / cfg.MSISI) + 1)
 ]
 
 # -----------------------------------------------------------------------------
@@ -151,7 +159,7 @@ cfg.delayPYROLM = 1.5
 cfg.delayOLMPYR = 1.1
 cfg.delayVIPOLM = 1.
 
-cfg.saveFolder = 'output_3'
+cfg.saveFolder = 'output_4'
 cfg.simLabel = 'CA1_1'
 Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
 
