@@ -95,7 +95,7 @@ factorSynPYR = 0.208 #(for 500 ms transient)
 cfg.thetaAMPAWeightPYR = 1.2 * 0.00156 * factorSynPYR
 cfg.thetaNMDAWeightPYR = 1.2 * 0.000882 * factorSynPYR
 
-factorSynVIP = 1.1 
+factorSynVIP = 0.2 
 cfg.thetaAMPAWeightVIP = 1.2 * 0.00156 * factorSynVIP
 cfg.thetaNMDAWeightVIP = 1.2 * 0.000882 * factorSynVIP
 
@@ -121,9 +121,10 @@ cfg.PP = 1
 # -----------------------------------------------------------------------------
 
 cfg.nMS = 1
-cfg.nMSweight = 0*5e-4
-cfg.MSIntraBurstISI = 20.
-cfg.MSSpikesPerBurst = 2
+cfg.nMSweight = 5e-3
+cfg.nMSinputs = 3
+cfg.MSIntraBurstISI = 10.
+cfg.MSSpikesPerBurst = 1
 
 cfg.MS_train = [
     cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI + spike * cfg.MSIntraBurstISI
@@ -154,7 +155,7 @@ cfg.saveFolder = 'output_3'
 cfg.simLabel = 'CA1_1'
 Path(cfg.saveFolder).mkdir(parents=True, exist_ok=True)
 
-cfg.simLabel += f'_Control{cfg.applyControlPC2B}_GLU{cfg.PYROLMweight}_GABAOLM{cfg.OLMPYRweight}_GABAVIP{cfg.VIPOLMweight}_Achinput{cfg.nMSweight}' 
+cfg.simLabel += f'_Control{cfg.applyControlPC2B}_VIPx{factorSynVIP}_GLU{cfg.PYROLMweight}_GABAOLM{cfg.OLMPYRweight}_GABAVIP{cfg.VIPOLMweight}_Achinput{cfg.nMSweight}' 
 
 # -----------------------------------------------------------------------------
 # Recording
