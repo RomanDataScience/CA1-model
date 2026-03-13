@@ -4,8 +4,8 @@ def apply_sim_config(cfg):
     cfg.cvode_active = True
     cfg.cvode_atol = 1e-3
     cfg.progressBar = 0
-    cfg.hParams = {"v_init": -75.0, "celsius": 34.0}
-    cfg.vipBatchVInit = -75.0
+    cfg.hParams = {"v_init": -60.0, "celsius": 34.0}
+    cfg.vipBatchVInit = -60.0
 
     cfg.verbose = False
     cfg.validateNetParams = False
