@@ -35,6 +35,12 @@ def _build_ms_train(ms_start, ms_stop, ms_isi):
     return spike_times
 
 
+def _last_theta_burst_end(cycle_starts, intra_burst_isi, spikes_per_burst):
+    if not cycle_starts:
+        return 0.0
+    return cycle_starts[-1] + max(0, spikes_per_burst - 1) * intra_burst_isi
+
+
 def apply_derived_config(cfg):
     cfg.thetaBurstStart = cfg.Transient
     cfg.thetaCycleWindows = []
@@ -75,8 +81,12 @@ def apply_derived_config(cfg):
         cfg.MSISI = 1000.0 / cfg.MSRateHz
         cfg.MSPhaseRef = ms_block_start - cfg.MSLeadBeforeTheta
         cfg.MSIstart = cfg.MSPhaseRef
-        ms_block_end = ms_block_start + cfg.vipBatchMsCycles * cfg.thetaInterBurstISI
-        cfg.MS_train = _build_ms_train(cfg.MSIstart, ms_block_end, cfg.MSISI)
+        ms_last_burst_end = _last_theta_burst_end(
+            ms_cycle_starts,
+            cfg.thetaIntraBurstISI,
+            cfg.thetaSpikesPerBurst,
+        )
+        cfg.MS_train = _build_ms_train(cfg.MSIstart, ms_last_burst_end, cfg.MSISI)
     else:
         cfg.duration = cfg.Transient + cfg.thetaCycles * cfg.thetaInterBurstISI + cfg.thetaTailBuffer
         cycle_starts = [
@@ -92,8 +102,12 @@ def apply_derived_config(cfg):
         cfg.MSISI = 1000.0 / cfg.MSRateHz
         cfg.MSPhaseRef = cfg.thetaBurstStart - cfg.MSLeadBeforeTheta
         cfg.MSIstart = cfg.MSPhaseRef
-        theta_end = cfg.thetaBurstStart + cfg.thetaCycles * cfg.thetaInterBurstISI
-        cfg.MS_train = _build_ms_train(cfg.MSIstart, theta_end, cfg.MSISI)
+        theta_last_burst_end = _last_theta_burst_end(
+            cycle_starts,
+            cfg.thetaIntraBurstISI,
+            cfg.thetaSpikesPerBurst,
+        )
+        cfg.MS_train = _build_ms_train(cfg.MSIstart, theta_last_burst_end, cfg.MSISI)
 
     cfg.thetaSites = _build_theta_sites()
     cfg.thetaScSites = [
