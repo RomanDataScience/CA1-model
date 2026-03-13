@@ -1,6 +1,7 @@
 def apply_recording_config(cfg):
     cfg.allPops = ["PC2B", "OLM", "VIP", "SC", "PP", "MS"]
     cfg.recordExcludePops = ["SC", "PP", "MS"]
+    cfg.enableDefaultAnalysis = True
 
     cfg.recordTraces = {
         "V_soma": {"sec": "soma", "loc": 0.5, "var": "v"},

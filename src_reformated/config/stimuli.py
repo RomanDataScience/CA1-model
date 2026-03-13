@@ -4,6 +4,13 @@ def apply_stimuli_config(cfg):
     cfg.thetaIntraBurstISI = 10.0
     cfg.thetaSpikesPerBurst = 5
     cfg.thetaDelay = 0.1
+    cfg.thetaTailBuffer = 200.0
+
+    cfg.vipBatchProtocol = False
+    cfg.vipBatchNoMsCycles = 5
+    cfg.vipBatchMsCycles = 5
+    cfg.vipBatchInterPhaseGap = cfg.thetaInterBurstISI
+    cfg.vipBatchTargetSpikesPerCycle = 4
 
     cfg.vipScTargetSecs = [
         "radTprox",

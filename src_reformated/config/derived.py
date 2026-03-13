@@ -13,15 +13,82 @@ def _build_theta_sites():
     return sites
 
 
+def _build_theta_spike_times(cycle_starts, intra_burst_isi, spikes_per_burst):
+    return [
+        cycle_start + spike * intra_burst_isi
+        for cycle_start in cycle_starts
+        for spike in range(spikes_per_burst)
+    ]
+
+
+def _build_cycle_windows(cycle_starts, cycle_duration):
+    return [(cycle_start, cycle_start + cycle_duration) for cycle_start in cycle_starts]
+
+
 def apply_derived_config(cfg):
     cfg.thetaBurstStart = cfg.Transient
-    cfg.duration = cfg.Transient + cfg.thetaCycles * cfg.thetaInterBurstISI + 200.0
+    cfg.thetaCycleWindows = []
+    cfg.vipBatchNoMsWindows = []
+    cfg.vipBatchMsWindows = []
 
-    cfg.thetaSpikeTimes = [
-        cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI + spike * cfg.thetaIntraBurstISI
-        for burst in range(cfg.thetaCycles)
-        for spike in range(cfg.thetaSpikesPerBurst)
-    ]
+    if getattr(cfg, "vipBatchProtocol", False):
+        no_ms_cycle_starts = [
+            cfg.thetaBurstStart + cycle_index * cfg.thetaInterBurstISI
+            for cycle_index in range(cfg.vipBatchNoMsCycles)
+        ]
+        ms_block_start = (
+            cfg.thetaBurstStart
+            + cfg.vipBatchNoMsCycles * cfg.thetaInterBurstISI
+            + cfg.vipBatchInterPhaseGap
+        )
+        ms_cycle_starts = [
+            ms_block_start + cycle_index * cfg.thetaInterBurstISI
+            for cycle_index in range(cfg.vipBatchMsCycles)
+        ]
+
+        cfg.thetaSpikeTimes = _build_theta_spike_times(
+            no_ms_cycle_starts + ms_cycle_starts,
+            cfg.thetaIntraBurstISI,
+            cfg.thetaSpikesPerBurst,
+        )
+        cfg.thetaCycleWindows = _build_cycle_windows(
+            no_ms_cycle_starts + ms_cycle_starts,
+            cfg.thetaInterBurstISI,
+        )
+        cfg.vipBatchNoMsWindows = _build_cycle_windows(no_ms_cycle_starts, cfg.thetaInterBurstISI)
+        cfg.vipBatchMsWindows = _build_cycle_windows(ms_cycle_starts, cfg.thetaInterBurstISI)
+        cfg.duration = (
+            ms_block_start
+            + cfg.vipBatchMsCycles * cfg.thetaInterBurstISI
+            + cfg.thetaTailBuffer
+        )
+        cfg.MSISI = 1000.0 / cfg.MSRateHz
+        cfg.MSPhaseRef = ms_block_start - cfg.MSLeadBeforeTheta
+        cfg.MSIstart = cfg.MSPhaseRef
+        ms_block_end = ms_block_start + cfg.vipBatchMsCycles * cfg.thetaInterBurstISI
+        cfg.MS_train = [
+            cfg.MSIstart + spike * cfg.MSISI
+            for spike in range(int((ms_block_end - cfg.MSIstart) / cfg.MSISI) + 1)
+        ]
+    else:
+        cfg.duration = cfg.Transient + cfg.thetaCycles * cfg.thetaInterBurstISI + cfg.thetaTailBuffer
+        cycle_starts = [
+            cfg.thetaBurstStart + burst * cfg.thetaInterBurstISI
+            for burst in range(cfg.thetaCycles)
+        ]
+        cfg.thetaSpikeTimes = _build_theta_spike_times(
+            cycle_starts,
+            cfg.thetaIntraBurstISI,
+            cfg.thetaSpikesPerBurst,
+        )
+        cfg.thetaCycleWindows = _build_cycle_windows(cycle_starts, cfg.thetaInterBurstISI)
+        cfg.MSISI = 1000.0 / cfg.MSRateHz
+        cfg.MSPhaseRef = cfg.thetaBurstStart - cfg.MSLeadBeforeTheta
+        cfg.MSIstart = cfg.MSPhaseRef % cfg.MSISI
+        cfg.MS_train = [
+            cfg.MSIstart + spike * cfg.MSISI
+            for spike in range(int((cfg.duration - cfg.MSIstart) / cfg.MSISI) + 1)
+        ]
 
     cfg.thetaSites = _build_theta_sites()
     cfg.thetaScSites = [
@@ -40,14 +107,6 @@ def apply_derived_config(cfg):
     cfg.thetaAMPAWeightVIP = cfg.thetaSynScaleVIP * cfg.thetaAMPAUnitWeight * cfg.factorSynVIP
     cfg.thetaNMDAWeightVIP = cfg.thetaSynScaleVIP * cfg.thetaNMDAUnitWeight * cfg.factorSynVIP
 
-    cfg.MSISI = 1000.0 / cfg.MSRateHz
-    cfg.MSPhaseRef = cfg.thetaBurstStart - cfg.MSLeadBeforeTheta
-    cfg.MSIstart = cfg.MSPhaseRef % cfg.MSISI
-    cfg.MS_train = [
-        cfg.MSIstart + spike * cfg.MSISI
-        for spike in range(int((cfg.duration - cfg.MSIstart) / cfg.MSISI) + 1)
-    ]
-
     cfg.simLabel = (
         f"{cfg.simLabelBase}"
         f"_Control{cfg.applyControlPC2B}"
@@ -62,20 +121,23 @@ def apply_derived_config(cfg):
     record_exclude = set(cfg.recordExcludePops)
     cfg.recordCells = [(pop, 0) for pop in cfg.allPops if pop not in record_exclude]
 
-    if not isinstance(getattr(cfg, "analysis", None), dict):
+    if getattr(cfg, "enableDefaultAnalysis", True):
+        if not isinstance(getattr(cfg, "analysis", None), dict):
+            cfg.analysis = {}
+        cfg.analysis["plotRaster"] = {
+            "include": list(cfg.allPops),
+            "timeRange": time_range,
+            **cfg.plotRasterDefaults,
+        }
+        cfg.analysis["plotSpikeHist"] = {
+            "include": list(cfg.allPops),
+            "timeRange": time_range,
+            **cfg.plotSpikeHistDefaults,
+        }
+        cfg.analysis["plotTraces"] = {
+            "include": list(cfg.recordCells),
+            "timeRange": time_range,
+            **cfg.plotTracesDefaults,
+        }
+    else:
         cfg.analysis = {}
-    cfg.analysis["plotRaster"] = {
-        "include": list(cfg.allPops),
-        "timeRange": time_range,
-        **cfg.plotRasterDefaults,
-    }
-    cfg.analysis["plotSpikeHist"] = {
-        "include": list(cfg.allPops),
-        "timeRange": time_range,
-        **cfg.plotSpikeHistDefaults,
-    }
-    cfg.analysis["plotTraces"] = {
-        "include": list(cfg.recordCells),
-        "timeRange": time_range,
-        **cfg.plotTracesDefaults,
-    }
