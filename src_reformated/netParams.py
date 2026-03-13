@@ -154,7 +154,7 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaPpSites):
 # SC and PP pathway inputs onto VIP from cfg-defined target section lists.
 vip_sc_targets_all = list(getattr(cfg, 'vipScTargetSecs', []))
 vip_pp_targets_all = list(getattr(cfg, 'vipPpTargetSecs', []))
-vip_input_loc = float(getattr(cfg, 'vipInputLoc', 0.5))
+vip_input_loc = float(getattr(cfg, 'vipInputLoc', 0.2))
 vip_secs = set(cellRuleVIP.get('secs', {}).keys())
 
 invalid_sc_targets = [sec for sec in vip_sc_targets_all if sec not in vip_secs]

@@ -223,7 +223,7 @@ def _run_phase(output_dir, phase_name, ms_enabled):
     cfg.simLabel = phase_name
 
     if not ms_enabled:
-        cfg.MS_train = [1.0]
+        cfg.MS_train = [1e9]
         phase_netparams.popParams["MS"]["numCells"] = 1
         phase_netparams.popParams["MS"]["spkTimes"] = cfg.MS_train
     else:

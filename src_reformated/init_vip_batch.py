@@ -90,7 +90,7 @@ def _run_phase(phase_name, ms_enabled, vip_gids, trial_save_folder, trial_label)
     phase_netparams = _restrict_to_vip_only(netparams_module.netParams)
 
     if not ms_enabled:
-        cfg.MS_train = [1.0]
+        cfg.MS_train = [1e9]
         phase_netparams.popParams["MS"]["numCells"] = 1
         phase_netparams.popParams["MS"]["spkTimes"] = cfg.MS_train
     cfg.simLabel = f"{trial_label}_{phase_name}"
