@@ -14,9 +14,9 @@ def apply_synapse_config(cfg):
     cfg.synsPerConnOLMPYR = 8
     cfg.synsPerConnVIPOLM = 3
 
-    cfg.delayPYROLM = 1.1
-    cfg.delayOLMPYR = 1.1
-    cfg.delayVIPOLM = 0.7
+    cfg.delayPYROLM = 1.
+    cfg.delayOLMPYR = 1.
+    cfg.delayVIPOLM = 3
 
     cfg.synMechParams = {
         "AMPA": {
@@ -44,8 +44,8 @@ def apply_synapse_config(cfg):
         },
         "GABA_VIP": {
             "mod": "Exp2Syn",
-            "tau1": 0.3,
-            "tau2": 15.0,
+            "tau1": 1.0,
+            "tau2": 10.0,
             "e": -80,
         },
         "nACh_IS3": {

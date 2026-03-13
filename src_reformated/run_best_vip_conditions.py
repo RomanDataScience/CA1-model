@@ -2,6 +2,8 @@ import argparse
 import json
 from pathlib import Path
 
+import matplotlib.pyplot as plt
+
 from run_best_vip_trial import (
     DEFAULT_STUDY_LABEL,
     DEFAULT_TRIAL_NUMBER,
@@ -18,6 +20,22 @@ from run_best_vip_trial import (
 
 CONDITIONS = [
     {
+        "name": "03_baseline_pc2b_olm_loop_only",
+        "applyControlPC2B": False,
+        "PYROLMweight": 4e-3,
+        "OLMPYRweight": 5e-3,
+        "VIPOLMweight": 0.0,
+        "nMSweight": 0.0,
+    },
+    {
+        "name": "04_baseline_pc2b_full_loop",
+        "applyControlPC2B": False,
+        "PYROLMweight": 3e-3,
+        "OLMPYRweight": 5e-3,
+        "VIPOLMweight": 1e-2,
+        "nMSweight": "trial",
+    },
+    {
         "name": "01_control_pc2b_no_recurrent_inh",
         "applyControlPC2B": True,
         "PYROLMweight": 0.0,
@@ -32,22 +50,6 @@ CONDITIONS = [
         "OLMPYRweight": 0.0,
         "VIPOLMweight": 0.0,
         "nMSweight": 0.0,
-    },
-    {
-        "name": "03_baseline_pc2b_olm_loop_only",
-        "applyControlPC2B": False,
-        "PYROLMweight": 2e-3,
-        "OLMPYRweight": 2e-3,
-        "VIPOLMweight": 0.0,
-        "nMSweight": 0.0,
-    },
-    {
-        "name": "04_baseline_pc2b_full_loop",
-        "applyControlPC2B": False,
-        "PYROLMweight": 2e-3,
-        "OLMPYRweight": 2e-3,
-        "VIPOLMweight": 1e-3,
-        "nMSweight": "trial",
     },
 ]
 
@@ -81,6 +83,47 @@ def _parse_args():
         help="Repo-root output folder for all four reruns.",
     )
     return parser.parse_args()
+
+
+def _save_combined_v_soma_figure(sim_cfg, sim_data, output_path):
+    time = sim_data.get("t", [])
+    voltage_traces = sim_data.get("V_soma", {})
+    if len(time) == 0 or not voltage_traces:
+        return None
+
+    record_labels = []
+    for entry in getattr(sim_cfg, "recordCells", []):
+        if isinstance(entry, (list, tuple)) and len(entry) == 2:
+            record_labels.append(f"{entry[0]}[{entry[1]}]")
+        else:
+            record_labels.append(str(entry))
+
+    trace_keys = sorted(
+        voltage_traces,
+        key=lambda key: int(key.split("_")[-1]) if "_" in key and key.split("_")[-1].isdigit() else key,
+    )
+    colors = ["#1f77b4", "#d62728", "#2ca02c"]
+
+    fig, axis = plt.subplots(figsize=(12, 5))
+    for index, trace_key in enumerate(trace_keys):
+        label = record_labels[index] if index < len(record_labels) else trace_key
+        axis.plot(
+            time,
+            voltage_traces[trace_key],
+            linewidth=1.0,
+            color=colors[index % len(colors)],
+            label=label,
+        )
+
+    axis.set_xlabel("Time (ms)")
+    axis.set_ylabel("V_soma (mV)")
+    axis.set_title("PC2B, OLM, and VIP on the same axis")
+    axis.legend(loc="best")
+    axis.grid(alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=200)
+    plt.close(fig)
+    return str(output_path)
 
 
 def _run_condition(sim_module, sim_cfg, refresh_cfg_fn, trial, trial_params, base_output_dir, condition):
@@ -119,6 +162,11 @@ def _run_condition(sim_module, sim_cfg, refresh_cfg_fn, trial, trial_params, bas
     sim_module.setupRecording()
     sim_module.runSim()
     sim_module.gatherData()
+    combined_trace_path = _save_combined_v_soma_figure(
+        sim_cfg=sim_cfg,
+        sim_data=sim_module.allSimData if hasattr(sim_module, "allSimData") else sim_module.simData,
+        output_path=condition_dir / f"{sim_cfg.simLabel}_traces_overlay.png",
+    )
     sim_module.saveData()
     sim_module.analysis.plotData()
 
@@ -133,6 +181,7 @@ def _run_condition(sim_module, sim_cfg, refresh_cfg_fn, trial, trial_params, bas
         "output_dir": str(condition_dir),
         "sim_label": sim_cfg.simLabel,
         "data_json": str(data_json_path) if data_json_path.exists() else None,
+        "combined_v_soma_plot": combined_trace_path,
     }
 
     if hasattr(sim_module, "net"):
