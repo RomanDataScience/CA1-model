@@ -1,100 +1,123 @@
-from collections import OrderedDict
+import os
 from pathlib import Path
 
-from netpyne.batch import Batch
+try:
+    from batchtk.algos import optuna_search
+except ImportError:
+    from netpyne.batchtools.search import search as _search
 
-from vip_batch_fitness import build_vip_gid_range, build_vip_protocol_windows, vip_theta_fitness
+    def optuna_search(
+        study_label,
+        param_space,
+        metrics,
+        num_trials,
+        num_workers,
+        dispatcher_constructor,
+        submit_constructor,
+        submit_kwargs,
+        param_space_samplers=None,
+        interval=10,
+        project_path=".",
+        output_path="./optimization/optuna",
+        checkpoint_path=None,
+        algorithm_config=None,
+        ray_config=None,
+        **kwargs,
+    ):
+        metric_name, objective = next(iter(metrics.items()))
+        mode = {"minimize": "min", "maximize": "max", "min": "min", "max": "max"}[objective]
+        current_dir = Path.cwd()
+        try:
+            os.chdir(Path(project_path).resolve())
+            return _search(
+                dispatcher_constructor=dispatcher_constructor,
+                submit_constructor=submit_constructor,
+                run_config=submit_kwargs,
+                params=param_space,
+                algorithm="optuna",
+                label=study_label,
+                output_path=output_path,
+                checkpoint_path=checkpoint_path or f"{output_path}_checkpoint",
+                max_concurrent=num_workers,
+                num_samples=num_trials,
+                metric=metric_name,
+                mode=mode,
+                sample_interval=interval,
+                algorithm_config=algorithm_config,
+                ray_config=ray_config,
+                clean_checkpoint=False,
+            )
+        finally:
+            os.chdir(current_dir)
+
+try:
+    from batchtk.utils import expand_path
+except ImportError:
+    def expand_path(path, create_dirs=False):
+        expanded = Path(path).expanduser().resolve()
+        if create_dirs:
+            expanded.mkdir(parents=True, exist_ok=True)
+        return str(expanded)
+
+from netpyne.batchtools.search import generate_constructors
 
 
-BASE_DIR = Path(__file__).resolve().parent
-ENV_BIN = Path("/Users/romanbaravalle/miniconda3/envs/M1_CEBRA/bin")
-NRN_COMMAND = str(ENV_BIN / "nrniv")
-MPI_COMMAND = str(ENV_BIN / "mpiexec")
+REPO_ROOT = Path(__file__).resolve().parents[1]
+cwd = str(REPO_ROOT)
+env_bin = Path("/Users/romanbaravalle/miniconda3/envs/M1_CEBRA/bin")
+study_label = "vip_optuna_theta_gate_v3"
 
-NO_MS_CYCLES = 5
-MS_CYCLES = 5
-INTER_PHASE_GAP = 200.0
-TARGET_SPIKES_PER_CYCLE = 4
-MAX_TRIALS = 40
+# Option for local run.
+dispatcher, submit = generate_constructors("sh", "sfs")
 
+num_individuals = 1
+num_iterations = 200
 
-def build_vip_optuna_batch():
-    params = OrderedDict(
-        [
-            ("factorSynVIP", [0.1, 3.0]),
-            ("nMSweight", [1e-5, 5e-3]),
-            (("synMechParams", "nACh_IS3", "tau2"), [120.0, 320.0]),
-        ]
-    )
+percentage_change = 0.5
+min_chg = 1.0 - percentage_change
+max_chg = 1.0 + percentage_change
 
-    no_ms_windows, ms_windows = build_vip_protocol_windows(
-        transient=500.0,
-        inter_burst_isi=200.0,
-        no_ms_cycles=NO_MS_CYCLES,
-        ms_cycles=MS_CYCLES,
-        inter_phase_gap=INTER_PHASE_GAP,
-    )
+params = {
+    "factorSynVIP": (0.1, 10.),
+    "nMSweight": (1e-5, 1e-2),
+    "synMechParams.nACh_IS3.tau2": (150, 300),
+    "nMSinputs": (1, 10),
+    "nVipScInputs": (1, 10),
+    "nVipPpInputs": (1, 10),
+    "vipInputResistanceScale": (0.1, 5.0),
+}
 
-    batch = Batch(
-        cfgFile=str(BASE_DIR / "cfg.py"),
-        netParamsFile=str(BASE_DIR / "netParams.py"),
-        params=params,
-    )
-    batch.batchLabel = "vip_optuna_theta_gate"
-    batch.saveFolder = str(BASE_DIR / "batch_runs" / batch.batchLabel)
-    batch.method = "optuna"
+param_space_samplers = [
+    "float",
+    "float",
+    "float",
+    "int",
+    "int",
+    "int",
+    "float",
+]
 
-    batch.initCfg = OrderedDict(
-        [
-            ("vipBatchProtocol", True),
-            ("vipBatchNoMsCycles", NO_MS_CYCLES),
-            ("vipBatchMsCycles", MS_CYCLES),
-            ("vipBatchInterPhaseGap", INTER_PHASE_GAP),
-            ("enableDefaultAnalysis", False),
-            ("recordTraces", {}),
-            ("saveJson", True),
-            ("savePickle", False),
-            ("saveDataInclude", ["simData", "simConfig"]),
-        ]
-    )
-
-    batch.optimCfg = {
-        "fitnessFunc": vip_theta_fitness,
-        "fitnessFuncArgs": {
-            "vip_gids": build_vip_gid_range(pyr_cells=1, olm_cells=1, vip_cells=1),
-            "no_ms_windows": no_ms_windows,
-            "ms_windows": ms_windows,
-            "target_spikes_per_cycle": TARGET_SPIKES_PER_CYCLE,
-            "no_ms_weight": 25.0,
-            "ms_weight": 5.0,
-            "outside_weight": 100.0,
-            "missing_vip_penalty": 1e6,
-        },
-        "maxiters": MAX_TRIALS,
-        "maxiter_wait": 2000,
-        "time_sleep": 5,
-        "maxFitness": 1e9,
-        "direction": "minimize",
-    }
-
-    batch.runCfg = {
-        "type": "mpi_direct",
-        "script": "init.py",
-        "folder": str(BASE_DIR),
-        "nodes": 1,
-        "coresPerNode": 1,
-        "sleepInterval": 1.0,
-        "mpiCommand": MPI_COMMAND,
-        "nrnCommand": NRN_COMMAND,
-        "executor": "/bin/bash",
-    }
-
-    return batch
+submit_kwargs = {
+    "command": f"{env_bin / 'python'} -u src_reformated/init_vip_batch.py",
+}
 
 
 def main():
-    batch = build_vip_optuna_batch()
-    batch.run()
+    results = optuna_search(
+        study_label=study_label,
+        param_space=params,
+        metrics={"loss": "minimize"},
+        param_space_samplers=param_space_samplers,
+        num_trials=num_iterations * num_individuals,
+        num_workers=num_individuals,
+        dispatcher_constructor=dispatcher,
+        submit_constructor=submit,
+        submit_kwargs=submit_kwargs,
+        interval=10,
+        project_path=cwd,
+        output_path=expand_path(f"./src_reformated/batch_runs/{study_label}", create_dirs=True),
+    )
+    return results
 
 
 if __name__ == "__main__":

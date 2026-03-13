@@ -6,6 +6,10 @@ from cfg import cfg, refresh_cfg
 
 
 refresh_cfg(cfg)
+if getattr(cfg, "_batchtk_path_pointer", None) is not None:
+    cfg.saveFolder = cfg._batchtk_path_pointer
+if getattr(cfg, "_batchtk_label_pointer", None) is not None:
+    cfg.simLabel = cfg._batchtk_label_pointer
 
 netParams = specs.NetParams()
 netParams.version = 1
@@ -64,6 +68,32 @@ def apply_pc2b_condition_mods(cell_rule, cfg):
     
     return cell_rule
 
+
+def apply_vip_condition_mods(cell_rule, cfg):
+    secs = cell_rule.get("secs", {})
+    if not isinstance(secs, dict):
+        return cell_rule
+
+    rin_scale = float(getattr(cfg, "vipInputResistanceScale", 1.0))
+    if rin_scale <= 0.0:
+        raise ValueError("cfg.vipInputResistanceScale must be > 0.")
+
+    if rin_scale != 1.0:
+        leak_scale = 1.0 / rin_scale
+        for sec_data in secs.values():
+            if not isinstance(sec_data, dict):
+                continue
+            mechs = sec_data.get("mechs", {})
+            pas = mechs.get("pas", {})
+            if isinstance(pas, dict) and "g" in pas:
+                pas["g"] = float(pas["g"]) * leak_scale
+            for mech_name in ("hha_old", "hha2"):
+                mech = mechs.get(mech_name, {})
+                if isinstance(mech, dict) and "gl" in mech:
+                    mech["gl"] = float(mech["gl"]) * leak_scale
+
+    return cell_rule
+
 # -----------------------------------------------------------------------------
 # Cell rule
 # -----------------------------------------------------------------------------
@@ -76,6 +106,7 @@ with open(cfg.OLMFile, 'r') as f:
 
 with open(cfg.VIPFile, 'r') as f:
     cellRuleVIP = json.load(f)
+cellRuleVIP = apply_vip_condition_mods(cellRuleVIP, cfg)
 
 netParams.addCellParams(label='PC2B', params=cellRulePYR)
 netParams.addCellParams(label='OLM', params=cellRuleOLM)
@@ -121,18 +152,35 @@ for i, (sec, loc, nmda_mult) in enumerate(cfg.thetaPpSites):
     }
 
 # SC and PP pathway inputs onto VIP from cfg-defined target section lists.
-vip_sc_targets = list(getattr(cfg, 'vipScTargetSecs', []))
-vip_pp_targets = list(getattr(cfg, 'vipPpTargetSecs', []))
+vip_sc_targets_all = list(getattr(cfg, 'vipScTargetSecs', []))
+vip_pp_targets_all = list(getattr(cfg, 'vipPpTargetSecs', []))
 vip_input_loc = float(getattr(cfg, 'vipInputLoc', 0.5))
 vip_secs = set(cellRuleVIP.get('secs', {}).keys())
 
-invalid_sc_targets = [sec for sec in vip_sc_targets if sec not in vip_secs]
-invalid_pp_targets = [sec for sec in vip_pp_targets if sec not in vip_secs]
+invalid_sc_targets = [sec for sec in vip_sc_targets_all if sec not in vip_secs]
+invalid_pp_targets = [sec for sec in vip_pp_targets_all if sec not in vip_secs]
 if invalid_sc_targets or invalid_pp_targets:
     raise ValueError(
         'Invalid VIP target sections in cfg. '
         f'SC invalid: {invalid_sc_targets}; PP invalid: {invalid_pp_targets}'
     )
+
+max_vip_sc_inputs = len(vip_sc_targets_all)
+max_vip_pp_inputs = len(vip_pp_targets_all)
+n_vip_sc_inputs = int(getattr(cfg, 'nVipScInputs', max_vip_sc_inputs))
+n_vip_pp_inputs = int(getattr(cfg, 'nVipPpInputs', max_vip_pp_inputs))
+n_ms_inputs = int(getattr(cfg, 'nMSinputs', 0))
+
+if not 0 <= n_vip_sc_inputs <= max_vip_sc_inputs:
+    raise ValueError(f"cfg.nVipScInputs must be between 0 and {max_vip_sc_inputs}.")
+if not 0 <= n_vip_pp_inputs <= max_vip_pp_inputs:
+    raise ValueError(f"cfg.nVipPpInputs must be between 0 and {max_vip_pp_inputs}.")
+if not 0 <= n_ms_inputs <= max_vip_sc_inputs:
+    raise ValueError(f"cfg.nMSinputs must be between 0 and {max_vip_sc_inputs}.")
+
+vip_sc_targets = vip_sc_targets_all[:n_vip_sc_inputs]
+vip_pp_targets = vip_pp_targets_all[:n_vip_pp_inputs]
+vip_ms_targets = vip_sc_targets_all[:n_ms_inputs]
 
 for i, sec in enumerate(vip_sc_targets):
     netParams.connParams[f'SC->VIP_{i}'] = {
@@ -159,7 +207,7 @@ for i, sec in enumerate(vip_pp_targets):
     }
 
 # MS to IS3 with a small weight that you tune to get a somatic EPSP around 2–3 mV
-for i, sec in enumerate(vip_sc_targets[0:cfg.nMSinputs]):
+for i, sec in enumerate(vip_ms_targets):
     netParams.connParams[f'MS->VIP_{i}'] = {
         'preConds': {'pop': 'MS', 'cellModel': 'VecStim'},
         'postConds': {'pop': 'VIP', 'cellType': 'BilashVIP'},

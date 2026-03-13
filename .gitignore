@@ -233,3 +233,5 @@ src_test_copy/
 exampleTheta/
 *working*.py
 EPS_plots
+pids.pid
+batch_runs

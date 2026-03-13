@@ -11,6 +11,7 @@ def apply_stimuli_config(cfg):
     cfg.vipBatchMsCycles = 5
     cfg.vipBatchInterPhaseGap = cfg.thetaInterBurstISI
     cfg.vipBatchTargetSpikesPerCycle = 4
+    cfg.vipBatchMsGainWeight = 20.0
 
     cfg.vipScTargetSecs = [
         "radTprox",
@@ -37,6 +38,8 @@ def apply_stimuli_config(cfg):
         "lmt1",
     ]
     cfg.vipInputLoc = 0.5
+    cfg.nVipScInputs = len(cfg.vipScTargetSecs)
+    cfg.nVipPpInputs = len(cfg.vipPpTargetSecs)
 
     cfg.SC = 1
     cfg.PP = 1

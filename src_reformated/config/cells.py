@@ -11,6 +11,7 @@ def apply_cells_config(cfg):
     cfg.OLMFile = str(_CELLS_DIR / "OLMCell.json")
     cfg.VIP = 1
     cfg.VIPFile = str(_CELLS_DIR / "BilashVIP.json")
+    cfg.vipInputResistanceScale = 1.0
 
     cfg.applyControlPC2B = False
     cfg.controlKmSomaDivisor = 0.05

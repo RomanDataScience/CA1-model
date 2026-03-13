@@ -25,6 +25,16 @@ def _build_cycle_windows(cycle_starts, cycle_duration):
     return [(cycle_start, cycle_start + cycle_duration) for cycle_start in cycle_starts]
 
 
+def _build_ms_train(ms_start, ms_stop, ms_isi):
+    spike_times = []
+    spike_time = ms_start
+    while spike_time <= ms_stop:
+        spike_times.append(spike_time)
+        spike_time += ms_isi
+    spike_times.append(spike_time)
+    return spike_times
+
+
 def apply_derived_config(cfg):
     cfg.thetaBurstStart = cfg.Transient
     cfg.thetaCycleWindows = []
@@ -66,10 +76,7 @@ def apply_derived_config(cfg):
         cfg.MSPhaseRef = ms_block_start - cfg.MSLeadBeforeTheta
         cfg.MSIstart = cfg.MSPhaseRef
         ms_block_end = ms_block_start + cfg.vipBatchMsCycles * cfg.thetaInterBurstISI
-        cfg.MS_train = [
-            cfg.MSIstart + spike * cfg.MSISI
-            for spike in range(int((ms_block_end - cfg.MSIstart) / cfg.MSISI) + 1)
-        ]
+        cfg.MS_train = _build_ms_train(cfg.MSIstart, ms_block_end, cfg.MSISI)
     else:
         cfg.duration = cfg.Transient + cfg.thetaCycles * cfg.thetaInterBurstISI + cfg.thetaTailBuffer
         cycle_starts = [
@@ -84,11 +91,9 @@ def apply_derived_config(cfg):
         cfg.thetaCycleWindows = _build_cycle_windows(cycle_starts, cfg.thetaInterBurstISI)
         cfg.MSISI = 1000.0 / cfg.MSRateHz
         cfg.MSPhaseRef = cfg.thetaBurstStart - cfg.MSLeadBeforeTheta
-        cfg.MSIstart = cfg.MSPhaseRef % cfg.MSISI
-        cfg.MS_train = [
-            cfg.MSIstart + spike * cfg.MSISI
-            for spike in range(int((cfg.duration - cfg.MSIstart) / cfg.MSISI) + 1)
-        ]
+        cfg.MSIstart = cfg.MSPhaseRef
+        theta_end = cfg.thetaBurstStart + cfg.thetaCycles * cfg.thetaInterBurstISI
+        cfg.MS_train = _build_ms_train(cfg.MSIstart, theta_end, cfg.MSISI)
 
     cfg.thetaSites = _build_theta_sites()
     cfg.thetaScSites = [
@@ -117,7 +122,7 @@ def apply_derived_config(cfg):
         f"_Achinput{cfg.nMSweight}"
     )
 
-    time_range = [cfg.Transient - 50.0, cfg.duration - 200.0]
+    time_range = [0, cfg.duration]
     record_exclude = set(cfg.recordExcludePops)
     cfg.recordCells = [(pop, 0) for pop in cfg.allPops if pop not in record_exclude]
 
