@@ -9,6 +9,8 @@ from pathlib import Path
 
 import matplotlib
 import numpy as np
+from matplotlib.collections import LineCollection
+from matplotlib.patches import Circle
 
 os.environ.setdefault("MPLBACKEND", "Agg")
 os.environ.setdefault("NEURON_MODULE_OPTIONS", "-nogui")
@@ -26,7 +28,9 @@ if str(SRC_REFORMATED) not in sys.path:
     sys.path.insert(0, str(SRC_REFORMATED))
 
 
-DEFAULT_INTENSITY_SCALES = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 3.0]
+DEFAULT_INTENSITY_SCALES = [round(value, 6) for value in np.linspace(0.25, 1.5, 10)]
+DEFAULT_DT = 1e-2
+DEFAULT_CVODE_ATOL = 1e-6
 
 
 sim = None
@@ -72,7 +76,7 @@ def _parse_args():
         default=DEFAULT_INTENSITY_SCALES,
         help=(
             "Multipliers applied to the baseline PC2B theta synaptic strength "
-            "(cfg.factorSynPYR). Defaults to 10 values from 0.5x to 3.0x."
+            "(cfg.factorSynPYR). Defaults to 10 values from 0.25x to 1.5x."
         ),
     )
     parser.add_argument(
@@ -86,6 +90,24 @@ def _parse_args():
         type=float,
         default=7.5,
         help="Somatic depolarization above baseline used to detect the up state.",
+    )
+    parser.add_argument(
+        "--morphology-projection",
+        choices=sorted(PROJECTION_AXES),
+        default="xz",
+        help="Projection used for the morphology input plot (default: xz).",
+    )
+    parser.add_argument(
+        "--dt",
+        type=float,
+        default=DEFAULT_DT,
+        help="Simulation dt and recordStep for this batch (default: 1e-2).",
+    )
+    parser.add_argument(
+        "--cvode-atol",
+        type=float,
+        default=DEFAULT_CVODE_ATOL,
+        help="CVode absolute tolerance for this batch (default: 1e-6).",
     )
     parser.add_argument(
         "--upstate-smooth-ms",
@@ -300,6 +322,20 @@ def _sorted_intensity_scales(scales):
     return unique_scales
 
 
+def _apply_solver_settings(sim_cfg, dt, cvode_atol):
+    dt = float(dt)
+    cvode_atol = float(cvode_atol)
+    if dt <= 0.0:
+        raise ValueError("dt must be positive.")
+    if cvode_atol <= 0.0:
+        raise ValueError("cvode_atol must be positive.")
+
+    sim_cfg.dt = dt
+    sim_cfg.recordStep = dt
+    sim_cfg.cvode_active = True
+    sim_cfg.cvode_atol = cvode_atol
+
+
 def _trace_key_sort_key(key):
     suffix = str(key).split("_")[-1]
     if suffix.isdigit():
@@ -344,6 +380,211 @@ def _plot_theta_spike_lines(ax, theta_spike_times):
         ax.axvline(float(spike_time), color="#cfd8dc", linewidth=0.6, alpha=0.35, zorder=0)
 
 
+PROJECTION_AXES = {
+    "xy": (0, 1),
+    "xz": (0, 2),
+    "yz": (1, 2),
+}
+
+
+def _line_width_from_diam(diameter):
+    return max(0.5, min(4.0, float(diameter) * 0.35))
+
+
+def _section_pt3d_points(cell_def, sec_name):
+    section = cell_def.get("secs", {}).get(sec_name, {})
+    geom = section.get("geom", {})
+    points = geom.get("pt3d")
+    if not isinstance(points, list):
+        return []
+    return [point for point in points if isinstance(point, list) and len(point) >= 3]
+
+
+def _section_average_diameter(cell_def, sec_name):
+    section = cell_def.get("secs", {}).get(sec_name, {})
+    geom = section.get("geom", {})
+    diameter = geom.get("diam")
+    if isinstance(diameter, (int, float)):
+        return float(diameter)
+    if isinstance(diameter, list) and diameter:
+        return float(np.mean([float(value) for value in diameter]))
+
+    points = _section_pt3d_points(cell_def, sec_name)
+    diameters = [float(point[3]) for point in points if len(point) >= 4]
+    if diameters:
+        return float(np.mean(diameters))
+    return 1.0
+
+
+def _build_morphology_geometry(cell_def, projection):
+    axis_a, axis_b = PROJECTION_AXES[projection]
+    segments = []
+    widths = []
+    soma_circles = []
+
+    for sec_name in cell_def.get("secs", {}):
+        points = _section_pt3d_points(cell_def, sec_name)
+        if len(points) < 2:
+            continue
+
+        if sec_name.lower() == "soma":
+            center = points[len(points) // 2]
+            soma_circles.append(
+                (
+                    (float(center[axis_a]), float(center[axis_b])),
+                    max(0.5, _section_average_diameter(cell_def, sec_name) / 2.0),
+                )
+            )
+
+        for start, end in zip(points, points[1:]):
+            start_xy = (float(start[axis_a]), float(start[axis_b]))
+            end_xy = (float(end[axis_a]), float(end[axis_b]))
+            point_diams = []
+            if len(start) >= 4:
+                point_diams.append(float(start[3]))
+            if len(end) >= 4:
+                point_diams.append(float(end[3]))
+            diameter = (
+                float(np.mean(point_diams))
+                if point_diams
+                else _section_average_diameter(cell_def, sec_name)
+            )
+            segments.append((start_xy, end_xy))
+            widths.append(_line_width_from_diam(diameter))
+
+    return segments, widths, soma_circles
+
+
+def _interpolate_section_point(cell_def, sec_name, loc):
+    points = _section_pt3d_points(cell_def, sec_name)
+    if not points:
+        return None
+    if len(points) == 1:
+        return [float(points[0][0]), float(points[0][1]), float(points[0][2])]
+
+    cumulative = [0.0]
+    for start, end in zip(points, points[1:]):
+        dx = float(end[0]) - float(start[0])
+        dy = float(end[1]) - float(start[1])
+        dz = float(end[2]) - float(start[2])
+        cumulative.append(cumulative[-1] + float(np.sqrt(dx * dx + dy * dy + dz * dz)))
+
+    total_length = cumulative[-1]
+    if total_length <= 0.0:
+        return [float(points[0][0]), float(points[0][1]), float(points[0][2])]
+
+    target = max(0.0, min(float(loc), 1.0)) * total_length
+    for index in range(1, len(cumulative)):
+        if cumulative[index] < target:
+            continue
+        segment_length = cumulative[index] - cumulative[index - 1]
+        if segment_length <= 0.0:
+            return [float(points[index][0]), float(points[index][1]), float(points[index][2])]
+        fraction = (target - cumulative[index - 1]) / segment_length
+        start = points[index - 1]
+        end = points[index]
+        return [
+            float(start[dim]) + fraction * (float(end[dim]) - float(start[dim]))
+            for dim in range(3)
+        ]
+
+    last = points[-1]
+    return [float(last[0]), float(last[1]), float(last[2])]
+
+
+def _project_xyz(point_xyz, projection):
+    axis_a, axis_b = PROJECTION_AXES[projection]
+    return (float(point_xyz[axis_a]), float(point_xyz[axis_b]))
+
+
+def _save_morphology_inputs_figure(
+    output_path,
+    cell_def,
+    active_sc_sites,
+    active_pp_sites,
+    projection="xz",
+):
+    segments, widths, soma_circles = _build_morphology_geometry(cell_def, projection=projection)
+    figure, axis = plt.subplots(figsize=(8, 10), constrained_layout=True)
+
+    if segments:
+        collection = LineCollection(
+            segments,
+            linewidths=widths,
+            colors="#1f2937",
+            capstyle="round",
+            joinstyle="round",
+            zorder=1,
+        )
+        axis.add_collection(collection)
+
+    for center, radius in soma_circles:
+        axis.add_patch(
+            Circle(
+                center,
+                radius=radius,
+                facecolor="#cbd5e1",
+                edgecolor="#1f2937",
+                linewidth=1.0,
+                zorder=2,
+            )
+        )
+
+    def _scatter_sites(site_dicts, color, marker, label, size):
+        x_values = []
+        y_values = []
+        for site in site_dicts:
+            point_xyz = _interpolate_section_point(cell_def, site["sec"], site["loc"])
+            if point_xyz is None:
+                continue
+            x_value, y_value = _project_xyz(point_xyz, projection)
+            x_values.append(x_value)
+            y_values.append(y_value)
+        if x_values:
+            axis.scatter(
+                x_values,
+                y_values,
+                c=color,
+                marker=marker,
+                s=size,
+                label=label,
+                edgecolors="black",
+                linewidths=0.5,
+                zorder=4,
+            )
+
+    _scatter_sites(active_sc_sites, color="#1d4ed8", marker="o", label="SC input", size=42)
+    _scatter_sites(active_pp_sites, color="#dc2626", marker="s", label="PP input", size=42)
+
+    axis.autoscale()
+    axis.margins(0.08)
+    axis.set_aspect("equal", adjustable="datalim")
+    axis.grid(False)
+    axis.set_xlabel(f"{projection[0].upper()} (um)")
+    axis.set_ylabel(f"{projection[1].upper()} (um)")
+    axis.set_title(f"PC2B morphology with sampled SC/PP sites ({projection})")
+    axis.legend(loc="upper left", fontsize=8)
+
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+    figure.savefig(output_path, dpi=250, bbox_inches="tight")
+    plt.close(figure)
+    return str(Path(output_path).resolve())
+
+
+def _plot_window_limits(time, theta_spike_times, lead_ms=200.0):
+    time = np.asarray(time, dtype=float)
+    theta_spike_times = np.asarray(theta_spike_times, dtype=float)
+    if time.size == 0:
+        return None, None
+
+    if theta_spike_times.size:
+        start_ms = max(float(time[0]), float(np.min(theta_spike_times)) - float(lead_ms))
+    else:
+        start_ms = float(time[0])
+    end_ms = float(time[-1])
+    return start_ms, end_ms
+
+
 def _plot_soma_voltage_axis(
     ax,
     time,
@@ -354,6 +595,9 @@ def _plot_soma_voltage_axis(
 ):
     ax.plot(time, soma_voltage, color="#0b4f6c", linewidth=1.2)
     _plot_theta_spike_lines(ax, theta_spike_times)
+    x_start, x_end = _plot_window_limits(time, theta_spike_times)
+    if x_start is not None:
+        ax.set_xlim(x_start, x_end)
 
     baseline_mv = up_state_summary["baseline_mv"]
     threshold_mv = up_state_summary["threshold_mv"]
@@ -397,6 +641,9 @@ def _plot_total_ican_axis(
 ):
     ax.plot(time, inward_total_ican, color="#8e5a2b", linewidth=1.2)
     _plot_theta_spike_lines(ax, theta_spike_times)
+    x_start, x_end = _plot_window_limits(time, theta_spike_times)
+    if x_start is not None:
+        ax.set_xlim(x_start, x_end)
     ax.axhline(
         ican_summary["threshold"],
         color="#b23a48",
@@ -431,6 +678,9 @@ def _plot_ican_heatmap_axis(
         cmap="inferno",
     )
     _plot_theta_spike_lines(ax, theta_spike_times)
+    x_start, x_end = _plot_window_limits(time, theta_spike_times)
+    if x_start is not None:
+        ax.set_xlim(x_start, x_end)
 
     tick_step = max(1, int(np.ceil(len(dendritic_sections) / 12)))
     tick_indices = list(range(0, len(dendritic_sections), tick_step))
@@ -916,6 +1166,7 @@ def _run_single_simulation(
     sim_module,
     sim_cfg,
     refresh_cfg_fn,
+    cell_def,
     draw_index,
     connection_count,
     intensity_scale,
@@ -961,6 +1212,7 @@ def _run_single_simulation(
     sim_cfg.simLabelBase = "BranchComputation"
 
     refresh_cfg_fn(sim_cfg)
+    _apply_solver_settings(sim_cfg, dt=args.dt, cvode_atol=args.cvode_atol)
     sim_cfg.saveFolder = str(run_dir)
     sim_cfg.thetaScSites = list(theta_sc_sites)
     sim_cfg.thetaPpSites = list(theta_pp_sites)
@@ -1074,6 +1326,13 @@ def _run_single_simulation(
         dendritic_sections=available_sections,
         theta_spike_times=sim_cfg.thetaSpikeTimes,
     )
+    morphology_inputs_plot = _save_morphology_inputs_figure(
+        output_path=plots_dir / "morphology_inputs.png",
+        cell_def=cell_def,
+        active_sc_sites=active_sc_sites,
+        active_pp_sites=active_pp_sites,
+        projection=str(args.morphology_projection),
+    )
     summary_panel_plot = _save_summary_panel_figure(
         output_path=plots_dir / "summary_panel.png",
         time=time,
@@ -1119,6 +1378,9 @@ def _run_single_simulation(
         "connection_count": int(connection_count),
         "intensity_scale": float(intensity_scale),
         "factorSynPYR": float(sim_cfg.factorSynPYR),
+        "dt": float(sim_cfg.dt),
+        "recordStep": float(sim_cfg.recordStep),
+        "cvode_atol": float(sim_cfg.cvode_atol),
         "thetaAMPAWeightPYR": float(sim_cfg.thetaAMPAWeightPYR),
         "thetaNMDAWeightPYR": float(sim_cfg.thetaNMDAWeightPYR),
         "active_sc_sections": list(active_sc_sections),
@@ -1139,6 +1401,7 @@ def _run_single_simulation(
         "dendritic_ican": ican_summary,
         "activated_ican": activated_ican_summary,
         "plots": {
+            "morphology_inputs": morphology_inputs_plot,
             "soma_voltage": soma_voltage_plot,
             "summed_dendritic_ican": total_ican_plot,
             "dendritic_ican_heatmap": ican_heatmap_plot,
@@ -1252,6 +1515,7 @@ def _write_summary_csv(path, results):
         "dendritic_ican_duration_ms",
         "peak_ican_section",
         "trace_file",
+        "morphology_inputs_plot",
         "summary_panel_plot",
     ]
     with Path(path).open("w", encoding="utf-8", newline="") as handle:
@@ -1289,6 +1553,7 @@ def _write_summary_csv(path, results):
                     "dendritic_ican_duration_ms": row["dendritic_ican"]["duration_ms"],
                     "peak_ican_section": row["dendritic_ican"]["peak_section"],
                     "trace_file": row["trace_file"],
+                    "morphology_inputs_plot": row["plots"]["morphology_inputs"],
                     "summary_panel_plot": row["plots"]["summary_panel"],
                 }
             )
@@ -1302,6 +1567,7 @@ def main():
     sim_module, sim_cfg, refresh_cfg_fn = _bootstrap_simulation_imports()
     sim_cfg.PYRFile = str(Path(args.cell_file).expanduser().resolve())
     refresh_cfg_fn(sim_cfg)
+    _apply_solver_settings(sim_cfg, dt=args.dt, cvode_atol=args.cvode_atol)
 
     cell_def = _load_cell_definition(args.cell_file)
     dendritic_ican_sections = _sections_with_ican(cell_def)
@@ -1332,6 +1598,10 @@ def main():
         "connection_counts": connection_counts,
         "intensity_scales": intensity_scales,
         "random_seed": int(args.random_seed),
+        "morphology_projection": str(args.morphology_projection),
+        "dt": float(args.dt),
+        "recordStep": float(args.dt),
+        "cvode_atol": float(args.cvode_atol),
         "sc_target_sections_all": sc_unique_sections,
         "pp_target_sections_all": pp_unique_sections,
         "sc_target_sites_all": [_site_to_dict(site) for site in base_theta_sc_sites],
@@ -1370,6 +1640,7 @@ def main():
                     sim_module=sim_module,
                     sim_cfg=sim_cfg,
                     refresh_cfg_fn=refresh_cfg_fn,
+                    cell_def=cell_def,
                     draw_index=draw["draw_index"],
                     connection_count=draw["connection_count"],
                     intensity_scale=intensity_scale,

@@ -9,6 +9,8 @@ This folder contains a dedicated PC2B branch-computation sweep that keeps the ex
 - The default batch is now `N x intensity`, where `N` sweeps from `1` to the maximum number of SC/PP theta-site connections available in the current protocol.
 - In each `N`, the script samples `N` SC theta sites and `N` PP theta sites without replacement from the already-targeted theta site lists.
 - Input intensity is controlled by scaling the baseline PC2B theta synaptic factor `cfg.factorSynPYR`.
+- The default intensity sweep now uses 10 values from `0.25` to `1.5`.
+- This batch overrides the solver settings to `dt = 1e-2`, `recordStep = 1e-2`, and `cvode_atol = 1e-6`.
 - Every run saves compressed dendritic `ICAN` traces in `traces.npz`, a `run_summary.json`, and four figures in `plots/`.
 - A batch-level `batch_summary.csv` and `batch_summary.json` are written at the end with first-pass up-state and post hoc activated-`ICAN` section metrics.
 - If you want the older wide-apical `ICAN` distribution again, pass `--cell-file cells/PC2B.json`.
@@ -17,10 +19,14 @@ This folder contains a dedicated PC2B branch-computation sweep that keeps the ex
 
 Each parameter combination now generates:
 
+- `plots/morphology_inputs.png`: the PC2B morphology with the sampled SC and PP sites marked at their actual section/`loc` positions.
 - `plots/soma_voltage.png`: `V_soma` over time, with theta spike times, somatic spikes, baseline, threshold, and the detected main up-state window.
 - `plots/summed_dendritic_ican.png`: summed inward dendritic `ICAN` over time.
 - `plots/dendritic_ican_heatmap.png`: section-by-section inward `ICAN` heatmap.
-- `plots/summary_panel.png`: a 2x2 panel combining the plots above plus a text summary of the active SC/PP sites and run metrics.
+- `plots/summary_panel.png`: a 2x2 panel combining the time-series plots plus a text summary of the active SC/PP sites and run metrics.
+
+All run-level plots now start `200 ms` before the first theta spike time and extend to the end of the simulation.
+The morphology plot uses the `xz` projection by default; override it with `--morphology-projection xy|xz|yz`.
 
 ## How target sections and locations vary
 
