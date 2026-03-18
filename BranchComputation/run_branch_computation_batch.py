@@ -28,8 +28,8 @@ if str(SRC_REFORMATED) not in sys.path:
     sys.path.insert(0, str(SRC_REFORMATED))
 
 
-DEFAULT_INTENSITY_SCALES = [round(value, 6) for value in np.linspace(0.25, 1.5, 10)]
-DEFAULT_DT = 1e-2
+DEFAULT_INTENSITY_SCALES = [round(value, 6) for value in np.linspace(0.25, 1.5, 5)]
+DEFAULT_DT = 1e-1
 DEFAULT_CVODE_ATOL = 1e-6
 
 
@@ -66,7 +66,7 @@ def _parse_args():
         default=None,
         help=(
             "Requested SC and PP synaptic-connection counts to sweep. If omitted, "
-            "the script uses 1..max over the existing theta target-site lists."
+            "the script uses 1, 4, 7, ... up to the available theta target-site max."
         ),
     )
     parser.add_argument(
@@ -76,7 +76,7 @@ def _parse_args():
         default=DEFAULT_INTENSITY_SCALES,
         help=(
             "Multipliers applied to the baseline PC2B theta synaptic strength "
-            "(cfg.factorSynPYR). Defaults to 10 values from 0.25x to 1.5x."
+            "(cfg.factorSynPYR). Defaults to 5 values from 0.25x to 1.5x."
         ),
     )
     parser.add_argument(
@@ -275,7 +275,10 @@ def _grouped_site_lines(label, grouped_sites):
 
 def _sorted_connection_counts(connection_counts, max_available):
     if connection_counts is None:
-        return list(range(1, max_available + 1))
+        default_counts = list(range(1, max_available + 1, 3))
+        if default_counts[-1] != max_available:
+            default_counts.append(max_available)
+        return default_counts
 
     unique_counts = sorted({int(value) for value in connection_counts})
     if not unique_counts:

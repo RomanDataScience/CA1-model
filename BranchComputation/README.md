@@ -6,10 +6,10 @@ This folder contains a dedicated PC2B branch-computation sweep that keeps the ex
 
 - The runner now uses [cells/PC2B_new.json](/Users/romanbaravalle/Documents/Consultancy/GaspariniCanavier_CA1Grant_2026/CA1-model/cells/PC2B_new.json) by default. In this cell, dendritic `ICAN` is limited to `trunk_0` through `trunk_7` rather than the full apical tree.
 - The SC and PP target zones come directly from the current theta protocol in `src_reformated/config/derived.py`.
-- The default batch is now `N x intensity`, where `N` sweeps from `1` to the maximum number of SC/PP theta-site connections available in the current protocol.
+- The default batch is now `N x intensity`, where `N` sweeps every 3 connections starting at `1` and appends the protocol maximum if needed.
 - In each `N`, the script samples `N` SC theta sites and `N` PP theta sites without replacement from the already-targeted theta site lists.
 - Input intensity is controlled by scaling the baseline PC2B theta synaptic factor `cfg.factorSynPYR`.
-- The default intensity sweep now uses 10 values from `0.25` to `1.5`.
+- The default intensity sweep now uses 5 values from `0.25` to `1.5`.
 - This batch overrides the solver settings to `dt = 1e-2`, `recordStep = 1e-2`, and `cvode_atol = 1e-6`.
 - Every run saves compressed dendritic `ICAN` traces in `traces.npz`, a `run_summary.json`, and four figures in `plots/`.
 - A batch-level `batch_summary.csv` and `batch_summary.json` are written at the end with first-pass up-state and post hoc activated-`ICAN` section metrics.
@@ -43,6 +43,7 @@ For each run:
 
 - `N` SC theta sites are drawn at random without replacement from the 20 SC sites already defined by the protocol.
 - `N` PP theta sites are drawn at random without replacement from the 20 PP sites already defined by the protocol.
+- By default, `N` takes values like `1, 4, 7, 10, ...` and includes the maximum available connection count as the final point.
 
 The random draws are reproducible through `--random-seed`, and the exact sampled sites for every `N` are stored in `batch_config.json`.
 
