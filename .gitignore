@@ -229,9 +229,13 @@ One2One
 src/
 src_copy/
 src_test/
+src_new/
 src_test_copy/
 exampleTheta/
 *working*.py
 EPS_plots
 pids.pid
 batch_runs
+results/
+lasttxt/
+BranchComputation/
