@@ -74,7 +74,7 @@ study_label = "vip_optuna_theta_gate"
 dispatcher, submit = generate_constructors("sh", "sfs")
 
 num_individuals = 1
-num_iterations = 200
+num_iterations = 500
 
 percentage_change = 0.5
 min_chg = 1.0 - percentage_change
@@ -88,7 +88,7 @@ params = {
     "nVipScInputs": (1, 10),
     "nVipPpInputs": (1, 10),
     "vipInputResistanceScale": (0.1, 5.0),
-    "vipBatchVInit": (-80.0, -50.0),
+    "vipBatchVInit": (-65.0, -55.0),
 }
 
 param_space_samplers = [
