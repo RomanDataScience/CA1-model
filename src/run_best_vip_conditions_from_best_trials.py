@@ -40,11 +40,13 @@ def _parse_args():
     parser.add_argument(
         "--skip-conditions",
         action="store_true",
+        default=True,
         help="Skip run_best_vip_conditions.py.",
     )
     parser.add_argument(
         "--skip-currentscape",
         action="store_true",
+        default=False,
         help="Skip run_best_vip_conditions_currentscape.py.",
     )
     parser.add_argument(
