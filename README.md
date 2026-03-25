@@ -51,7 +51,7 @@ Each of those folders now has its own `README.md` with local details.
 Compile mechanisms after editing any `.mod` file:
 
 ```bash
-nrnivmodl mechanisms
+nrnivmodl $(find mechanisms -name "*.mod" | sort)
 ```
 
 Run the default full network:
