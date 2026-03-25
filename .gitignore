@@ -218,4 +218,5 @@ arm64/
 batch_runs/
 output/
 output_best/
+output_best_batch/
 singleCellSuite/results/

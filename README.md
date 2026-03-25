@@ -84,6 +84,29 @@ Replay one trial and also save soma currentscape plots:
 python src/run_best_vip_conditions_currentscape.py --trial 74
 ```
 
+Replay multiple selected trials listed in `batch_runs/BestTrials.txt`:
+
+Create `batch_runs/BestTrials.txt` with one Optuna trial number per line, for example:
+
+```text
+469
+463
+415
+```
+
+Then run:
+
+```bash
+python src/run_best_vip_conditions_from_best_trials.py --study-label vip_optuna_theta_gate
+```
+
+This wrapper runs both:
+
+- `src/run_best_vip_conditions.py`
+- `src/run_best_vip_conditions_currentscape.py`
+
+for each listed trial and writes the outputs under `output_best_batch/`.
+
 Run a single-cell ramp protocol:
 
 ```bash
