@@ -41,7 +41,6 @@ The execution flow for the Optuna workflow is:
 - `singleCellSuite/`: one-cell ramp-protocol runners and morphology plotting helpers.
 - `batch_runs/`: current root-level Optuna study output location.
 - `output/`: default output directory for standard full-network runs.
-- `tests/`: smoke and integration tests for cell imports and legacy protocol comparisons.
 - `src/batch_runs/`: legacy study-output location kept only for older artifacts.
 
 Each of those folders now has its own `README.md` with local details.
@@ -150,15 +149,16 @@ The code assumes a Python environment with at least:
 Optional extras:
 
 - `currentscape` for `src/run_best_vip_conditions_currentscape.py`
-- `pytest` for the test suite
 
 The repository currently includes compiled `arm64/` artifacts, which are useful on Apple Silicon but should be treated as generated files. If the mechanisms change, re-run `nrnivmodl mechanisms`.
 
-## Tests And Legacy Assets
+## Current Scope
 
-The tests are a mix of current smoke tests and older integration scripts. Some test files still expect legacy folders such as `original_models/` and `NetPyNE_comparison/`, which are not present in the current snapshot. That means:
+This repo snapshot does not currently include a maintained `tests/` directory. The focus is on executable simulation workflows and saved study artifacts:
 
-- some tests only work in a larger local workspace
-- some tests behave more like one-off import/regression scripts than a clean unit-test suite
+- full-network runs from `src/init.py`
+- VIP batch optimization from `src/batch_vip_optuna.py`
+- replay and analysis scripts under `src/`
+- single-cell protocol utilities under `singleCellSuite/`
 
-See `tests/README.md` for file-by-file notes.
+Some documentation still refers to external or historical assets such as compiled mechanisms and legacy output locations. The active runtime paths in this repo are the ones listed above and in the folder READMEs.
