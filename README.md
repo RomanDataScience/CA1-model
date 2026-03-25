@@ -29,7 +29,8 @@ The execution flow for the Optuna workflow is:
 2. `src/init_vip_batch.py` runs two VIP-only phases for each trial: `ms_off` and `ms_on`.
 3. `src/vip_batch_fitness.py` computes the objective from VIP spike counts per theta cycle.
 4. `src/vip_batch_plots.py` saves a side-by-side trace figure for the two phases.
-5. Artifacts are written under `batch_runs/<study-label>/`.
+5. The search space currently includes VIP initial voltage via `vipBatchVInit`.
+6. Artifacts are written under `batch_runs/<study-label>/`.
 
 ## Main Folders
 
@@ -107,7 +108,7 @@ Key groups:
 - simulation controls: `dt`, `duration`, `Transient`, `cvode_active`, `saveFolder`
 - cell/model toggles: `applyControlPC2B`, `IcanGbarFactor`, `overrideIcanConcrelease`, `vipInputResistanceScale`
 - theta drive: `thetaCycles`, `thetaInterBurstISI`, `thetaIntraBurstISI`, `thetaSpikesPerBurst`
-- VIP batch protocol: `vipBatchNoMsCycles`, `vipBatchMsCycles`, `vipBatchTargetSpikesPerCycle`
+- VIP batch protocol: `vipBatchNoMsCycles`, `vipBatchMsCycles`, `vipBatchTargetSpikesPerCycle`, `vipBatchVInit`
 - external input wiring: `nVipScInputs`, `nVipPpInputs`, `nMSinputs`, `nMSweight`
 - recurrent connectivity: `PYROLMweight`, `OLMPYRweight`, `VIPOLMweight`
 
@@ -117,6 +118,7 @@ When a script mutates config values at runtime, it typically calls `refresh_cfg(
 - `thetaSpikeTimes`
 - `thetaCycleWindows`
 - effective AMPA/NMDA weights
+- effective VIP batch initialization voltage used during VIP-only search phases
 - `recordCells`
 - default analysis requests
 - `simLabel`

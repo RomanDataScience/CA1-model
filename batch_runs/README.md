@@ -10,10 +10,10 @@ Each study gets its own subdirectory:
 batch_runs/<study-label>/
 ```
 
-The default study label defined in `src/batch_vip_optuna.py` is:
+The current default study label defined in `src/batch_vip_optuna.py` is:
 
 ```text
-vip_optuna_theta_gate_v3
+vip_optuna_theta_gate
 ```
 
 ## Typical Contents Of A Study Folder
@@ -32,6 +32,21 @@ vip_optuna_theta_gate_v3
 - read by `src/run_best_vip_trial.py`
 - also used by `src/run_best_vip_conditions.py` and `src/run_best_vip_conditions_currentscape.py`
 
+## Current Search Parameters
+
+The Optuna search currently varies:
+
+- `factorSynVIP`
+- `nMSweight`
+- `synMechParams.nACh_IS3.tau2`
+- `nMSinputs`
+- `nVipScInputs`
+- `nVipPpInputs`
+- `vipInputResistanceScale`
+- `vipBatchVInit`
+
+`vipBatchVInit` is searched over `-80.0` to `-50.0` mV and is used as the initialization voltage for the VIP-only batch runs.
+
 ## Important Note
 
-Older artifacts may still exist under `src/batch_runs/`. That older path is deprecated and should not be used for new runs.
+Older artifacts may still exist under `src/batch_runs/`, including snapshots from earlier study labels such as `vip_optuna_theta_gate_v3`. That older path is deprecated and should not be used for new runs.

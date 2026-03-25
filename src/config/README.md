@@ -46,4 +46,13 @@ Derived quantities are then added by `derived.py`.
 
 ## How To Change Parameters Safely
 
-If a script edits values like `nMSweight`, `factorSynVIP`, or `applyControlPC2B`, it must call `refresh_cfg()` afterward so the dependent fields stay consistent. This is especially important before importing or reloading `netParams.py`.
+If a script edits values like `nMSweight`, `factorSynVIP`, `vipBatchVInit`, or `applyControlPC2B`, it must call `refresh_cfg()` afterward so the dependent fields stay consistent. This is especially important before importing or reloading `netParams.py`.
+
+## `v_init` In This Repo
+
+The base simulation config in `sim.py` defines:
+
+- `cfg.hParams["v_init"]`: general simulation initialization voltage
+- `cfg.vipBatchVInit`: batch-search-specific initialization voltage used by `src/init_vip_batch.py`
+
+During the VIP-only Optuna workflow, the batch runner copies `cfg.vipBatchVInit` into `cfg.hParams["v_init"]` before initializing the simulation. The replay utilities in `src/run_best_vip_trial.py` and the related condition scripts now do the same, so selected Optuna trials preserve the optimized initial voltage.

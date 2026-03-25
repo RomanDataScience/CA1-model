@@ -35,8 +35,9 @@ For the VIP batch/Optuna workflow:
 1. `batch_vip_optuna.py` defines the search space.
 2. Each trial runs `src/init_vip_batch.py`.
 3. The batch runner executes `ms_off` and `ms_on` phases separately.
-4. The objective is computed from spike counts inside and outside the theta windows.
-5. The combined loss is sent back through `sim.send()`.
+4. The search space currently includes `vipBatchVInit`, which controls the initial membrane voltage used in the VIP-only batch simulation.
+5. The objective is computed from spike counts inside and outside the theta windows.
+6. The combined loss is sent back through `sim.send()`.
 
 ## Important Runtime Conventions
 
@@ -44,6 +45,7 @@ For the VIP batch/Optuna workflow:
 - Full-network default outputs go to `output/`.
 - Optuna study outputs now go to `batch_runs/<study-label>/` at the repo root.
 - The old `src/batch_runs/` path is retained only for older artifacts.
+- Replay scripts now reapply trial-specific `vipBatchVInit` to `hParams["v_init"]` so full-network reruns stay consistent with the batch search.
 - Several scripts set `MPLBACKEND=Agg` and `NEURON_MODULE_OPTIONS=-nogui` to run headless.
 
 ## Typical Commands
