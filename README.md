@@ -177,6 +177,44 @@ Optional extras:
 
 The repository currently includes compiled `arm64/` artifacts, which are useful on Apple Silicon but should be treated as generated files. If the mechanisms change, re-run `nrnivmodl mechanisms`.
 
+## Deploying To Another Machine
+
+The lowest-friction portable setup for this repo is:
+
+1. clone the repo on the target machine
+2. create the conda or micromamba environment from `environment.yml`
+3. compile the NEURON mechanisms on that machine
+4. run the simulation scripts from the activated environment
+
+Example:
+
+```bash
+conda env create -f environment.yml
+conda activate ca1-model
+nrnivmodl mechanisms
+python src/init.py
+```
+
+For VIP batch optimization:
+
+```bash
+conda activate ca1-model
+python src/batch_vip_optuna.py
+```
+
+`src/batch_vip_optuna.py` now uses the active Python interpreter by default. If needed, override it explicitly:
+
+```bash
+CA1_PYTHON_BIN=/path/to/python python src/batch_vip_optuna.py
+```
+
+Important portability note:
+
+- do not rely on the committed `arm64/` build products on a different architecture or OS
+- always run `nrnivmodl mechanisms` on the target machine so `libnrnmech` is rebuilt for that platform
+
+If the second machine is the same OS and CPU architecture as your current one, the easiest one-off transfer is to pack the existing conda environment with `conda-pack` and unpack it there. For long-term reproducibility across machines, keep `environment.yml` in the repo and rebuild from it.
+
 ## Current Scope
 
 This repo snapshot does not currently include a maintained `tests/` directory. The focus is on executable simulation workflows and saved study artifacts:

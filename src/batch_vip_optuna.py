@@ -1,4 +1,6 @@
 import os
+import shlex
+import sys
 from pathlib import Path
 
 try:
@@ -67,7 +69,7 @@ from netpyne.batchtools.search import generate_constructors
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 cwd = str(REPO_ROOT)
-env_bin = Path("/Users/romanbaravalle/miniconda3/envs/M1_CEBRA/bin")
+python_bin = os.environ.get("CA1_PYTHON_BIN", sys.executable)
 study_label = "vip_optuna_theta_gate"
 
 # Option for local run.
@@ -103,7 +105,7 @@ param_space_samplers = [
 ]
 
 submit_kwargs = {
-    "command": f"{env_bin / 'python'} -u src/init_vip_batch.py",
+    "command": f"{shlex.quote(python_bin)} -u src/init_vip_batch.py",
 }
 
 

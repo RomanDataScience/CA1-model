@@ -1,0 +1,19 @@
+name: ca1-model
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.13
+  - mpich=5.0.0
+  - mpi4py=4.1.1
+  - pip
+  - pip:
+      - batchtk==0.1.6
+      - currentscape==1.0.20
+      - matplotlib==3.10.1
+      - netpyne==1.1.1
+      - neuron==8.2.6
+      - numpy==1.26.4
+      - optuna==4.2.1
+      - pandas==2.2.3
+      - scipy==1.15.2
