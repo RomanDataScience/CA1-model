@@ -1,0 +1,10 @@
+batchtk==0.1.6
+currentscape==1.0.20
+matplotlib==3.10.1
+mpi4py==4.1.1
+netpyne==1.1.1
+neuron==8.2.6
+numpy==1.26.4
+optuna==4.2.1
+pandas==2.2.3
+scipy==1.15.2

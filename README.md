@@ -182,11 +182,12 @@ The repository currently includes compiled `arm64/` artifacts, which are useful 
 The lowest-friction portable setup for this repo is:
 
 1. clone the repo on the target machine
-2. install conda environment manager
-3. create the conda or micromamba environment from `environment.yml` (one-time install)
-4. activate the environment
-5. compile the NEURON mechanisms on that machine
-6. run the simulation scripts from the activated environment
+2. choose one environment setup path:
+   - create the conda or micromamba environment from `environment.yml`
+   - or create a virtual environment and install from `requirements.txt`
+3. activate the environment
+4. compile the NEURON mechanisms on that machine
+5. run the simulation scripts from the activated environment
 
 Example:
 
@@ -197,10 +198,34 @@ nrnivmodl mechanisms
 python src/init.py
 ```
 
+Alternative `pip` setup:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+nrnivmodl mechanisms
+python src/init.py
+```
+
+Notes for the `pip` path:
+
+- `requirements.txt` mirrors the Python package set from `environment.yml`.
+- `mpi4py` may require a working MPI toolchain or runtime on the target machine.
+- `pip` installs the Python packages only; the NEURON mechanisms still need `nrnivmodl mechanisms`.
+
 For VIP batch optimization:
 
 ```bash
 conda activate ca1-model
+python src/batch_vip_optuna.py
+```
+
+With the `pip` setup:
+
+```bash
+source .venv/bin/activate
 python src/batch_vip_optuna.py
 ```
 
