@@ -248,7 +248,7 @@ python3 src/batch_vip_optuna.py
 `src/batch_vip_optuna.py` now uses the active Python interpreter by default. If needed, override it explicitly:
 
 ```bash
-CA1_PYTHON_BIN=/path/to/python python src/batch_vip_optuna.py
+CA1_PYTHON_BIN=/path/to/python3 python3 src/batch_vip_optuna.py
 ```
 
 Important portability note:

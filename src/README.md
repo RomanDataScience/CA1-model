@@ -53,25 +53,25 @@ For the VIP batch/Optuna workflow:
 Run a full simulation:
 
 ```bash
-python src/init.py
+python3 src/init.py
 ```
 
 Run the Optuna search:
 
 ```bash
-python src/batch_vip_optuna.py
+python3 src/batch_vip_optuna.py
 ```
 
 Replay a chosen trial:
 
 ```bash
-python src/run_best_vip_trial.py --trial 74
+python3 src/run_best_vip_trial.py --trial 74
 ```
 
 Make synaptic contact plots:
 
 ```bash
-python src/PlotSynConn.py
+python3 src/PlotSynConn.py
 ```
 
 ## Notes For Developers

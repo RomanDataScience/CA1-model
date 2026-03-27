@@ -36,9 +36,9 @@ The runner tries to load compiled NEURON mechanisms from the repo, preferring:
 ## Typical Usage
 
 ```bash
-python singleCellSuite/run_pc2b.py
-python singleCellSuite/run_bilash_vip.py --output-dir singleCellSuite/results
-python singleCellSuite/plotGeometry.py BilashVIP --projection xy
+python3 singleCellSuite/run_pc2b.py
+python3 singleCellSuite/run_bilash_vip.py --output-dir singleCellSuite/results
+python3 singleCellSuite/plotGeometry.py BilashVIP --projection xy
 ```
 
 ## Why This Folder Exists
