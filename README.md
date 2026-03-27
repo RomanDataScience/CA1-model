@@ -260,7 +260,7 @@ If the second machine is the same OS and CPU architecture as your current one, t
 
 ## Current Scope
 
-This repo snapshot does not currently include a maintained `tests/` directory. The focus is on executable simulation workflows and saved study artifacts:
+The focus is on executable simulation workflows and saved study artifacts:
 
 - full-network runs from `src/init.py`
 - VIP batch optimization from `src/batch_vip_optuna.py`
