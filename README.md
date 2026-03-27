@@ -182,9 +182,11 @@ The repository currently includes compiled `arm64/` artifacts, which are useful 
 The lowest-friction portable setup for this repo is:
 
 1. clone the repo on the target machine
-2. create the conda or micromamba environment from `environment.yml`
-3. compile the NEURON mechanisms on that machine
-4. run the simulation scripts from the activated environment
+2. install conda environment manager
+3. create the conda or micromamba environment from `environment.yml` (one-time install)
+4. activate the environment
+5. compile the NEURON mechanisms on that machine
+6. run the simulation scripts from the activated environment
 
 Example:
 
