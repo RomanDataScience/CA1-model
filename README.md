@@ -191,10 +191,26 @@ The lowest-friction portable setup for this repo is:
 
 Example:
 
+If `conda` is not installed locally, install Miniconda3 first:
+
+Mac:
+
+```bash
+curl -fsSL -o Miniconda3.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+bash Miniconda3.sh
+```
+
+Linux:
+
+```bash
+curl -fsSL -o Miniconda3.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3.sh
+```
+
 ```bash
 conda env create -f environment.yml
 conda activate ca1-model
-nrnivmodl mechanisms
+nrnivmodl $(find mechanisms -name "*.mod" | sort)
 python src/init.py
 ```
 
@@ -205,7 +221,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
-nrnivmodl mechanisms
+nrnivmodl $(find mechanisms -name "*.mod" | sort)
 python src/init.py
 ```
 
