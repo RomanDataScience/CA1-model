@@ -57,31 +57,31 @@ nrnivmodl $(find mechanisms -name "*.mod" | sort)
 Run the default full network:
 
 ```bash
-python src/init.py
+python3 src/init.py
 ```
 
 Launch the VIP Optuna search:
 
 ```bash
-python src/batch_vip_optuna.py
+python3 src/batch_vip_optuna.py
 ```
 
 Replay one Optuna trial in the full network:
 
 ```bash
-python src/run_best_vip_trial.py --trial 74
+python3 src/run_best_vip_trial.py --trial 74
 ```
 
 Replay one trial across the four named network conditions:
 
 ```bash
-python src/run_best_vip_conditions.py --trial 74
+python3 src/run_best_vip_conditions.py --trial 74
 ```
 
 Replay one trial and also save soma currentscape plots:
 
 ```bash
-python src/run_best_vip_conditions_currentscape.py --trial 74
+python3 src/run_best_vip_conditions_currentscape.py --trial 74
 ```
 
 Replay multiple selected trials listed in `batch_runs/BestTrials.txt`:
@@ -97,7 +97,7 @@ Create `batch_runs/BestTrials.txt` with one Optuna trial number per line, for ex
 Then run:
 
 ```bash
-python src/run_best_vip_conditions_from_best_trials.py --study-label vip_optuna_theta_gate
+python3 src/run_best_vip_conditions_from_best_trials.py --study-label vip_optuna_theta_gate
 ```
 
 This wrapper runs both:
@@ -110,16 +110,16 @@ for each listed trial and writes the outputs under `output_best_batch/`.
 Run a single-cell ramp protocol:
 
 ```bash
-python singleCellSuite/run_pc2b.py
-python singleCellSuite/run_bilash_vip.py
-python singleCellSuite/run_olm_cell.py
-python singleCellSuite/run_bilash_pyr.py
+python3 singleCellSuite/run_pc2b.py
+python3 singleCellSuite/run_bilash_vip.py
+python3 singleCellSuite/run_olm_cell.py
+python3 singleCellSuite/run_bilash_pyr.py
 ```
 
 Render a cell morphology from JSON:
 
 ```bash
-python singleCellSuite/plotGeometry.py PC2B
+python3 singleCellSuite/plotGeometry.py PC2B
 ```
 
 ## Important Parameters
@@ -211,18 +211,18 @@ bash Miniconda3.sh
 conda env create -f environment.yml
 conda activate ca1-model
 nrnivmodl $(find mechanisms -name "*.mod" | sort)
-python src/init.py
+python3 src/init.py
 ```
 
 Alternative `pip` setup:
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 nrnivmodl $(find mechanisms -name "*.mod" | sort)
-python src/init.py
+python3 src/init.py
 ```
 
 Notes for the `pip` path:
@@ -235,14 +235,14 @@ For VIP batch optimization:
 
 ```bash
 conda activate ca1-model
-python src/batch_vip_optuna.py
+python3 src/batch_vip_optuna.py
 ```
 
 With the `pip` setup:
 
 ```bash
 source .venv/bin/activate
-python src/batch_vip_optuna.py
+python3 src/batch_vip_optuna.py
 ```
 
 `src/batch_vip_optuna.py` now uses the active Python interpreter by default. If needed, override it explicitly:
