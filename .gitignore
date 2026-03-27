@@ -220,3 +220,4 @@ output/
 output_best/
 output_best_batch/
 singleCellSuite/results/
+generate_neuroscience_report.py
