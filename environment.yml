@@ -7,6 +7,7 @@ dependencies:
   - mpich=5.0.0
   - mpi4py=4.1.1
   - pip
+  - setuptools<82
   - pip:
       - batchtk==0.1.6
       - currentscape==1.0.20

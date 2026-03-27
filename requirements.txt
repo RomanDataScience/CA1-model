@@ -8,3 +8,4 @@ numpy==1.26.4
 optuna==4.2.1
 pandas==2.2.3
 scipy==1.15.2
+setuptools<82
